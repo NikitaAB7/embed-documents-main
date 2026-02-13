@@ -1,0 +1,335 @@
+{
+  "generated_at": "",
+  "questions": [
+    {
+      "id": "Q1",
+      "question": "In the investor-presentation document dated 2024-11-06 for APOLLOHOSP, what are the key highlights?",
+      "symbol": "APOLLOHOSP",
+      "fincode": 108869,
+      "category": "investor-presentation",
+      "document_date": "2024-11-06",
+      "expected_sources": [
+        "5c8e1593-fa2f-4a22-b0c9-c6c05d77e1f1.pdf"
+      ]
+    },
+    {
+      "id": "Q2",
+      "question": "Summarize the major updates in ADANIENT's investor-presentation document (2024-10-29).",
+      "symbol": "ADANIENT",
+      "fincode": 112599,
+      "category": "investor-presentation",
+      "document_date": "2024-10-29",
+      "expected_sources": [
+        "9d887fc8-621f-4d08-88a4-252d94228246.pdf"
+      ]
+    },
+    {
+      "id": "Q3",
+      "question": "What guidance or outlook is shared in the concall document for BHARTIARTL dated 2025-02-14?",
+      "symbol": "BHARTIARTL",
+      "fincode": 132454,
+      "category": "concall",
+      "document_date": "2025-02-14",
+      "expected_sources": [
+        "25774a12-2089-4653-9e26-972643e5fe4c.pdf"
+      ]
+    },
+    {
+      "id": "Q4",
+      "question": "What were the main topics discussed in the investor-presentation document for APOLLOHOSP (2025-05-31)?",
+      "symbol": "APOLLOHOSP",
+      "fincode": 108869,
+      "category": "investor-presentation",
+      "document_date": "2025-05-31",
+      "expected_sources": [
+        "b850535c-b6c7-417c-9899-007a8bd0d2c8.pdf"
+      ]
+    },
+    {
+      "id": "Q5",
+      "question": "In the investor-presentation document dated 2025-11-11 for AXISBANK, what are the key highlights?",
+      "symbol": "AXISBANK",
+      "fincode": 132215,
+      "category": "investor-presentation",
+      "document_date": "2025-11-11",
+      "expected_sources": [
+        "15c72b0c-0e7f-418d-bb03-8718695a65a9.pdf"
+      ]
+    },
+    {
+      "id": "Q6",
+      "question": "Summarize the major updates in ADANIPORTS's investor-presentation document (2024-11-29).",
+      "symbol": "ADANIPORTS",
+      "fincode": 132921,
+      "category": "investor-presentation",
+      "document_date": "2024-11-29",
+      "expected_sources": [
+        "9ed17eb4-3824-4a85-84f5-a647788e99b3.pdf"
+      ]
+    },
+    {
+      "id": "Q7",
+      "question": "What guidance or outlook is shared in the investor-presentation document for ASIANPAINT dated 2025-02-04?",
+      "symbol": "ASIANPAINT",
+      "fincode": 100820,
+      "category": "investor-presentation",
+      "document_date": "2025-02-04",
+      "expected_sources": [
+        "d36025bc-68a0-4070-91b7-ecdb2b4e5ac2.pdf"
+      ]
+    },
+    {
+      "id": "Q8",
+      "question": "What were the main topics discussed in the investor-presentation document for AXISBANK (2025-01-16)?",
+      "symbol": "AXISBANK",
+      "fincode": 132215,
+      "category": "investor-presentation",
+      "document_date": "2025-01-16",
+      "expected_sources": [
+        "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf"
+      ]
+    },
+    {
+      "id": "Q9",
+      "question": "In the concall document dated 2025-05-05 for ADANIPORTS, what are the key highlights?",
+      "symbol": "ADANIPORTS",
+      "fincode": 132921,
+      "category": "concall",
+      "document_date": "2025-05-05",
+      "expected_sources": [
+        "31fe38b1-102f-4292-80b7-b424a47719c9.pdf"
+      ]
+    },
+    {
+      "id": "Q10",
+      "question": "Summarize the major updates in BHARTIARTL's concall document (2025-11-11).",
+      "symbol": "BHARTIARTL",
+      "fincode": 132454,
+      "category": "concall",
+      "document_date": "2025-11-11",
+      "expected_sources": [
+        "b8f70dc5-c46b-481a-961c-ecbd39a6f45d.pdf"
+      ]
+    },
+    {
+      "id": "Q11",
+      "question": "What guidance or outlook is shared in the annual-report document for AXISBANK dated 2024-06-28?",
+      "symbol": "AXISBANK",
+      "fincode": 132215,
+      "category": "annual-report",
+      "document_date": "2024-06-28",
+      "expected_sources": [
+        "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf"
+      ]
+    },
+    {
+      "id": "Q12",
+      "question": "What were the main topics discussed in the investor-presentation document for BAJFINANCE (2025-04-29)?",
+      "symbol": "BAJFINANCE",
+      "fincode": 100034,
+      "category": "investor-presentation",
+      "document_date": "2025-04-29",
+      "expected_sources": [
+        "8beec986-70dd-415a-8ac3-27fecfef2d68.pdf"
+      ]
+    },
+    {
+      "id": "Q13",
+      "question": "In the concall document dated 2025-02-04 for ADANIENT, what are the key highlights?",
+      "symbol": "ADANIENT",
+      "fincode": 112599,
+      "category": "concall",
+      "document_date": "2025-02-04",
+      "expected_sources": [
+        "e54ea6c1-6868-4962-a793-e4a7bf4c0851.pdf"
+      ]
+    },
+    {
+      "id": "Q14",
+      "question": "Summarize the major updates in APOLLOHOSP's investor-presentation document (2025-11-06).",
+      "symbol": "APOLLOHOSP",
+      "fincode": 108869,
+      "category": "investor-presentation",
+      "document_date": "2025-11-06",
+      "expected_sources": [
+        "4430a828-14c2-4c64-8cff-b68f1a2904f1.pdf"
+      ]
+    },
+    {
+      "id": "Q15",
+      "question": "What guidance or outlook is shared in the investor-presentation document for ADANIENT dated 2025-01-30?",
+      "symbol": "ADANIENT",
+      "fincode": 112599,
+      "category": "investor-presentation",
+      "document_date": "2025-01-30",
+      "expected_sources": [
+        "b57a1eaa-8b60-4fd4-bf3f-c2da76f73da0.pdf"
+      ]
+    },
+    {
+      "id": "Q16",
+      "question": "What were the main topics discussed in the investor-presentation document for AXISBANK (2024-10-17)?",
+      "symbol": "AXISBANK",
+      "fincode": 132215,
+      "category": "investor-presentation",
+      "document_date": "2024-10-17",
+      "expected_sources": [
+        "c395f40a-df42-4a61-bf4b-b3efa1f2e2b3.pdf"
+      ]
+    },
+    {
+      "id": "Q17",
+      "question": "In the investor-presentation document dated 2024-07-17 for ASIANPAINT, what are the key highlights?",
+      "symbol": "ASIANPAINT",
+      "fincode": 100820,
+      "category": "investor-presentation",
+      "document_date": "2024-07-17",
+      "expected_sources": [
+        "fa64a601-c78f-4fca-ad0f-e3487d2f2c20.pdf"
+      ]
+    },
+    {
+      "id": "Q18",
+      "question": "Summarize the major updates in AXISBANK's concall document (2024-10-23).",
+      "symbol": "AXISBANK",
+      "fincode": 132215,
+      "category": "concall",
+      "document_date": "2024-10-23",
+      "expected_sources": [
+        "c68c6175-680f-4f7f-8403-c97e0d4e842b.pdf"
+      ]
+    },
+    {
+      "id": "Q19",
+      "question": "What guidance or outlook is shared in the concall document for BAJAJ-AUTO dated 2025-11-14?",
+      "symbol": "BAJAJ-AUTO",
+      "fincode": 200132,
+      "category": "concall",
+      "document_date": "2025-11-14",
+      "expected_sources": [
+        "6beac10f-a781-42da-b71b-38ad4dd37e78.pdf"
+      ]
+    },
+    {
+      "id": "Q20",
+      "question": "What were the main topics discussed in the investor-presentation document for AXISBANK (2024-04-24)?",
+      "symbol": "AXISBANK",
+      "fincode": 132215,
+      "category": "investor-presentation",
+      "document_date": "2024-04-24",
+      "expected_sources": [
+        "c3f57013-8624-44b7-94d7-f1eec2495a47.pdf"
+      ]
+    },
+    {
+      "id": "Q21",
+      "question": "In the concall document dated 2025-05-12 for ASIANPAINT, what are the key highlights?",
+      "symbol": "ASIANPAINT",
+      "fincode": 100820,
+      "category": "concall",
+      "document_date": "2025-05-12",
+      "expected_sources": [
+        "095fd538-6e08-4480-9795-3d6c9607cc85.pdf"
+      ]
+    },
+    {
+      "id": "Q22",
+      "question": "Summarize the major updates in AXISBANK's concall document (2025-01-22).",
+      "symbol": "AXISBANK",
+      "fincode": 132215,
+      "category": "concall",
+      "document_date": "2025-01-22",
+      "expected_sources": [
+        "bcf0ed65-901e-4f23-889b-37e4b7a646ca.pdf"
+      ]
+    },
+    {
+      "id": "Q23",
+      "question": "What guidance or outlook is shared in the concall document for AXISBANK dated 2024-04-29?",
+      "symbol": "AXISBANK",
+      "fincode": 132215,
+      "category": "concall",
+      "document_date": "2024-04-29",
+      "expected_sources": [
+        "d39f9189-a7d6-4a03-9ad2-f5302ed4735c.pdf"
+      ]
+    },
+    {
+      "id": "Q24",
+      "question": "What were the main topics discussed in the investor-presentation document for APOLLOHOSP (2025-05-30)?",
+      "symbol": "APOLLOHOSP",
+      "fincode": 108869,
+      "category": "investor-presentation",
+      "document_date": "2025-05-30",
+      "expected_sources": [
+        "14a059cf-24b8-4d1a-a641-c917bfff7dda.pdf"
+      ]
+    },
+    {
+      "id": "Q25",
+      "question": "In the concall document dated 2025-08-11 for BHARTIARTL, what are the key highlights?",
+      "symbol": "BHARTIARTL",
+      "fincode": 132454,
+      "category": "concall",
+      "document_date": "2025-08-11",
+      "expected_sources": [
+        "e7bdada9-733e-41a6-bdd9-f61d71d30335.pdf"
+      ]
+    },
+    {
+      "id": "Q26",
+      "question": "Summarize the major updates in ADANIPORTS's investor-presentation document (2024-10-05).",
+      "symbol": "ADANIPORTS",
+      "fincode": 132921,
+      "category": "investor-presentation",
+      "document_date": "2024-10-05",
+      "expected_sources": [
+        "2ad483f8-cbb8-4cb5-9132-a24764a0126d.pdf"
+      ]
+    },
+    {
+      "id": "Q27",
+      "question": "What guidance or outlook is shared in the annual-report document for ADANIENT dated 2024-05-29?",
+      "symbol": "ADANIENT",
+      "fincode": 112599,
+      "category": "annual-report",
+      "document_date": "2024-05-29",
+      "expected_sources": [
+        "045307f4-4c12-4e61-9764-d48b84c5b233.pdf"
+      ]
+    },
+    {
+      "id": "Q28",
+      "question": "What were the main topics discussed in the concall document for ASIANPAINT (2025-08-02)?",
+      "symbol": "ASIANPAINT",
+      "fincode": 100820,
+      "category": "concall",
+      "document_date": "2025-08-02",
+      "expected_sources": [
+        "cfd25bff-1623-40b0-a6d6-c8ddab10b398.pdf"
+      ]
+    },
+    {
+      "id": "Q29",
+      "question": "In the investor-presentation document dated 2024-05-09 for ASIANPAINT, what are the key highlights?",
+      "symbol": "ASIANPAINT",
+      "fincode": 100820,
+      "category": "investor-presentation",
+      "document_date": "2024-05-09",
+      "expected_sources": [
+        "63a2696f-f94d-4133-a636-a33645aaa4f3.pdf"
+      ]
+    },
+    {
+      "id": "Q30",
+      "question": "Summarize the major updates in BAJAJ-AUTO's concall document (2024-04-25).",
+      "symbol": "BAJAJ-AUTO",
+      "fincode": 200132,
+      "category": "concall",
+      "document_date": "2024-04-25",
+      "expected_sources": [
+        "5339fa5f-b7cf-4abc-a496-3c8d7b24f4a5.pdf"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+[project]
+name = "embed-docs"
+version = "0.0.1"
+description = "Scripts to embed company documents using Docling and LangChain."
+authors = [
+    { name = "Shoeb Merchant", email = "shoebmerchant12@gmail.com" },
+]
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+dependencies = [
+    "langchain>=1.0.3",
+    "python-dotenv>=1.2.1",
+    "docling>=2.60.1",
+    "diskcache>=5.6.3",
+    "langchain[openai]>=1.0.2",
+    "langchain-qdrant>=1.1.0",
+    "aiosqlite>=0.20.0",
+    "pydantic>=2.0.0",
+    "fastapi>=0.104.0",
+    "uvicorn>=0.24.0",
+    "joblib",
+    "llama-parse>=0.5.0",
+    "lxml>=5.2.0",
+    "rank-bm25>=0.2.2",
+    "sentence-transformers>=3.0.1"
+]
+
+
+[project.optional-dependencies]
+dev = ["mypy>=1.11.1", "ruff>=0.6.1"]
+
+[build-system]
+requires = ["setuptools>=73.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["rag*", "utils*", "langchain_docling*"]
+exclude = ["tests*"]
+
+
+[tool.setuptools.package-data]
+"*" = ["py.typed"]
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle
+    "F",    # pyflakes
+    "I",    # isort
+    "D",    # pydocstyle
+    "D401", # First line should be in imperative mood
+    "T201",
+    "UP",
+    "E402", # Module level import not at top of file
+    "PLC",  # Pylint convention
+]
+ignore = [
+    "UP006",
+    "UP007",
+    # We actually do want to import from typing_extensions
+    "UP035",
+    # Relax the convention by _not_ requiring documentation for every function parameter.
+    "D417",
+    "E501",
+]
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["D", "UP", "T201"]
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.isort]
+known-first-party = ["src"]
+
+[dependency-groups]
+dev = [
+    "anyio>=4.7.0",
+    "mypy>=1.13.0",
+    "pytest>=8.3.5",
+    "pytest-asyncio>=0.24.0",
+    "ruff>=0.8.2",
+    "ipywidgets"
+]

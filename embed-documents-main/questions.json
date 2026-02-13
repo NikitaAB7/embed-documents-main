@@ -1,0 +1,170 @@
+{
+  "generated_at": "2026-02-09T10:58:10.772322Z",
+  "questions": [
+    {
+      "id": "Q1",
+      "question": "In the concall document dated 2024-05-16 for TMPV, what are the key highlights?",
+      "symbol": "TMPV",
+      "fincode": 100570,
+      "category": "concall",
+      "document_date": "2024-05-16",
+      "expected_sources": [
+        "cfd0020f-d9cc-4148-9606-10eb86705ffd.pdf"
+      ]
+    },
+    {
+      "id": "Q2",
+      "question": "Summarize the major financial or operational updates in SBIN's investor-presentation document (2025-05-03).",
+      "symbol": "SBIN",
+      "fincode": 100112,
+      "category": "investor-presentation",
+      "document_date": "2025-05-03",
+      "expected_sources": [
+        "c71220a2-e01b-4e3d-9380-cf165b023d52.pdf"
+      ]
+    },
+    {
+      "id": "Q3",
+      "question": "What guidance or outlook is stated in the investor-presentation document for TMPV dated 2025-01-29?",
+      "symbol": "TMPV",
+      "fincode": 100570,
+      "category": "investor-presentation",
+      "document_date": "2025-01-29",
+      "expected_sources": [
+        "e9ded3b7-11c4-4572-a0ba-e7fa5dac0a16.pdf"
+      ]
+    },
+    {
+      "id": "Q4",
+      "question": "What were the key topics discussed in the investor-presentation document for SBIN (2024-05-09)?",
+      "symbol": "SBIN",
+      "fincode": 100112,
+      "category": "investor-presentation",
+      "document_date": "2024-05-09",
+      "expected_sources": [
+        "d7eaa420-b619-4865-b196-519921e57cbc.pdf"
+      ]
+    },
+    {
+      "id": "Q5",
+      "question": "In the investor-presentation document dated 2024-01-19 for RELIANCE, what are the key highlights?",
+      "symbol": "RELIANCE",
+      "fincode": 100325,
+      "category": "investor-presentation",
+      "document_date": "2024-01-19",
+      "expected_sources": [
+        "1cb66ca2-dfd5-4f46-986f-03b0661bd486.pdf"
+      ]
+    },
+    {
+      "id": "Q6",
+      "question": "Summarize the major financial or operational updates in RELIANCE's investor-presentation document (2025-10-17).",
+      "symbol": "RELIANCE",
+      "fincode": 100325,
+      "category": "investor-presentation",
+      "document_date": "2025-10-17",
+      "expected_sources": [
+        "7a050d55-ad53-4d57-8735-cbcf20bb412b.pdf"
+      ]
+    },
+    {
+      "id": "Q7",
+      "question": "What guidance or outlook is stated in the investor-presentation document for TMPV dated 2025-06-09?",
+      "symbol": "TMPV",
+      "fincode": 100570,
+      "category": "investor-presentation",
+      "document_date": "2025-06-09",
+      "expected_sources": [
+        "ab4787f4-7c6a-423d-aa9a-a79e0cd1e06e.pdf"
+      ]
+    },
+    {
+      "id": "Q8",
+      "question": "What were the key topics discussed in the concall document for SUNPHARMA (2024-05-29)?",
+      "symbol": "SUNPHARMA",
+      "fincode": 124715,
+      "category": "concall",
+      "document_date": "2024-05-29",
+      "expected_sources": [
+        "ee40a7ec-017e-41e7-9f33-2453153e8620.pdf"
+      ]
+    },
+    {
+      "id": "Q9",
+      "question": "In the annual-report document dated 2024-06-28 for ITC, what are the key highlights?",
+      "symbol": "ITC",
+      "fincode": 100875,
+      "category": "annual-report",
+      "document_date": "2024-06-28",
+      "expected_sources": [
+        "f0d1e906-3c13-4993-ad06-e04ad1d3edf9.pdf"
+      ]
+    },
+    {
+      "id": "Q10",
+      "question": "Summarize the major financial or operational updates in INFY's concall document (2025-07-28).",
+      "symbol": "INFY",
+      "fincode": 100209,
+      "category": "concall",
+      "document_date": "2025-07-28",
+      "expected_sources": [
+        "10c91fa1-f133-476d-ada3-0143acdd9846.pdf"
+      ]
+    },
+    {
+      "id": "Q11",
+      "question": "What guidance or outlook is stated in the concall document for RELIANCE dated 2024-10-15?",
+      "symbol": "RELIANCE",
+      "fincode": 100325,
+      "category": "concall",
+      "document_date": "2024-10-15",
+      "expected_sources": [
+        "0e6309fa-450f-4db6-88b2-d76d9a3ff756.pdf"
+      ]
+    },
+    {
+      "id": "Q12",
+      "question": "What were the key topics discussed in the concall document for INFY (2025-01-21)?",
+      "symbol": "INFY",
+      "fincode": 100209,
+      "category": "concall",
+      "document_date": "2025-01-21",
+      "expected_sources": [
+        "ba0eb28e-bc2c-46d4-b945-9f4c67091850.pdf"
+      ]
+    },
+    {
+      "id": "Q13",
+      "question": "In the concall document dated 2024-04-23 for RELIANCE, what are the key highlights?",
+      "symbol": "RELIANCE",
+      "fincode": 100325,
+      "category": "concall",
+      "document_date": "2024-04-23",
+      "expected_sources": [
+        "06b05d06-8c38-4aee-aa5b-5e7108ae3871.pdf"
+      ]
+    },
+    {
+      "id": "Q14",
+      "question": "Summarize the major financial or operational updates in RELIANCE's concall document (2025-10-19).",
+      "symbol": "RELIANCE",
+      "fincode": 100325,
+      "category": "concall",
+      "document_date": "2025-10-19",
+      "expected_sources": [
+        "f2454c0f-aad9-4d23-add0-dfe3d49aa8d6.pdf"
+      ]
+    },
+    {
+      "id": "Q15",
+      "question": "What guidance or outlook is stated in the investor-presentation document for TMPV dated 2025-05-13?",
+      "symbol": "TMPV",
+      "fincode": 100570,
+      "category": "investor-presentation",
+      "document_date": "2025-05-13",
+      "expected_sources": [
+        "157fab8e-e33c-4f7e-af09-dd3b05c995af.pdf"
+      ]
+    }
+  ]
+}

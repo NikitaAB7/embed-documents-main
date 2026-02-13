@@ -1,0 +1,327 @@
+{
+  "answers": [
+    {
+      "id": "Q1",
+      "question": "In the concall document dated 2024-05-16 for TMPV, what are the key highlights?",
+      "answer": "No relevant sources found.",
+      "citations": [],
+      "metrics": {
+        "recall": 0.0,
+        "citation_coverage": 0.0,
+        "citations_present": false,
+        "faithfulness": 0.0
+      },
+      "expected_sources": [
+        "cfd0020f-d9cc-4148-9606-10eb86705ffd.pdf"
+      ],
+      "retrieved_sources": [],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q2",
+      "question": "Summarize the major financial or operational updates in SBIN's investor-presentation document (2025-05-03).",
+      "answer": "No relevant sources found.",
+      "citations": [],
+      "metrics": {
+        "recall": 0.0,
+        "citation_coverage": 0.0,
+        "citations_present": false,
+        "faithfulness": 0.0
+      },
+      "expected_sources": [
+        "c71220a2-e01b-4e3d-9380-cf165b023d52.pdf"
+      ],
+      "retrieved_sources": [],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.6000000000000001,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q3",
+      "question": "What guidance or outlook is stated in the investor-presentation document for TMPV dated 2025-01-29?",
+      "answer": "No relevant sources found.",
+      "citations": [],
+      "metrics": {
+        "recall": 0.0,
+        "citation_coverage": 0.0,
+        "citations_present": false,
+        "faithfulness": 0.0
+      },
+      "expected_sources": [
+        "e9ded3b7-11c4-4572-a0ba-e7fa5dac0a16.pdf"
+      ],
+      "retrieved_sources": [],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q4",
+      "question": "What were the key topics discussed in the investor-presentation document for SBIN (2024-05-09)?",
+      "answer": "No relevant sources found.",
+      "citations": [],
+      "metrics": {
+        "recall": 0.0,
+        "citation_coverage": 0.0,
+        "citations_present": false,
+        "faithfulness": 0.0
+      },
+      "expected_sources": [
+        "d7eaa420-b619-4865-b196-519921e57cbc.pdf"
+      ],
+      "retrieved_sources": [],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q5",
+      "question": "In the investor-presentation document dated 2024-01-19 for RELIANCE, what are the key highlights?",
+      "answer": "No relevant sources found.",
+      "citations": [],
+      "metrics": {
+        "recall": 0.0,
+        "citation_coverage": 0.0,
+        "citations_present": false,
+        "faithfulness": 0.0
+      },
+      "expected_sources": [
+        "1cb66ca2-dfd5-4f46-986f-03b0661bd486.pdf"
+      ],
+      "retrieved_sources": [],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q6",
+      "question": "Summarize the major financial or operational updates in RELIANCE's investor-presentation document (2025-10-17).",
+      "answer": "No relevant sources found.",
+      "citations": [],
+      "metrics": {
+        "recall": 0.0,
+        "citation_coverage": 0.0,
+        "citations_present": false,
+        "faithfulness": 0.0
+      },
+      "expected_sources": [
+        "7a050d55-ad53-4d57-8735-cbcf20bb412b.pdf"
+      ],
+      "retrieved_sources": [],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.6000000000000001,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q7",
+      "question": "What guidance or outlook is stated in the investor-presentation document for TMPV dated 2025-06-09?",
+      "answer": "No relevant sources found.",
+      "citations": [],
+      "metrics": {
+        "recall": 0.0,
+        "citation_coverage": 0.0,
+        "citations_present": false,
+        "faithfulness": 0.0
+      },
+      "expected_sources": [
+        "ab4787f4-7c6a-423d-aa9a-a79e0cd1e06e.pdf"
+      ],
+      "retrieved_sources": [],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q8",
+      "question": "What were the key topics discussed in the concall document for SUNPHARMA (2024-05-29)?",
+      "answer": "No relevant sources found.",
+      "citations": [],
+      "metrics": {
+        "recall": 0.0,
+        "citation_coverage": 0.0,
+        "citations_present": false,
+        "faithfulness": 0.0
+      },
+      "expected_sources": [
+        "ee40a7ec-017e-41e7-9f33-2453153e8620.pdf"
+      ],
+      "retrieved_sources": [],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q9",
+      "question": "In the annual-report document dated 2024-06-28 for ITC, what are the key highlights?",
+      "answer": "No relevant sources found.",
+      "citations": [],
+      "metrics": {
+        "recall": 0.0,
+        "citation_coverage": 0.0,
+        "citations_present": false,
+        "faithfulness": 0.0
+      },
+      "expected_sources": [
+        "f0d1e906-3c13-4993-ad06-e04ad1d3edf9.pdf"
+      ],
+      "retrieved_sources": [],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.6,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q10",
+      "question": "Summarize the major financial or operational updates in INFY's concall document (2025-07-28).",
+      "answer": "No relevant sources found.",
+      "citations": [],
+      "metrics": {
+        "recall": 0.0,
+        "citation_coverage": 0.0,
+        "citations_present": false,
+        "faithfulness": 0.0
+      },
+      "expected_sources": [
+        "10c91fa1-f133-476d-ada3-0143acdd9846.pdf"
+      ],
+      "retrieved_sources": [],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.6000000000000001,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q11",
+      "question": "What guidance or outlook is stated in the concall document for RELIANCE dated 2024-10-15?",
+      "answer": "No relevant sources found.",
+      "citations": [],
+      "metrics": {
+        "recall": 0.0,
+        "citation_coverage": 0.0,
+        "citations_present": false,
+        "faithfulness": 0.0
+      },
+      "expected_sources": [
+        "0e6309fa-450f-4db6-88b2-d76d9a3ff756.pdf"
+      ],
+      "retrieved_sources": [],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q12",
+      "question": "What were the key topics discussed in the concall document for INFY (2025-01-21)?",
+      "answer": "No relevant sources found.",
+      "citations": [],
+      "metrics": {
+        "recall": 0.0,
+        "citation_coverage": 0.0,
+        "citations_present": false,
+        "faithfulness": 0.0
+      },
+      "expected_sources": [
+        "ba0eb28e-bc2c-46d4-b945-9f4c67091850.pdf"
+      ],
+      "retrieved_sources": [],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q13",
+      "question": "In the concall document dated 2024-04-23 for RELIANCE, what are the key highlights?",
+      "answer": "No relevant sources found.",
+      "citations": [],
+      "metrics": {
+        "recall": 0.0,
+        "citation_coverage": 0.0,
+        "citations_present": false,
+        "faithfulness": 0.0
+      },
+      "expected_sources": [
+        "06b05d06-8c38-4aee-aa5b-5e7108ae3871.pdf"
+      ],
+      "retrieved_sources": [],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q14",
+      "question": "Summarize the major financial or operational updates in RELIANCE's concall document (2025-10-19).",
+      "answer": "No relevant sources found.",
+      "citations": [],
+      "metrics": {
+        "recall": 0.0,
+        "citation_coverage": 0.0,
+        "citations_present": false,
+        "faithfulness": 0.0
+      },
+      "expected_sources": [
+        "f2454c0f-aad9-4d23-add0-dfe3d49aa8d6.pdf"
+      ],
+      "retrieved_sources": [],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.6000000000000001,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q15",
+      "question": "What guidance or outlook is stated in the investor-presentation document for TMPV dated 2025-05-13?",
+      "answer": "No relevant sources found.",
+      "citations": [],
+      "metrics": {
+        "recall": 0.0,
+        "citation_coverage": 0.0,
+        "citations_present": false,
+        "faithfulness": 0.0
+      },
+      "expected_sources": [
+        "157fab8e-e33c-4f7e-af09-dd3b05c995af.pdf"
+      ],
+      "retrieved_sources": [],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    }
+  ],
+  "overall_metrics": {
+    "total_questions": 15,
+    "avg_recall": 0.0,
+    "avg_citation_coverage": 0.0,
+    "avg_faithfulness": 0.0,
+    "citation_rate": 0.0
+  },
+  "generated_from": "c:\\Users\\Anant\\Downloads\\embed-documents-main\\embed-documents-main\\questions.json"
+}

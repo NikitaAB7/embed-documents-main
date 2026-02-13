@@ -1,0 +1,2118 @@
+{
+  "answers": [
+    {
+      "id": "Q1",
+      "question": "In the investor-presentation document dated 2024-11-06 for APOLLOHOSP, what are the key highlights?",
+      "answer": "The key highlights from the investor-presentation document dated 2024-11-06 for Apollo Hospitals Enterprise Limited (APOLLOHOSP) are as follows:\n\n- The presentation discloses the financial results of the company for the quarter and year ended March 31, 2024, in compliance with SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015. The presentation is also available on the company's website (www.apollohospitals.com) [C1].\n\n- A major strategic update is the investment by Advent International in Apollo Healthco Limited (AHL):\n  - Advent International is investing INR 2,475 crores (USD 300 million) in AHL, with Tranche 1 of INR 1,732 crores already completed and Tranche 2 of INR 743 crores to be completed within 12 months.\n  - There is a proposed phased integration of Keimed Private Limited with AHL.\n  - The merger with Keimed is expected to be EPS (Earnings Per Share) accretive from Year 1.\n  - The combined entity aims to create India\u2019s leading integrated pharmacy distribution business, complemented by a fast-growing omni-channel digital health business.\n  - Keimed is the market leader in wholesale pharma distribution, with twice the scale of its nearest competitor and industry-leading operating metrics.\n  - AHL plans to leverage Keimed\u2019s network of 70,000+ stores to accelerate its INR 1,500+ crore private label portfolio.\n  - The merged entity targets consolidated Year 3 revenues of approximately INR 25,000 crores (USD 3.03 billion) with operating margins of 7-8% (post 24/7 operating cost) [C8].\n\n- The presentation includes a financial performance snapshot and business segment-wise update, but specific financial figures or segment details are not provided in the available context [C3].\n\n- The document emphasizes the synergetic benefits of the Keimed merger, aiming for an industry-defining business model with pan-India presence [C8].\n\nIf you need more granular financial data or segment-wise performance, that information is not available in the provided contexts.",
+      "citations": [
+        {
+          "id": "C1",
+          "source": "406daf7a-494f-4413-9bcd-c0bd50753640.pdf",
+          "page": null,
+          "chunk_id": "406daf7a-494f-4413-9bcd-c0bd50753640.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C2",
+          "source": "14a059cf-24b8-4d1a-a641-c917bfff7dda.pdf",
+          "page": null,
+          "chunk_id": "14a059cf-24b8-4d1a-a641-c917bfff7dda.pdf::text::2",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C3",
+          "source": "b850535c-b6c7-417c-9899-007a8bd0d2c8.pdf",
+          "page": null,
+          "chunk_id": "b850535c-b6c7-417c-9899-007a8bd0d2c8.pdf::text::2",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C4",
+          "source": "4430a828-14c2-4c64-8cff-b68f1a2904f1.pdf",
+          "page": null,
+          "chunk_id": "4430a828-14c2-4c64-8cff-b68f1a2904f1.pdf::text::2",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C5",
+          "source": "dce7bcc1-c27f-4f71-87bb-fd3e836c1c2e.pdf",
+          "page": null,
+          "chunk_id": "dce7bcc1-c27f-4f71-87bb-fd3e836c1c2e.pdf::text::2",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C6",
+          "source": "5c8e1593-fa2f-4a22-b0c9-c6c05d77e1f1.pdf",
+          "page": null,
+          "chunk_id": "5c8e1593-fa2f-4a22-b0c9-c6c05d77e1f1.pdf::text::2",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C7",
+          "source": "f30907dc-d76c-4a3b-bbf9-7a8b5121223c.pdf",
+          "page": null,
+          "chunk_id": "f30907dc-d76c-4a3b-bbf9-7a8b5121223c.pdf::text::3",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C8",
+          "source": "5c8e1593-fa2f-4a22-b0c9-c6c05d77e1f1.pdf",
+          "page": null,
+          "chunk_id": "5c8e1593-fa2f-4a22-b0c9-c6c05d77e1f1.pdf::text::95",
+          "reference_chunk_id": null
+        }
+      ],
+      "metrics": {
+        "recall": 1.0,
+        "citation_coverage": 0.3333333333333333,
+        "citations_present": true,
+        "faithfulness": 0.9
+      },
+      "expected_sources": [
+        "5c8e1593-fa2f-4a22-b0c9-c6c05d77e1f1.pdf"
+      ],
+      "retrieved_sources": [
+        "406daf7a-494f-4413-9bcd-c0bd50753640.pdf",
+        "14a059cf-24b8-4d1a-a641-c917bfff7dda.pdf",
+        "b850535c-b6c7-417c-9899-007a8bd0d2c8.pdf",
+        "4430a828-14c2-4c64-8cff-b68f1a2904f1.pdf",
+        "dce7bcc1-c27f-4f71-87bb-fd3e836c1c2e.pdf",
+        "5c8e1593-fa2f-4a22-b0c9-c6c05d77e1f1.pdf",
+        "f30907dc-d76c-4a3b-bbf9-7a8b5121223c.pdf",
+        "5c8e1593-fa2f-4a22-b0c9-c6c05d77e1f1.pdf",
+        "4430a828-14c2-4c64-8cff-b68f1a2904f1.pdf",
+        "dce7bcc1-c27f-4f71-87bb-fd3e836c1c2e.pdf"
+      ],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q2",
+      "question": "Summarize the major updates in ADANIENT's investor-presentation document (2024-10-29).",
+      "answer": "No relevant sources found.",
+      "citations": [],
+      "metrics": {
+        "recall": 0.0,
+        "citation_coverage": 0.0,
+        "citations_present": false,
+        "faithfulness": 0.0
+      },
+      "expected_sources": [
+        "9d887fc8-621f-4d08-88a4-252d94228246.pdf"
+      ],
+      "retrieved_sources": [],
+      "route": {
+        "use_rag": false,
+        "confidence": 0.5,
+        "reason": "generic query"
+      }
+    },
+    {
+      "id": "Q3",
+      "question": "What guidance or outlook is shared in the concall document for BHARTIARTL dated 2025-02-14?",
+      "answer": "Based on the available contexts, the guidance and outlook shared in the concall document for BHARTIARTL around February 2025 (specifically referencing the Q3 FY2025 results and the period leading up to and including early 2025) include the following key points:\n\n1. **Capex Outlook**: The company indicated that the rollout in the coming year (FY2026) will be substantially lower as they have completed their footprint. The capex for FY2026 is expected to be lower than FY2025, reflecting that much of the heavy lifting in terms of investments has already been done over the last two years. The approach remains disciplined, with well-planned and calibrated capex, financial prudence, and sustained deleveraging, which is reflected in a solid balance sheet[ C6 ].\n\n2. **Growth Focus Areas**:\n   - Continued focus on postpaid mobile, smartphone upgrades, and international roaming to drive ARPU growth.\n   - Broadband business is expected to see continued acceleration, with a focus on expanding fiber home passes and leveraging Fixed Wireless Access (FWA) to reach areas where fiber is not feasible.\n   - B2B (Enterprise) business is a strong growth area, with emphasis on adjacencies like Cloud, Cybersecurity, Managed Services, CPaaS, and IoT, which are contributing significantly to industry growth. The company is positioning itself with a comprehensive suite of products and is scaling up investments in data centers and digital tools for customer experience and delivery assurance[ C6 ][ C7 ].\n\n3. **Customer Experience and Digital Transformation**:\n   - The company is investing in advanced digital tools, AI, and ML to enhance network performance, reduce churn, and fight SPAM calls (with notable success in reducing SPAM for customers).\n   - There is a strong cultural focus on customer obsession, with initiatives to have employees work alongside frontline teams to generate actionable insights[ C6 ].\n\n4. **Financial Health and Tariff Repair**:\n   - The company reiterates the need for further tariff repair in the industry to ensure sustained financial health and to support continued investments, aiming for a respectable Return on Capital Employed (ROCE)[ C6 ].\n\n5. **Segment Updates**:\n   - Mobile: ARPU improvement is being driven by mix improvement and upgrades, with 5G expansion continuing as planned and 5G sites now handling a significant portion of network traffic.\n   - Broadband: Record net additions and strong momentum in FWA.\n   - Digital TV: Structural changes to eliminate subsidies are expected to improve cash generation.\n   - Digital Businesses: Continued strategic investments in Cloud, Cybersecurity, Financial Services, IoT, and CPaaS.\n   - Payments Bank: Strong growth in users and revenue run rate[ C7 ].\n\n6. **Overall Guidance**:\n   - The company is well capitalized to seize growth opportunities, with a disciplined approach to investments and a focus on future-proofing the business and building digital services at scale.\n   - The outlook for the business remains strong, with visibility on the order book and continued improvement in digital and enterprise segments[ C6 ][ C7 ].\n\nIn summary, the guidance and outlook for BHARTIARTL as of early 2025 emphasize lower capex in FY2026, continued focus on digital and enterprise growth, disciplined financial management, and the need for industry tariff repair to support long-term investments[ C6 ][ C7 ]. [C1]",
+      "citations": [
+        {
+          "id": "C1",
+          "source": "e7bdada9-733e-41a6-bdd9-f61d71d30335.pdf",
+          "page": null,
+          "chunk_id": "e7bdada9-733e-41a6-bdd9-f61d71d30335.pdf::text::51",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C2",
+          "source": "75c7f6b8-2b0d-4c5f-9404-f1778e5acab2.pdf",
+          "page": null,
+          "chunk_id": "75c7f6b8-2b0d-4c5f-9404-f1778e5acab2.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C3",
+          "source": "e7bdada9-733e-41a6-bdd9-f61d71d30335.pdf",
+          "page": null,
+          "chunk_id": "e7bdada9-733e-41a6-bdd9-f61d71d30335.pdf::text::0",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C4",
+          "source": "25774a12-2089-4653-9e26-972643e5fe4c.pdf",
+          "page": null,
+          "chunk_id": "25774a12-2089-4653-9e26-972643e5fe4c.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C5",
+          "source": "55b5e9bb-e2f4-4c54-9865-f0b7f789f6ed.pdf",
+          "page": null,
+          "chunk_id": "55b5e9bb-e2f4-4c54-9865-f0b7f789f6ed.pdf::text::55",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C6",
+          "source": "75c7f6b8-2b0d-4c5f-9404-f1778e5acab2.pdf",
+          "page": null,
+          "chunk_id": "75c7f6b8-2b0d-4c5f-9404-f1778e5acab2.pdf::text::16",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C7",
+          "source": "e7bdada9-733e-41a6-bdd9-f61d71d30335.pdf",
+          "page": null,
+          "chunk_id": "e7bdada9-733e-41a6-bdd9-f61d71d30335.pdf::text::4",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C8",
+          "source": "06861a12-3ad9-4a7b-808a-566a9e7abb09.pdf",
+          "page": null,
+          "chunk_id": "06861a12-3ad9-4a7b-808a-566a9e7abb09.pdf::text::5",
+          "reference_chunk_id": null
+        }
+      ],
+      "metrics": {
+        "recall": 1.0,
+        "citation_coverage": 0.04,
+        "citations_present": true,
+        "faithfulness": 1.0
+      },
+      "expected_sources": [
+        "25774a12-2089-4653-9e26-972643e5fe4c.pdf"
+      ],
+      "retrieved_sources": [
+        "e7bdada9-733e-41a6-bdd9-f61d71d30335.pdf",
+        "75c7f6b8-2b0d-4c5f-9404-f1778e5acab2.pdf",
+        "e7bdada9-733e-41a6-bdd9-f61d71d30335.pdf",
+        "25774a12-2089-4653-9e26-972643e5fe4c.pdf",
+        "55b5e9bb-e2f4-4c54-9865-f0b7f789f6ed.pdf",
+        "75c7f6b8-2b0d-4c5f-9404-f1778e5acab2.pdf",
+        "e7bdada9-733e-41a6-bdd9-f61d71d30335.pdf",
+        "06861a12-3ad9-4a7b-808a-566a9e7abb09.pdf",
+        "25774a12-2089-4653-9e26-972643e5fe4c.pdf",
+        "55b5e9bb-e2f4-4c54-9865-f0b7f789f6ed.pdf"
+      ],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q4",
+      "question": "What were the main topics discussed in the investor-presentation document for APOLLOHOSP (2025-05-31)?",
+      "answer": "The main topics discussed in the investor-presentation document for APOLLOHOSP (Apollo Hospitals Enterprise Limited) for the period ended 31 May 2025 were:\n\n- Financial Performance Snapshot\n- Business Segment-wise Update\n\nThese topics are indicated as the focus of the presentation, which was prepared in compliance with SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015, and covers the financial results of the company for the three months and year ended March 31, 2025. The presentation was also made available on the company's website for investor reference. The document includes standard disclaimers and forward-looking statements, but the specific content centers on financial and business segment updates for the reporting period[1][2][3].\n\nSources:\n1. [C1]\n2. [C6]\n3. [C5]",
+      "citations": [
+        {
+          "id": "C1",
+          "source": "14a059cf-24b8-4d1a-a641-c917bfff7dda.pdf",
+          "page": null,
+          "chunk_id": "14a059cf-24b8-4d1a-a641-c917bfff7dda.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C2",
+          "source": "406daf7a-494f-4413-9bcd-c0bd50753640.pdf",
+          "page": null,
+          "chunk_id": "406daf7a-494f-4413-9bcd-c0bd50753640.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C3",
+          "source": "2faa7e2f-97ab-40df-9cbe-a4e59085f27d.pdf",
+          "page": null,
+          "chunk_id": "2faa7e2f-97ab-40df-9cbe-a4e59085f27d.pdf::text::2",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C4",
+          "source": "4430a828-14c2-4c64-8cff-b68f1a2904f1.pdf",
+          "page": null,
+          "chunk_id": "4430a828-14c2-4c64-8cff-b68f1a2904f1.pdf::text::2",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C5",
+          "source": "b850535c-b6c7-417c-9899-007a8bd0d2c8.pdf",
+          "page": null,
+          "chunk_id": "b850535c-b6c7-417c-9899-007a8bd0d2c8.pdf::text::2",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C6",
+          "source": "14a059cf-24b8-4d1a-a641-c917bfff7dda.pdf",
+          "page": null,
+          "chunk_id": "14a059cf-24b8-4d1a-a641-c917bfff7dda.pdf::text::2",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C7",
+          "source": "dce7bcc1-c27f-4f71-87bb-fd3e836c1c2e.pdf",
+          "page": null,
+          "chunk_id": "dce7bcc1-c27f-4f71-87bb-fd3e836c1c2e.pdf::text::2",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C8",
+          "source": "5c8e1593-fa2f-4a22-b0c9-c6c05d77e1f1.pdf",
+          "page": null,
+          "chunk_id": "5c8e1593-fa2f-4a22-b0c9-c6c05d77e1f1.pdf::text::2",
+          "reference_chunk_id": null
+        }
+      ],
+      "metrics": {
+        "recall": 1.0,
+        "citation_coverage": 0.42857142857142855,
+        "citations_present": true,
+        "faithfulness": 1.0
+      },
+      "expected_sources": [
+        "b850535c-b6c7-417c-9899-007a8bd0d2c8.pdf"
+      ],
+      "retrieved_sources": [
+        "14a059cf-24b8-4d1a-a641-c917bfff7dda.pdf",
+        "406daf7a-494f-4413-9bcd-c0bd50753640.pdf",
+        "2faa7e2f-97ab-40df-9cbe-a4e59085f27d.pdf",
+        "4430a828-14c2-4c64-8cff-b68f1a2904f1.pdf",
+        "b850535c-b6c7-417c-9899-007a8bd0d2c8.pdf",
+        "14a059cf-24b8-4d1a-a641-c917bfff7dda.pdf",
+        "dce7bcc1-c27f-4f71-87bb-fd3e836c1c2e.pdf",
+        "5c8e1593-fa2f-4a22-b0c9-c6c05d77e1f1.pdf",
+        "f30907dc-d76c-4a3b-bbf9-7a8b5121223c.pdf",
+        "b850535c-b6c7-417c-9899-007a8bd0d2c8.pdf"
+      ],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q5",
+      "question": "In the investor-presentation document dated 2025-11-11 for AXISBANK, what are the key highlights?",
+      "answer": "Based on the provided contexts, the investor-presentation document dated 2025-11-11 for AXISBANK is not available. The contexts reference investor presentations for the quarters and nine months ended December 31, 2024, and for other periods, but there is no information or key highlights specifically from a document dated 2025-11-11. Therefore, I don't know the key highlights of the investor-presentation document dated 2025-11-11 for AXISBANK based on the given information[ C1][C3][C7][C8].",
+      "citations": [
+        {
+          "id": "C1",
+          "source": "3b400118-5942-4c76-ba0d-c03700357428.pdf",
+          "page": null,
+          "chunk_id": "3b400118-5942-4c76-ba0d-c03700357428.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C2",
+          "source": "27cd59c0-8697-4e71-9838-88d1ddd2a40d.pdf",
+          "page": null,
+          "chunk_id": "27cd59c0-8697-4e71-9838-88d1ddd2a40d.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C3",
+          "source": "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf",
+          "page": null,
+          "chunk_id": "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C4",
+          "source": "c395f40a-df42-4a61-bf4b-b3efa1f2e2b3.pdf",
+          "page": null,
+          "chunk_id": "c395f40a-df42-4a61-bf4b-b3efa1f2e2b3.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C5",
+          "source": "b419c3d1-1979-49e1-933f-f610e9832cff.pdf",
+          "page": null,
+          "chunk_id": "b419c3d1-1979-49e1-933f-f610e9832cff.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C6",
+          "source": "c3f57013-8624-44b7-94d7-f1eec2495a47.pdf",
+          "page": null,
+          "chunk_id": "c3f57013-8624-44b7-94d7-f1eec2495a47.pdf::text::25",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C7",
+          "source": "3b400118-5942-4c76-ba0d-c03700357428.pdf",
+          "page": null,
+          "chunk_id": "3b400118-5942-4c76-ba0d-c03700357428.pdf::text::6",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C8",
+          "source": "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf",
+          "page": null,
+          "chunk_id": "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf::text::26",
+          "reference_chunk_id": null
+        }
+      ],
+      "metrics": {
+        "recall": 0.0,
+        "citation_coverage": 0.3333333333333333,
+        "citations_present": true,
+        "faithfulness": 1.0
+      },
+      "expected_sources": [
+        "15c72b0c-0e7f-418d-bb03-8718695a65a9.pdf"
+      ],
+      "retrieved_sources": [
+        "3b400118-5942-4c76-ba0d-c03700357428.pdf",
+        "27cd59c0-8697-4e71-9838-88d1ddd2a40d.pdf",
+        "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf",
+        "c395f40a-df42-4a61-bf4b-b3efa1f2e2b3.pdf",
+        "b419c3d1-1979-49e1-933f-f610e9832cff.pdf",
+        "c3f57013-8624-44b7-94d7-f1eec2495a47.pdf",
+        "3b400118-5942-4c76-ba0d-c03700357428.pdf",
+        "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf",
+        "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf",
+        "c395f40a-df42-4a61-bf4b-b3efa1f2e2b3.pdf"
+      ],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q6",
+      "question": "Summarize the major updates in ADANIPORTS's investor-presentation document (2024-11-29).",
+      "answer": "No relevant sources found.",
+      "citations": [],
+      "metrics": {
+        "recall": 0.0,
+        "citation_coverage": 0.0,
+        "citations_present": false,
+        "faithfulness": 0.0
+      },
+      "expected_sources": [
+        "9ed17eb4-3824-4a85-84f5-a647788e99b3.pdf"
+      ],
+      "retrieved_sources": [],
+      "route": {
+        "use_rag": false,
+        "confidence": 0.5,
+        "reason": "generic query"
+      }
+    },
+    {
+      "id": "Q7",
+      "question": "What guidance or outlook is shared in the investor-presentation document for ASIANPAINT dated 2025-02-04?",
+      "answer": "The investor-presentation document for ASIANPAINT dated 2025-02-04 is an intimation under Regulation 30 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015. It states that the enclosed presentation is to be made to investors regarding the business and financial performance of the company for the quarter and financial year ended 31st March 2025. Additionally, it mentions that the audio recording and transcript of the Investors Conference will be uploaded on the company's website and the stock exchanges as required by the regulations. However, the document does not provide any specific guidance or outlook details within the provided context\u2014it only references the existence of the presentation and related materials, not their content or forward-looking statements[ C1 ]. [C1]",
+      "citations": [
+        {
+          "id": "C1",
+          "source": "70255f9a-65f2-4439-965b-20c61aac94d3.pdf",
+          "page": null,
+          "chunk_id": "70255f9a-65f2-4439-965b-20c61aac94d3.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C2",
+          "source": "d36025bc-68a0-4070-91b7-ecdb2b4e5ac2.pdf",
+          "page": null,
+          "chunk_id": "d36025bc-68a0-4070-91b7-ecdb2b4e5ac2.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C3",
+          "source": "fa64a601-c78f-4fca-ad0f-e3487d2f2c20.pdf",
+          "page": null,
+          "chunk_id": "fa64a601-c78f-4fca-ad0f-e3487d2f2c20.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C4",
+          "source": "0920c8b8-9913-4f2f-8cee-a731aa310919.pdf",
+          "page": null,
+          "chunk_id": "0920c8b8-9913-4f2f-8cee-a731aa310919.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C5",
+          "source": "63a2696f-f94d-4133-a636-a33645aaa4f3.pdf",
+          "page": null,
+          "chunk_id": "63a2696f-f94d-4133-a636-a33645aaa4f3.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C6",
+          "source": "0920c8b8-9913-4f2f-8cee-a731aa310919.pdf",
+          "page": null,
+          "chunk_id": "0920c8b8-9913-4f2f-8cee-a731aa310919.pdf::text::0",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C7",
+          "source": "fa64a601-c78f-4fca-ad0f-e3487d2f2c20.pdf",
+          "page": null,
+          "chunk_id": "fa64a601-c78f-4fca-ad0f-e3487d2f2c20.pdf::text::0",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C8",
+          "source": "63a2696f-f94d-4133-a636-a33645aaa4f3.pdf",
+          "page": null,
+          "chunk_id": "63a2696f-f94d-4133-a636-a33645aaa4f3.pdf::text::0",
+          "reference_chunk_id": null
+        }
+      ],
+      "metrics": {
+        "recall": 1.0,
+        "citation_coverage": 0.2,
+        "citations_present": true,
+        "faithfulness": 1.0
+      },
+      "expected_sources": [
+        "d36025bc-68a0-4070-91b7-ecdb2b4e5ac2.pdf"
+      ],
+      "retrieved_sources": [
+        "70255f9a-65f2-4439-965b-20c61aac94d3.pdf",
+        "d36025bc-68a0-4070-91b7-ecdb2b4e5ac2.pdf",
+        "fa64a601-c78f-4fca-ad0f-e3487d2f2c20.pdf",
+        "0920c8b8-9913-4f2f-8cee-a731aa310919.pdf",
+        "63a2696f-f94d-4133-a636-a33645aaa4f3.pdf",
+        "0920c8b8-9913-4f2f-8cee-a731aa310919.pdf",
+        "fa64a601-c78f-4fca-ad0f-e3487d2f2c20.pdf",
+        "63a2696f-f94d-4133-a636-a33645aaa4f3.pdf",
+        "d36025bc-68a0-4070-91b7-ecdb2b4e5ac2.pdf",
+        "fa64a601-c78f-4fca-ad0f-e3487d2f2c20.pdf"
+      ],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q8",
+      "question": "What were the main topics discussed in the investor-presentation document for AXISBANK (2025-01-16)?",
+      "answer": "The main topics discussed in the investor-presentation document for AXISBANK dated January 16, 2025, were the unaudited standalone and consolidated financial results of the Bank for the quarter and nine months ended December 31, 2024. The presentation focused on the financial performance of the bank during this period, as indicated by the communication accompanying the investor presentation. Specific details about the financial metrics or other topics covered in the presentation are not provided in the available context, but the primary subject was the financial results for the stated period[ C1 ]. [C1]",
+      "citations": [
+        {
+          "id": "C1",
+          "source": "3b400118-5942-4c76-ba0d-c03700357428.pdf",
+          "page": null,
+          "chunk_id": "3b400118-5942-4c76-ba0d-c03700357428.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C2",
+          "source": "b419c3d1-1979-49e1-933f-f610e9832cff.pdf",
+          "page": null,
+          "chunk_id": "b419c3d1-1979-49e1-933f-f610e9832cff.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C3",
+          "source": "3b400118-5942-4c76-ba0d-c03700357428.pdf",
+          "page": null,
+          "chunk_id": "3b400118-5942-4c76-ba0d-c03700357428.pdf::text::6",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C4",
+          "source": "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf",
+          "page": null,
+          "chunk_id": "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf::text::26",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C5",
+          "source": "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf",
+          "page": null,
+          "chunk_id": "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf::text::20",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C6",
+          "source": "c395f40a-df42-4a61-bf4b-b3efa1f2e2b3.pdf",
+          "page": null,
+          "chunk_id": "c395f40a-df42-4a61-bf4b-b3efa1f2e2b3.pdf::text::20",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C7",
+          "source": "b419c3d1-1979-49e1-933f-f610e9832cff.pdf",
+          "page": null,
+          "chunk_id": "b419c3d1-1979-49e1-933f-f610e9832cff.pdf::text::2",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C8",
+          "source": "c395f40a-df42-4a61-bf4b-b3efa1f2e2b3.pdf",
+          "page": null,
+          "chunk_id": "c395f40a-df42-4a61-bf4b-b3efa1f2e2b3.pdf::text::2",
+          "reference_chunk_id": null
+        }
+      ],
+      "metrics": {
+        "recall": 1.0,
+        "citation_coverage": 0.25,
+        "citations_present": true,
+        "faithfulness": 1.0
+      },
+      "expected_sources": [
+        "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf"
+      ],
+      "retrieved_sources": [
+        "3b400118-5942-4c76-ba0d-c03700357428.pdf",
+        "b419c3d1-1979-49e1-933f-f610e9832cff.pdf",
+        "3b400118-5942-4c76-ba0d-c03700357428.pdf",
+        "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf",
+        "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf",
+        "c395f40a-df42-4a61-bf4b-b3efa1f2e2b3.pdf",
+        "b419c3d1-1979-49e1-933f-f610e9832cff.pdf",
+        "c395f40a-df42-4a61-bf4b-b3efa1f2e2b3.pdf",
+        "27cd59c0-8697-4e71-9838-88d1ddd2a40d.pdf",
+        "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf"
+      ],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q9",
+      "question": "In the concall document dated 2025-05-05 for ADANIPORTS, what are the key highlights?",
+      "answer": "The concall document dated 2025-05-05 for ADANIPORTS pertains to the transcript of the Earnings Call on the Audited Financial Results (Standalone and Consolidated) of the company for the quarter and year ended 31st March, 2025. However, the provided context only includes the notification about the availability of the transcript and does not contain the actual key highlights or summary of the call itself. For the detailed key highlights, you would need to access the transcript directly at the provided web link: https://www.adaniports.com/-/media/Project/Ports/Investor/Transcripts/Q4-FY25-Earnings-Call.pdf [C1][C3].",
+      "citations": [
+        {
+          "id": "C1",
+          "source": "31fe38b1-102f-4292-80b7-b424a47719c9.pdf",
+          "page": null,
+          "chunk_id": "31fe38b1-102f-4292-80b7-b424a47719c9.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C2",
+          "source": "aa660d81-728a-4520-b5ec-9c4624fe0c79.pdf",
+          "page": null,
+          "chunk_id": "aa660d81-728a-4520-b5ec-9c4624fe0c79.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C3",
+          "source": "31fe38b1-102f-4292-80b7-b424a47719c9.pdf",
+          "page": null,
+          "chunk_id": "31fe38b1-102f-4292-80b7-b424a47719c9.pdf::text::0",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C4",
+          "source": "49c46fc9-92ad-4172-ab09-a93a36b90ee8.pdf",
+          "page": null,
+          "chunk_id": "49c46fc9-92ad-4172-ab09-a93a36b90ee8.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C5",
+          "source": "aa660d81-728a-4520-b5ec-9c4624fe0c79.pdf",
+          "page": null,
+          "chunk_id": "aa660d81-728a-4520-b5ec-9c4624fe0c79.pdf::text::0",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C6",
+          "source": "49c46fc9-92ad-4172-ab09-a93a36b90ee8.pdf",
+          "page": null,
+          "chunk_id": "49c46fc9-92ad-4172-ab09-a93a36b90ee8.pdf::text::0",
+          "reference_chunk_id": null
+        }
+      ],
+      "metrics": {
+        "recall": 1.0,
+        "citation_coverage": 0.3333333333333333,
+        "citations_present": true,
+        "faithfulness": 1.0
+      },
+      "expected_sources": [
+        "31fe38b1-102f-4292-80b7-b424a47719c9.pdf"
+      ],
+      "retrieved_sources": [
+        "31fe38b1-102f-4292-80b7-b424a47719c9.pdf",
+        "aa660d81-728a-4520-b5ec-9c4624fe0c79.pdf",
+        "31fe38b1-102f-4292-80b7-b424a47719c9.pdf",
+        "49c46fc9-92ad-4172-ab09-a93a36b90ee8.pdf",
+        "aa660d81-728a-4520-b5ec-9c4624fe0c79.pdf",
+        "49c46fc9-92ad-4172-ab09-a93a36b90ee8.pdf"
+      ],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q10",
+      "question": "Summarize the major updates in BHARTIARTL's concall document (2025-11-11).",
+      "answer": "No relevant sources found.",
+      "citations": [],
+      "metrics": {
+        "recall": 0.0,
+        "citation_coverage": 0.0,
+        "citations_present": false,
+        "faithfulness": 0.0
+      },
+      "expected_sources": [
+        "b8f70dc5-c46b-481a-961c-ecbd39a6f45d.pdf"
+      ],
+      "retrieved_sources": [],
+      "route": {
+        "use_rag": false,
+        "confidence": 0.5,
+        "reason": "generic query"
+      }
+    },
+    {
+      "id": "Q11",
+      "question": "What guidance or outlook is shared in the annual-report document for AXISBANK dated 2024-06-28?",
+      "answer": "The annual report for AXISBANK dated 2024-06-28 provides the following guidance and outlook:\n\n1. **Strategic Direction and Resilience**: The report emphasizes Axis Bank\u2019s commitment to integrating Environmental, Social, and Governance (ESG) considerations into its business practices, aiming for enhanced transparency and positive change for stakeholders. The bank highlights its strategic GPS framework and focus on building a resilient, all-weather franchise, positioning itself to capture growth opportunities driven by steady consumption and a revival in the investment cycle in India[C1][C2][C6].\n\n2. **Macroeconomic Outlook**: The bank notes that while the global economy showed resilience in 2023, ongoing core inflation and geopolitical uncertainties may limit monetary easing in 2024. However, the Indian economy is described as a \"bright spot,\" with healthy expansion in manufacturing and services, improved corporate balance sheets, and strong financial sector resilience. Axis Bank sees itself well-positioned to benefit from these domestic macroeconomic trends[C2].\n\n3. **Business Performance and Focus Areas**: Axis Bank reports strong performance in fiscal 2024, with a consolidated return on equity (ROE) of 19.29%. Focus segments such as SME, Small Business Banking, Mid Corporate, Rural, Personal Loans, and Credit Cards grew by 26% year-on-year. The bank also expanded its branch network, crossing 5,000 branches, and continued to lead in digital banking through its \u2018open\u2019 and \u2018NEO\u2019 platforms[C2][C6].\n\n4. **Technology and Innovation**: The bank has invested heavily in technology, data analytics, and digital transformation, including cloud adoption and AI-driven initiatives. These investments are aimed at enhancing customer experience, operational efficiency, and risk management. Notable achievements include the rollout of Microsoft Copilot for employees and the Gen-AI chatbot \u2018Adi\u2019 for customer service[C7].\n\n5. **Risk Management and Asset Quality**: Axis Bank maintains a strong balance sheet with a provision coverage ratio of 79% and a net NPA of 0.31%, the lowest among large peer banks. The bank\u2019s capital position remains healthy, with a CET 1 ratio of 13.74% as of fiscal 2024[C7].\n\n6. **Sustainability and ESG Reporting**: The bank has published its Business Responsibility and Sustainability Report (BRSR) for fiscal 2024, which has been externally assured, reflecting its ongoing commitment to sustainability and responsible business practices[C8].\n\n**Overall Outlook**: Axis Bank expresses confidence in sustaining its growth trajectory, driven by strong fundamentals, continued investment in technology and people, and a focus on customer-centricity and resilience. The bank aims to maintain its leadership in key business segments and further strengthen its position as a robust, future-ready financial institution[C2][C6][C7][C8].",
+      "citations": [
+        {
+          "id": "C1",
+          "source": "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf",
+          "page": null,
+          "chunk_id": "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf::text::8",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C2",
+          "source": "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf",
+          "page": null,
+          "chunk_id": "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf::text::74",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C3",
+          "source": "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf",
+          "page": null,
+          "chunk_id": "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf::text::4",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C4",
+          "source": "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf",
+          "page": null,
+          "chunk_id": "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf::text::536",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C5",
+          "source": "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf",
+          "page": null,
+          "chunk_id": "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf::text::1126",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C6",
+          "source": "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf",
+          "page": null,
+          "chunk_id": "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf::text::76",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C7",
+          "source": "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf",
+          "page": null,
+          "chunk_id": "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf::text::79",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C8",
+          "source": "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf",
+          "page": null,
+          "chunk_id": "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf::text::1142",
+          "reference_chunk_id": null
+        }
+      ],
+      "metrics": {
+        "recall": 1.0,
+        "citation_coverage": 0.3181818181818182,
+        "citations_present": true,
+        "faithfulness": 1.0
+      },
+      "expected_sources": [
+        "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf"
+      ],
+      "retrieved_sources": [
+        "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf",
+        "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf",
+        "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf",
+        "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf",
+        "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf",
+        "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf",
+        "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf",
+        "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf",
+        "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf",
+        "93457ea2-9cfe-4d6c-98ec-12e62c07ff0b.pdf"
+      ],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.6,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q12",
+      "question": "What were the main topics discussed in the investor-presentation document for BAJFINANCE (2025-04-29)?",
+      "answer": "The main topics discussed in the investor-presentation document for BAJFINANCE (dated 2025-04-29, for the quarter ended 31 March 2025) included:\n\n- Consolidated pre-provisioning operating profit growth (24% increase to \u20b97,967 crore in Q4 FY25)\n- Consolidated profit before tax growth (11% increase to \u20b95,647 crore in Q4 FY25; 18% growth excluding additional ECL provision)\n- Consolidated profit after tax growth (19% increase to \u20b94,546 crore in Q4 FY25; 17% growth excluding certain provisions)\n- Annualised Return on Assets (ROA) and Return on Equity (ROE) for Q4 FY25 (ROA: 4.6%, ROE: 19.1%)\n- Capital adequacy (21.93% as of 31 March 2025; Tier-1 capital: 21.09%)\n- Upgrades in credit ratings by S&P Global and Moody\u2019s\n- Details of a preferential issue allotment following the exercise of warrants by Bajaj Finserv Ltd., resulting in the allotment of 1,550,000 equity shares\n\nThese topics reflect the company\u2019s financial performance, capital position, and recent corporate actions for the quarter ended 31 March 2025[8beec986-70dd-415a-8ac3-27fecfef2d68.pdf::text::15]. [C1]",
+      "citations": [
+        {
+          "id": "C1",
+          "source": "8beec986-70dd-415a-8ac3-27fecfef2d68.pdf",
+          "page": null,
+          "chunk_id": "8beec986-70dd-415a-8ac3-27fecfef2d68.pdf::text::0",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C2",
+          "source": "0d891300-4c34-4576-827c-96690f166a26.pdf",
+          "page": null,
+          "chunk_id": "0d891300-4c34-4576-827c-96690f166a26.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C3",
+          "source": "fc30b0b8-a3df-4635-9997-5c45cca16f62.pdf",
+          "page": null,
+          "chunk_id": "fc30b0b8-a3df-4635-9997-5c45cca16f62.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C4",
+          "source": "6bc31c67-fcf4-447f-905f-34671a66a602.pdf",
+          "page": null,
+          "chunk_id": "6bc31c67-fcf4-447f-905f-34671a66a602.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C5",
+          "source": "6bc31c67-fcf4-447f-905f-34671a66a602.pdf",
+          "page": null,
+          "chunk_id": "6bc31c67-fcf4-447f-905f-34671a66a602.pdf::text::0",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C6",
+          "source": "0d891300-4c34-4576-827c-96690f166a26.pdf",
+          "page": null,
+          "chunk_id": "0d891300-4c34-4576-827c-96690f166a26.pdf::text::0",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C7",
+          "source": "c3695c36-cf70-4322-90eb-9bb0786e3e14.pdf",
+          "page": null,
+          "chunk_id": "c3695c36-cf70-4322-90eb-9bb0786e3e14.pdf::text::0",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C8",
+          "source": "8beec986-70dd-415a-8ac3-27fecfef2d68.pdf",
+          "page": null,
+          "chunk_id": "8beec986-70dd-415a-8ac3-27fecfef2d68.pdf::text::15",
+          "reference_chunk_id": null
+        }
+      ],
+      "metrics": {
+        "recall": 1.0,
+        "citation_coverage": 0.5,
+        "citations_present": true,
+        "faithfulness": 1.0
+      },
+      "expected_sources": [
+        "8beec986-70dd-415a-8ac3-27fecfef2d68.pdf"
+      ],
+      "retrieved_sources": [
+        "8beec986-70dd-415a-8ac3-27fecfef2d68.pdf",
+        "0d891300-4c34-4576-827c-96690f166a26.pdf",
+        "fc30b0b8-a3df-4635-9997-5c45cca16f62.pdf",
+        "6bc31c67-fcf4-447f-905f-34671a66a602.pdf",
+        "6bc31c67-fcf4-447f-905f-34671a66a602.pdf",
+        "0d891300-4c34-4576-827c-96690f166a26.pdf",
+        "c3695c36-cf70-4322-90eb-9bb0786e3e14.pdf",
+        "8beec986-70dd-415a-8ac3-27fecfef2d68.pdf",
+        "fc30b0b8-a3df-4635-9997-5c45cca16f62.pdf",
+        "0d891300-4c34-4576-827c-96690f166a26.pdf"
+      ],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q13",
+      "question": "In the concall document dated 2025-02-04 for ADANIENT, what are the key highlights?",
+      "answer": "The concall document dated 2025-02-04 for ADANIENT refers to the transcript of the earnings call pertaining to the unaudited financial results for the quarter and nine months ended 31st December, 2024. However, the provided context does not include the actual key highlights or details from the call itself\u2014only the cover letter confirming the transcript's availability and its subject matter is present. Therefore, I do not have information on the specific key highlights from the concall document dated 2025-02-04 for ADANIENT based on the provided contexts [C4][C7].",
+      "citations": [
+        {
+          "id": "C1",
+          "source": "0c701a2f-89bc-44cd-b304-f133eb4c3c0a.pdf",
+          "page": null,
+          "chunk_id": "0c701a2f-89bc-44cd-b304-f133eb4c3c0a.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C2",
+          "source": "e15fe661-864e-453a-905f-9a8a26e3583c.pdf",
+          "page": null,
+          "chunk_id": "e15fe661-864e-453a-905f-9a8a26e3583c.pdf::text::0",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C3",
+          "source": "e15fe661-864e-453a-905f-9a8a26e3583c.pdf",
+          "page": null,
+          "chunk_id": "e15fe661-864e-453a-905f-9a8a26e3583c.pdf::text::3",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C4",
+          "source": "e54ea6c1-6868-4962-a793-e4a7bf4c0851.pdf",
+          "page": null,
+          "chunk_id": "e54ea6c1-6868-4962-a793-e4a7bf4c0851.pdf::text::0",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C5",
+          "source": "1547dc88-edf8-4ba5-8526-184d835ce26a.pdf",
+          "page": null,
+          "chunk_id": "1547dc88-edf8-4ba5-8526-184d835ce26a.pdf::text::3",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C6",
+          "source": "0c701a2f-89bc-44cd-b304-f133eb4c3c0a.pdf",
+          "page": null,
+          "chunk_id": "0c701a2f-89bc-44cd-b304-f133eb4c3c0a.pdf::text::0",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C7",
+          "source": "e54ea6c1-6868-4962-a793-e4a7bf4c0851.pdf",
+          "page": null,
+          "chunk_id": "e54ea6c1-6868-4962-a793-e4a7bf4c0851.pdf::text::3",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C8",
+          "source": "1547dc88-edf8-4ba5-8526-184d835ce26a.pdf",
+          "page": null,
+          "chunk_id": "1547dc88-edf8-4ba5-8526-184d835ce26a.pdf::table::0",
+          "reference_chunk_id": null
+        }
+      ],
+      "metrics": {
+        "recall": 1.0,
+        "citation_coverage": 0.3333333333333333,
+        "citations_present": true,
+        "faithfulness": 1.0
+      },
+      "expected_sources": [
+        "e54ea6c1-6868-4962-a793-e4a7bf4c0851.pdf"
+      ],
+      "retrieved_sources": [
+        "0c701a2f-89bc-44cd-b304-f133eb4c3c0a.pdf",
+        "e15fe661-864e-453a-905f-9a8a26e3583c.pdf",
+        "e15fe661-864e-453a-905f-9a8a26e3583c.pdf",
+        "e54ea6c1-6868-4962-a793-e4a7bf4c0851.pdf",
+        "1547dc88-edf8-4ba5-8526-184d835ce26a.pdf",
+        "0c701a2f-89bc-44cd-b304-f133eb4c3c0a.pdf",
+        "e54ea6c1-6868-4962-a793-e4a7bf4c0851.pdf",
+        "1547dc88-edf8-4ba5-8526-184d835ce26a.pdf",
+        "e15fe661-864e-453a-905f-9a8a26e3583c.pdf",
+        "e54ea6c1-6868-4962-a793-e4a7bf4c0851.pdf"
+      ],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q14",
+      "question": "Summarize the major updates in APOLLOHOSP's investor-presentation document (2025-11-06).",
+      "answer": "No relevant sources found.",
+      "citations": [],
+      "metrics": {
+        "recall": 0.0,
+        "citation_coverage": 0.0,
+        "citations_present": false,
+        "faithfulness": 0.0
+      },
+      "expected_sources": [
+        "4430a828-14c2-4c64-8cff-b68f1a2904f1.pdf"
+      ],
+      "retrieved_sources": [],
+      "route": {
+        "use_rag": false,
+        "confidence": 0.5,
+        "reason": "generic query"
+      }
+    },
+    {
+      "id": "Q15",
+      "question": "What guidance or outlook is shared in the investor-presentation document for ADANIENT dated 2025-01-30?",
+      "answer": "The investor-presentation document for Adani Enterprises Limited (ADANIENT) dated 2025-11-04 (covering results up to September 30, 2025) provides the following guidance and outlook:\n\n- The company emphasizes its core strength in the timely execution of large-scale projects, highlighted by the inauguration of the Navi Mumbai International Airport and the completion of its 7th road project. These milestones reinforce AEL's focus on large-scale incubation and execution, strengthening its diversified business model and commitment to delivering infrastructure of national importance.\n- The emerging core infrastructure businesses have recorded a half-yearly EBITDA of Rs. 5,470 crore, marking a 5% year-on-year increase and now contributing 71% to total EBITDA.\n- The Board has approved a partly paid-up Rights Issue of Rs. 25,000 crore to further strengthen the balance sheet and support the next phase of business incubation.\n- The company continues to position itself as India's leading incubator of transformative infrastructure and energy businesses, with strong performance across airports, data centers, and roads. Notably, partnerships such as the one with Google for India's largest AI data center and rapid progress in the green energy ecosystem are highlighted as drivers for accelerating India's transition toward a sustainable, technology-driven future.\n- The company reiterates its commitment to building globally competitive businesses that create enduring value for stakeholders and contribute to a self-reliant India[ C2][C8].\n\nNo specific forward-looking financial guidance (such as revenue or profit forecasts) is mentioned in the provided contexts.",
+      "citations": [
+        {
+          "id": "C1",
+          "source": "8de70047-ce26-4a8e-b11f-7621bc26af13.pdf",
+          "page": "1",
+          "chunk_id": null,
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C2",
+          "source": "8de70047-ce26-4a8e-b11f-7621bc26af13.pdf",
+          "page": "2",
+          "chunk_id": null,
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C3",
+          "source": "8de70047-ce26-4a8e-b11f-7621bc26af13.pdf",
+          "page": "35",
+          "chunk_id": null,
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C4",
+          "source": "8de70047-ce26-4a8e-b11f-7621bc26af13.pdf",
+          "page": "3",
+          "chunk_id": null,
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C5",
+          "source": "8de70047-ce26-4a8e-b11f-7621bc26af13.pdf",
+          "page": "15",
+          "chunk_id": null,
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C6",
+          "source": "8de70047-ce26-4a8e-b11f-7621bc26af13.pdf",
+          "page": "11",
+          "chunk_id": null,
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C7",
+          "source": "8de70047-ce26-4a8e-b11f-7621bc26af13.pdf",
+          "page": "11",
+          "chunk_id": null,
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C8",
+          "source": "8de70047-ce26-4a8e-b11f-7621bc26af13.pdf",
+          "page": "2",
+          "chunk_id": null,
+          "reference_chunk_id": null
+        }
+      ],
+      "metrics": {
+        "recall": 0.0,
+        "citation_coverage": 0.1,
+        "citations_present": true,
+        "faithfulness": 1.0
+      },
+      "expected_sources": [
+        "b57a1eaa-8b60-4fd4-bf3f-c2da76f73da0.pdf"
+      ],
+      "retrieved_sources": [
+        "8de70047-ce26-4a8e-b11f-7621bc26af13.pdf",
+        "8de70047-ce26-4a8e-b11f-7621bc26af13.pdf",
+        "8de70047-ce26-4a8e-b11f-7621bc26af13.pdf",
+        "8de70047-ce26-4a8e-b11f-7621bc26af13.pdf",
+        "8de70047-ce26-4a8e-b11f-7621bc26af13.pdf",
+        "8de70047-ce26-4a8e-b11f-7621bc26af13.pdf",
+        "8de70047-ce26-4a8e-b11f-7621bc26af13.pdf",
+        "8de70047-ce26-4a8e-b11f-7621bc26af13.pdf",
+        "51e2e786-7289-44df-95f4-781f4fe5935a.pdf",
+        "9d887fc8-621f-4d08-88a4-252d94228246.pdf"
+      ],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q16",
+      "question": "What were the main topics discussed in the investor-presentation document for AXISBANK (2024-10-17)?",
+      "answer": "The main topics discussed in the investor-presentation document for AXISBANK dated 2024-10-17 were the unaudited standalone and consolidated financial results of the Bank for the quarter and nine months ended December 31, 2024. The presentation focused on the financial performance of Axis Bank during this period. Specific details about the topics covered within the presentation (such as segment-wise performance, asset quality, or strategic initiatives) are not provided in the available context, but the overall subject was the financial results for the stated period[ C1]. [C1]",
+      "citations": [
+        {
+          "id": "C1",
+          "source": "3b400118-5942-4c76-ba0d-c03700357428.pdf",
+          "page": null,
+          "chunk_id": "3b400118-5942-4c76-ba0d-c03700357428.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C2",
+          "source": "c395f40a-df42-4a61-bf4b-b3efa1f2e2b3.pdf",
+          "page": null,
+          "chunk_id": "c395f40a-df42-4a61-bf4b-b3efa1f2e2b3.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C3",
+          "source": "27cd59c0-8697-4e71-9838-88d1ddd2a40d.pdf",
+          "page": null,
+          "chunk_id": "27cd59c0-8697-4e71-9838-88d1ddd2a40d.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C4",
+          "source": "3b400118-5942-4c76-ba0d-c03700357428.pdf",
+          "page": null,
+          "chunk_id": "3b400118-5942-4c76-ba0d-c03700357428.pdf::text::6",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C5",
+          "source": "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf",
+          "page": null,
+          "chunk_id": "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf::text::26",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C6",
+          "source": "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf",
+          "page": null,
+          "chunk_id": "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf::text::20",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C7",
+          "source": "c395f40a-df42-4a61-bf4b-b3efa1f2e2b3.pdf",
+          "page": null,
+          "chunk_id": "c395f40a-df42-4a61-bf4b-b3efa1f2e2b3.pdf::text::20",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C8",
+          "source": "c3f57013-8624-44b7-94d7-f1eec2495a47.pdf",
+          "page": null,
+          "chunk_id": "c3f57013-8624-44b7-94d7-f1eec2495a47.pdf::text::25",
+          "reference_chunk_id": null
+        }
+      ],
+      "metrics": {
+        "recall": 1.0,
+        "citation_coverage": 0.25,
+        "citations_present": true,
+        "faithfulness": 1.0
+      },
+      "expected_sources": [
+        "c395f40a-df42-4a61-bf4b-b3efa1f2e2b3.pdf"
+      ],
+      "retrieved_sources": [
+        "3b400118-5942-4c76-ba0d-c03700357428.pdf",
+        "c395f40a-df42-4a61-bf4b-b3efa1f2e2b3.pdf",
+        "27cd59c0-8697-4e71-9838-88d1ddd2a40d.pdf",
+        "3b400118-5942-4c76-ba0d-c03700357428.pdf",
+        "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf",
+        "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf",
+        "c395f40a-df42-4a61-bf4b-b3efa1f2e2b3.pdf",
+        "c3f57013-8624-44b7-94d7-f1eec2495a47.pdf",
+        "c395f40a-df42-4a61-bf4b-b3efa1f2e2b3.pdf",
+        "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf"
+      ],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q17",
+      "question": "In the investor-presentation document dated 2024-07-17 for ASIANPAINT, what are the key highlights?",
+      "answer": "The investor-presentation document dated 2024-07-17 for ASIANPAINT highlights the following key points:\n\n- The presentation covers the business and financial performance of the company for the quarter ended 30th June 2024.\n- The audio recording and transcript of the Investors Conference will be made available on the company's website (www.asianpaints.com) and the Stock Exchanges, as required by SEBI Listing Regulations.\n- The communication is signed by R J Jeyamurugan, CFO & Company Secretary, and includes contact information for investor and consumer queries.\n\nHowever, the specific business and financial highlights or detailed performance metrics are not provided in the available context. For further details, you would need to refer to the actual enclosed presentation or the company's website where the full presentation and transcript are to be uploaded as per the intimation letter[ C2][C6].",
+      "citations": [
+        {
+          "id": "C1",
+          "source": "d36025bc-68a0-4070-91b7-ecdb2b4e5ac2.pdf",
+          "page": null,
+          "chunk_id": "d36025bc-68a0-4070-91b7-ecdb2b4e5ac2.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C2",
+          "source": "fa64a601-c78f-4fca-ad0f-e3487d2f2c20.pdf",
+          "page": null,
+          "chunk_id": "fa64a601-c78f-4fca-ad0f-e3487d2f2c20.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C3",
+          "source": "0920c8b8-9913-4f2f-8cee-a731aa310919.pdf",
+          "page": null,
+          "chunk_id": "0920c8b8-9913-4f2f-8cee-a731aa310919.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C4",
+          "source": "70255f9a-65f2-4439-965b-20c61aac94d3.pdf",
+          "page": null,
+          "chunk_id": "70255f9a-65f2-4439-965b-20c61aac94d3.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C5",
+          "source": "63a2696f-f94d-4133-a636-a33645aaa4f3.pdf",
+          "page": null,
+          "chunk_id": "63a2696f-f94d-4133-a636-a33645aaa4f3.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C6",
+          "source": "fa64a601-c78f-4fca-ad0f-e3487d2f2c20.pdf",
+          "page": null,
+          "chunk_id": "fa64a601-c78f-4fca-ad0f-e3487d2f2c20.pdf::text::0",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C7",
+          "source": "fa64a601-c78f-4fca-ad0f-e3487d2f2c20.pdf",
+          "page": null,
+          "chunk_id": "fa64a601-c78f-4fca-ad0f-e3487d2f2c20.pdf::text::45",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C8",
+          "source": "d36025bc-68a0-4070-91b7-ecdb2b4e5ac2.pdf",
+          "page": null,
+          "chunk_id": "d36025bc-68a0-4070-91b7-ecdb2b4e5ac2.pdf::text::59",
+          "reference_chunk_id": null
+        }
+      ],
+      "metrics": {
+        "recall": 1.0,
+        "citation_coverage": 0.2,
+        "citations_present": true,
+        "faithfulness": 1.0
+      },
+      "expected_sources": [
+        "fa64a601-c78f-4fca-ad0f-e3487d2f2c20.pdf"
+      ],
+      "retrieved_sources": [
+        "d36025bc-68a0-4070-91b7-ecdb2b4e5ac2.pdf",
+        "fa64a601-c78f-4fca-ad0f-e3487d2f2c20.pdf",
+        "0920c8b8-9913-4f2f-8cee-a731aa310919.pdf",
+        "70255f9a-65f2-4439-965b-20c61aac94d3.pdf",
+        "63a2696f-f94d-4133-a636-a33645aaa4f3.pdf",
+        "fa64a601-c78f-4fca-ad0f-e3487d2f2c20.pdf",
+        "fa64a601-c78f-4fca-ad0f-e3487d2f2c20.pdf",
+        "d36025bc-68a0-4070-91b7-ecdb2b4e5ac2.pdf",
+        "0920c8b8-9913-4f2f-8cee-a731aa310919.pdf",
+        "0920c8b8-9913-4f2f-8cee-a731aa310919.pdf"
+      ],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q18",
+      "question": "Summarize the major updates in AXISBANK's concall document (2024-10-23).",
+      "answer": "No relevant sources found.",
+      "citations": [],
+      "metrics": {
+        "recall": 0.0,
+        "citation_coverage": 0.0,
+        "citations_present": false,
+        "faithfulness": 0.0
+      },
+      "expected_sources": [
+        "c68c6175-680f-4f7f-8403-c97e0d4e842b.pdf"
+      ],
+      "retrieved_sources": [],
+      "route": {
+        "use_rag": false,
+        "confidence": 0.5,
+        "reason": "generic query"
+      }
+    },
+    {
+      "id": "Q19",
+      "question": "What guidance or outlook is shared in the concall document for BAJAJ-AUTO dated 2025-11-14?",
+      "answer": "The conference call document for Bajaj Auto dated November 7, 2025 (Q2 FY26) provides the following guidance and outlook:\n\n**Exports:**\n- Bajaj Auto expects exports to \"continue to maintain the growth tempo in the coming months.\" This is based on strong Q2 performance, with export volumes up 24% and the business achieving its highest ever quarterly revenue from exports. The company highlights robust growth in key markets, especially Latin America (LATAM), Asia, and Africa, and notes that even with reduced sales to Nigeria, other markets have compensated, indicating a broad-based recovery and market share gains. The company also mentions a positive outlook for future exports to KTM, with the recovery in KTM Austria sales[ C1].\n\n**Domestic Motorcycles:**\n- The domestic motorcycle industry saw a significant boost from GST rate cuts and festive demand, leading to all-time high retail performance for Bajaj Auto during the festive period and October. The company states that \"the market share erosion which we experienced over the last few quarters had got arrested by the end of Quarter 2, and October saw the beginning of market share gains in the strategic 125cc plus segment.\"\n- Bajaj Auto expects the industry to \"improve its growth rate by 6 to 8 percentage points in the medium term\" and sees \"very good opportunities to attract customers to our Pulsar portfolio,\" which will be strengthened by new variants in the next 2-3 months.\n- The company aims \"to outpace the industry growth in the 125cc plus segment and continue the path of acquiring market share which commenced in the period of September-October\"[C1].\n\n**Overall Sentiment:**\n- The management expresses optimism, citing all-time highs in topline, EBITDA, and PAT for the quarter, and a positive trading environment due to policy changes and festive sentiment.\n- While November and December are expected to be \"smaller months,\" the medium-term outlook remains positive, with expectations of continued growth and market share gains, especially in the higher-value motorcycle segments[ C1].\n\nIn summary, Bajaj Auto's guidance and outlook as shared in the November 2025 concall are positive, with expectations of sustained export growth, continued market share gains in domestic motorcycles (especially 125cc+), and a favorable industry environment driven by recent policy changes and strong festive demand[ C1].",
+      "citations": [
+        {
+          "id": "C1",
+          "source": "6beac10f-a781-42da-b71b-38ad4dd37e78.pdf",
+          "page": null,
+          "chunk_id": "6beac10f-a781-42da-b71b-38ad4dd37e78.pdf::text::4",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C2",
+          "source": "53f9f85f-418e-4842-9bd2-725b8e4cf77f.pdf",
+          "page": null,
+          "chunk_id": "53f9f85f-418e-4842-9bd2-725b8e4cf77f.pdf::text::4",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C3",
+          "source": "741b3731-4eae-432f-b9dc-217f029f1ad2.pdf",
+          "page": null,
+          "chunk_id": "741b3731-4eae-432f-b9dc-217f029f1ad2.pdf::text::4",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C4",
+          "source": "741b3731-4eae-432f-b9dc-217f029f1ad2.pdf",
+          "page": null,
+          "chunk_id": "741b3731-4eae-432f-b9dc-217f029f1ad2.pdf::text::2",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C5",
+          "source": "5339fa5f-b7cf-4abc-a496-3c8d7b24f4a5.pdf",
+          "page": null,
+          "chunk_id": "5339fa5f-b7cf-4abc-a496-3c8d7b24f4a5.pdf::text::3",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C6",
+          "source": "6beac10f-a781-42da-b71b-38ad4dd37e78.pdf",
+          "page": null,
+          "chunk_id": "6beac10f-a781-42da-b71b-38ad4dd37e78.pdf::text::2",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C7",
+          "source": "5339fa5f-b7cf-4abc-a496-3c8d7b24f4a5.pdf",
+          "page": null,
+          "chunk_id": "5339fa5f-b7cf-4abc-a496-3c8d7b24f4a5.pdf::text::7",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C8",
+          "source": "5339fa5f-b7cf-4abc-a496-3c8d7b24f4a5.pdf",
+          "page": null,
+          "chunk_id": "5339fa5f-b7cf-4abc-a496-3c8d7b24f4a5.pdf::text::9",
+          "reference_chunk_id": null
+        }
+      ],
+      "metrics": {
+        "recall": 1.0,
+        "citation_coverage": 0.1111111111111111,
+        "citations_present": true,
+        "faithfulness": 1.0
+      },
+      "expected_sources": [
+        "6beac10f-a781-42da-b71b-38ad4dd37e78.pdf"
+      ],
+      "retrieved_sources": [
+        "6beac10f-a781-42da-b71b-38ad4dd37e78.pdf",
+        "53f9f85f-418e-4842-9bd2-725b8e4cf77f.pdf",
+        "741b3731-4eae-432f-b9dc-217f029f1ad2.pdf",
+        "741b3731-4eae-432f-b9dc-217f029f1ad2.pdf",
+        "5339fa5f-b7cf-4abc-a496-3c8d7b24f4a5.pdf",
+        "6beac10f-a781-42da-b71b-38ad4dd37e78.pdf",
+        "5339fa5f-b7cf-4abc-a496-3c8d7b24f4a5.pdf",
+        "5339fa5f-b7cf-4abc-a496-3c8d7b24f4a5.pdf",
+        "5339fa5f-b7cf-4abc-a496-3c8d7b24f4a5.pdf",
+        "53f9f85f-418e-4842-9bd2-725b8e4cf77f.pdf"
+      ],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q20",
+      "question": "What were the main topics discussed in the investor-presentation document for AXISBANK (2024-04-24)?",
+      "answer": "The main topics discussed in the investor-presentation document for AXISBANK dated 2024-04-24 were the audited standalone and consolidated financial results of the Bank for the quarter and year ended March 31, 2024. The presentation was focused on the financial performance of the bank, as indicated by the subject of the communication and the fact that it was an investor presentation on financial results. The document also mentions that the investor presentation was made available on the bank's website for further details. Specific topics likely included financial performance metrics, business performance, and possibly segment-wise results, but the exact contents of the presentation are not detailed in the provided context[ C2][C8].",
+      "citations": [
+        {
+          "id": "C1",
+          "source": "3b400118-5942-4c76-ba0d-c03700357428.pdf",
+          "page": null,
+          "chunk_id": "3b400118-5942-4c76-ba0d-c03700357428.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C2",
+          "source": "c3f57013-8624-44b7-94d7-f1eec2495a47.pdf",
+          "page": null,
+          "chunk_id": "c3f57013-8624-44b7-94d7-f1eec2495a47.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C3",
+          "source": "b419c3d1-1979-49e1-933f-f610e9832cff.pdf",
+          "page": null,
+          "chunk_id": "b419c3d1-1979-49e1-933f-f610e9832cff.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C4",
+          "source": "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf",
+          "page": null,
+          "chunk_id": "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf::text::20",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C5",
+          "source": "3b400118-5942-4c76-ba0d-c03700357428.pdf",
+          "page": null,
+          "chunk_id": "3b400118-5942-4c76-ba0d-c03700357428.pdf::text::6",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C6",
+          "source": "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf",
+          "page": null,
+          "chunk_id": "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf::text::26",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C7",
+          "source": "c395f40a-df42-4a61-bf4b-b3efa1f2e2b3.pdf",
+          "page": null,
+          "chunk_id": "c395f40a-df42-4a61-bf4b-b3efa1f2e2b3.pdf::text::20",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C8",
+          "source": "c3f57013-8624-44b7-94d7-f1eec2495a47.pdf",
+          "page": null,
+          "chunk_id": "c3f57013-8624-44b7-94d7-f1eec2495a47.pdf::text::25",
+          "reference_chunk_id": null
+        }
+      ],
+      "metrics": {
+        "recall": 1.0,
+        "citation_coverage": 0.25,
+        "citations_present": true,
+        "faithfulness": 1.0
+      },
+      "expected_sources": [
+        "c3f57013-8624-44b7-94d7-f1eec2495a47.pdf"
+      ],
+      "retrieved_sources": [
+        "3b400118-5942-4c76-ba0d-c03700357428.pdf",
+        "c3f57013-8624-44b7-94d7-f1eec2495a47.pdf",
+        "b419c3d1-1979-49e1-933f-f610e9832cff.pdf",
+        "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf",
+        "3b400118-5942-4c76-ba0d-c03700357428.pdf",
+        "d687ec0f-daf8-4e57-b936-2e671481c15b.pdf",
+        "c395f40a-df42-4a61-bf4b-b3efa1f2e2b3.pdf",
+        "c3f57013-8624-44b7-94d7-f1eec2495a47.pdf",
+        "c395f40a-df42-4a61-bf4b-b3efa1f2e2b3.pdf",
+        "b419c3d1-1979-49e1-933f-f610e9832cff.pdf"
+      ],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q21",
+      "question": "In the concall document dated 2025-05-12 for ASIANPAINT, what are the key highlights?",
+      "answer": "The key highlights from the Asian Paints concall document dated 2025-05-12 are not available in the provided contexts. The closest available document is the Q4 FY2025 Earnings Conference held on May 8, 2025, which includes the presence of key management (MD & CEO Mr. Amit Syngle, CFO & Company Secretary Mr. R.J. Jeyamurugan, and AVP Finance Mr. Parag Rane) and an introduction to the Q4 and full year 2025 earnings discussion. However, specific highlights or financial details from the call are not included in the provided excerpts[ C2][C3][C8]. \n\nIf you need details from the May 8, 2025 call, please clarify, or provide more context for the May 12, 2025 document.",
+      "citations": [
+        {
+          "id": "C1",
+          "source": "0fa40d4c-f4d4-4d36-80cc-86be1f64817e.pdf",
+          "page": null,
+          "chunk_id": "0fa40d4c-f4d4-4d36-80cc-86be1f64817e.pdf::text::2",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C2",
+          "source": "095fd538-6e08-4480-9795-3d6c9607cc85.pdf",
+          "page": null,
+          "chunk_id": "095fd538-6e08-4480-9795-3d6c9607cc85.pdf::text::2",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C3",
+          "source": "095fd538-6e08-4480-9795-3d6c9607cc85.pdf",
+          "page": null,
+          "chunk_id": "095fd538-6e08-4480-9795-3d6c9607cc85.pdf::text::3",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C4",
+          "source": "0fa40d4c-f4d4-4d36-80cc-86be1f64817e.pdf",
+          "page": null,
+          "chunk_id": "0fa40d4c-f4d4-4d36-80cc-86be1f64817e.pdf::text::3",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C5",
+          "source": "ac9fe29f-3099-4479-b4f2-fdf0fa79e540.pdf",
+          "page": null,
+          "chunk_id": "ac9fe29f-3099-4479-b4f2-fdf0fa79e540.pdf::text::2",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C6",
+          "source": "cfd25bff-1623-40b0-a6d6-c8ddab10b398.pdf",
+          "page": null,
+          "chunk_id": "cfd25bff-1623-40b0-a6d6-c8ddab10b398.pdf::text::3",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C7",
+          "source": "528997a6-2e4e-47f5-b0e7-c255971db8c9.pdf",
+          "page": null,
+          "chunk_id": "528997a6-2e4e-47f5-b0e7-c255971db8c9.pdf::text::3",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C8",
+          "source": "095fd538-6e08-4480-9795-3d6c9607cc85.pdf",
+          "page": null,
+          "chunk_id": "095fd538-6e08-4480-9795-3d6c9607cc85.pdf::text::4",
+          "reference_chunk_id": null
+        }
+      ],
+      "metrics": {
+        "recall": 1.0,
+        "citation_coverage": 0.125,
+        "citations_present": true,
+        "faithfulness": 1.0
+      },
+      "expected_sources": [
+        "095fd538-6e08-4480-9795-3d6c9607cc85.pdf"
+      ],
+      "retrieved_sources": [
+        "0fa40d4c-f4d4-4d36-80cc-86be1f64817e.pdf",
+        "095fd538-6e08-4480-9795-3d6c9607cc85.pdf",
+        "095fd538-6e08-4480-9795-3d6c9607cc85.pdf",
+        "0fa40d4c-f4d4-4d36-80cc-86be1f64817e.pdf",
+        "ac9fe29f-3099-4479-b4f2-fdf0fa79e540.pdf",
+        "cfd25bff-1623-40b0-a6d6-c8ddab10b398.pdf",
+        "528997a6-2e4e-47f5-b0e7-c255971db8c9.pdf",
+        "095fd538-6e08-4480-9795-3d6c9607cc85.pdf",
+        "ac9fe29f-3099-4479-b4f2-fdf0fa79e540.pdf",
+        "528997a6-2e4e-47f5-b0e7-c255971db8c9.pdf"
+      ],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q22",
+      "question": "Summarize the major updates in AXISBANK's concall document (2025-01-22).",
+      "answer": "No relevant sources found.",
+      "citations": [],
+      "metrics": {
+        "recall": 0.0,
+        "citation_coverage": 0.0,
+        "citations_present": false,
+        "faithfulness": 0.0
+      },
+      "expected_sources": [
+        "bcf0ed65-901e-4f23-889b-37e4b7a646ca.pdf"
+      ],
+      "retrieved_sources": [],
+      "route": {
+        "use_rag": false,
+        "confidence": 0.5,
+        "reason": "generic query"
+      }
+    },
+    {
+      "id": "Q23",
+      "question": "What guidance or outlook is shared in the concall document for AXISBANK dated 2024-04-29?",
+      "answer": "Based on the provided contexts, there is no specific guidance or outlook from the Axis Bank concall document dated 2024-04-29. The available context ([C5]) only includes the cover letter addressed to the stock exchanges and does not contain any details about the guidance or outlook shared during the call. Therefore, I don't know what guidance or outlook was shared in the concall document for AXISBANK dated 2024-04-29.",
+      "citations": [
+        {
+          "id": "C1",
+          "source": "6960f4c4-57be-4cd9-b15d-c3cee6fc4d31.pdf",
+          "page": null,
+          "chunk_id": "6960f4c4-57be-4cd9-b15d-c3cee6fc4d31.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C2",
+          "source": "d39f9189-a7d6-4a03-9ad2-f5302ed4735c.pdf",
+          "page": null,
+          "chunk_id": "d39f9189-a7d6-4a03-9ad2-f5302ed4735c.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C3",
+          "source": "bcf0ed65-901e-4f23-889b-37e4b7a646ca.pdf",
+          "page": null,
+          "chunk_id": "bcf0ed65-901e-4f23-889b-37e4b7a646ca.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C4",
+          "source": "c68c6175-680f-4f7f-8403-c97e0d4e842b.pdf",
+          "page": null,
+          "chunk_id": "c68c6175-680f-4f7f-8403-c97e0d4e842b.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C5",
+          "source": "d39f9189-a7d6-4a03-9ad2-f5302ed4735c.pdf",
+          "page": null,
+          "chunk_id": "d39f9189-a7d6-4a03-9ad2-f5302ed4735c.pdf::text::0",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C6",
+          "source": "6960f4c4-57be-4cd9-b15d-c3cee6fc4d31.pdf",
+          "page": null,
+          "chunk_id": "6960f4c4-57be-4cd9-b15d-c3cee6fc4d31.pdf::text::0",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C7",
+          "source": "bcf0ed65-901e-4f23-889b-37e4b7a646ca.pdf",
+          "page": null,
+          "chunk_id": "bcf0ed65-901e-4f23-889b-37e4b7a646ca.pdf::text::0",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C8",
+          "source": "c68c6175-680f-4f7f-8403-c97e0d4e842b.pdf",
+          "page": null,
+          "chunk_id": "c68c6175-680f-4f7f-8403-c97e0d4e842b.pdf::text::0",
+          "reference_chunk_id": null
+        }
+      ],
+      "metrics": {
+        "recall": 1.0,
+        "citation_coverage": 0.3333333333333333,
+        "citations_present": true,
+        "faithfulness": 1.0
+      },
+      "expected_sources": [
+        "d39f9189-a7d6-4a03-9ad2-f5302ed4735c.pdf"
+      ],
+      "retrieved_sources": [
+        "6960f4c4-57be-4cd9-b15d-c3cee6fc4d31.pdf",
+        "d39f9189-a7d6-4a03-9ad2-f5302ed4735c.pdf",
+        "bcf0ed65-901e-4f23-889b-37e4b7a646ca.pdf",
+        "c68c6175-680f-4f7f-8403-c97e0d4e842b.pdf",
+        "d39f9189-a7d6-4a03-9ad2-f5302ed4735c.pdf",
+        "6960f4c4-57be-4cd9-b15d-c3cee6fc4d31.pdf",
+        "bcf0ed65-901e-4f23-889b-37e4b7a646ca.pdf",
+        "c68c6175-680f-4f7f-8403-c97e0d4e842b.pdf"
+      ],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q24",
+      "question": "What were the main topics discussed in the investor-presentation document for APOLLOHOSP (2025-05-30)?",
+      "answer": "The main topics discussed in the investor-presentation document for APOLLOHOSP (dated 2025-05-30) were:\n\n- Financial Results of the Company for the quarter and year ended March 31, 2025\n- A Financial Performance Snapshot\n- Business Segment-wise Update\n\nThese topics are indicated by the official disclosure and the opening slides of the presentation, which specify that the document is an \"Earnings Update Q4 FY25\" and includes a \"Financial Performance Snapshot & Business Segment wise Update\" for investors[ C1][C7][C6].",
+      "citations": [
+        {
+          "id": "C1",
+          "source": "14a059cf-24b8-4d1a-a641-c917bfff7dda.pdf",
+          "page": null,
+          "chunk_id": "14a059cf-24b8-4d1a-a641-c917bfff7dda.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C2",
+          "source": "406daf7a-494f-4413-9bcd-c0bd50753640.pdf",
+          "page": null,
+          "chunk_id": "406daf7a-494f-4413-9bcd-c0bd50753640.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C3",
+          "source": "f30907dc-d76c-4a3b-bbf9-7a8b5121223c.pdf",
+          "page": null,
+          "chunk_id": "f30907dc-d76c-4a3b-bbf9-7a8b5121223c.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C4",
+          "source": "2faa7e2f-97ab-40df-9cbe-a4e59085f27d.pdf",
+          "page": null,
+          "chunk_id": "2faa7e2f-97ab-40df-9cbe-a4e59085f27d.pdf::text::2",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C5",
+          "source": "4430a828-14c2-4c64-8cff-b68f1a2904f1.pdf",
+          "page": null,
+          "chunk_id": "4430a828-14c2-4c64-8cff-b68f1a2904f1.pdf::text::2",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C6",
+          "source": "b850535c-b6c7-417c-9899-007a8bd0d2c8.pdf",
+          "page": null,
+          "chunk_id": "b850535c-b6c7-417c-9899-007a8bd0d2c8.pdf::text::2",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C7",
+          "source": "14a059cf-24b8-4d1a-a641-c917bfff7dda.pdf",
+          "page": null,
+          "chunk_id": "14a059cf-24b8-4d1a-a641-c917bfff7dda.pdf::text::2",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C8",
+          "source": "dce7bcc1-c27f-4f71-87bb-fd3e836c1c2e.pdf",
+          "page": null,
+          "chunk_id": "dce7bcc1-c27f-4f71-87bb-fd3e836c1c2e.pdf::text::2",
+          "reference_chunk_id": null
+        }
+      ],
+      "metrics": {
+        "recall": 1.0,
+        "citation_coverage": 1.0,
+        "citations_present": true,
+        "faithfulness": 1.0
+      },
+      "expected_sources": [
+        "14a059cf-24b8-4d1a-a641-c917bfff7dda.pdf"
+      ],
+      "retrieved_sources": [
+        "14a059cf-24b8-4d1a-a641-c917bfff7dda.pdf",
+        "406daf7a-494f-4413-9bcd-c0bd50753640.pdf",
+        "f30907dc-d76c-4a3b-bbf9-7a8b5121223c.pdf",
+        "2faa7e2f-97ab-40df-9cbe-a4e59085f27d.pdf",
+        "4430a828-14c2-4c64-8cff-b68f1a2904f1.pdf",
+        "b850535c-b6c7-417c-9899-007a8bd0d2c8.pdf",
+        "14a059cf-24b8-4d1a-a641-c917bfff7dda.pdf",
+        "dce7bcc1-c27f-4f71-87bb-fd3e836c1c2e.pdf",
+        "5c8e1593-fa2f-4a22-b0c9-c6c05d77e1f1.pdf",
+        "f30907dc-d76c-4a3b-bbf9-7a8b5121223c.pdf"
+      ],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q25",
+      "question": "In the concall document dated 2025-08-11 for BHARTIARTL, what are the key highlights?",
+      "answer": "The key highlights from the Bharti Airtel (BHARTIARTL) concall document dated August 11, 2025, which covers the Q1 FY2026 results (quarter ended June 30, 2025), are as follows:\n\n**1. Financial Performance:**\n- Consolidated revenue was \u20b949,463 Crores, slightly under \u20b949,500 Crores, impacted by a decline in the B2B segment due to the planned exit from low-margin business.\n- India revenues (excluding Indus) were about \u20b933,820 Crores.\n- EBITDAaL (EBITDA after lease obligations) margin improved to 51.4%, up by 65 basis points sequentially.\n- Operating free cash flow (EBITDAaL minus capex) was \u20b911,928 Crores.\n- Continued deleveraging: India net debt to EBITDAaL now stands at 1.3.\n- The company redeemed senior notes worth $1 billion during the quarter.\n- Crisil upgraded the company\u2019s credit rating, reflecting financial prudence and a strong balance sheet.[C6]\n\n**2. Segment Performance:**\n- Mobile: Added 1.2 million customers and 3.9 million smartphone data customers. Postpaid net adds were 0.7 million (57% of total net adds). ARPU was \u20b9250.\n- 5G: Ended the quarter with 152 million 5G customers. 5G shipments now account for 86% of total smartphone shipments. 5G sites handle 36% of total network traffic.\n- Broadband: Highest ever quarterly net adds of 939,000. FWA (Fixed Wireless Access) net adds were 5.4 lakh. Plans to accelerate fiber home passes to a quarterly run rate of 2.5 million (up from 1.6 million).\n- Digital TV: Lost 2 lakh customers, but IPTV net adds increased. DTH net adds were impacted by the elimination of set-top box subsidies, a move expected to improve cash generation.\n- Airtel Business: Reported revenues of about \u20b95,060 Crores. Underlying revenue growth (excluding discontinued business) was 2% sequentially. Strong outlook with a robust order book and green shoots in the global business.\n- Digital Businesses: Continued investments in Cloud, Cybersecurity, Financial Services, IoT, and CPaaS. Airtel Finance saw acceleration in loan disbursements and credit card issuance. Payments Bank monthly transacting users reached 98 million, with annualized revenue run rate over \u20b93,100 Crores (up 27% YoY), and deposits at \u20b93,750 Crores (up 29% YoY).\n- Africa: Constant currency revenue growth of 6.7% sequentially, with reported revenue growth of 6.2%. EBITDAaL margin just under 37%. Net-debt to EBITDAaL under 1.[C4][C6]\n\n**3. Strategic and Operational Updates:**\n- Continued focus on building a diverse and resilient portfolio: Africa (24% of revenues), India mobile (55%), India non-mobile (13%), Indus (8%).\n- Investments are focused on future-ready digital networks and services.\n- Broadband strategy: Accelerating fiber rollout, expanding FWA, bundling content, and leveraging partnerships (e.g., Google One cloud storage for postpaid and Wi-Fi customers).\n- Mobile strategy: ARPU improvement through postpaid and smartphone upgrades, and international roaming. Rural expansion continues, with over 43,500 sites deployed in the last three years.\n- ESG: 64% of sites are now green; nearly half of data center electricity comes from renewables. Women represent just under 19% of the workforce (up from 11% two years ago). The Airtel Foundation launched a nationwide scholarship, with 51% of scholars being women.[C6][C4]\n\n**4. Network and Capex:**\n- Network expansion: 1,830 network sites and over 8,300 km of fiber deployed in the quarter.\n- Over 1,30,000 km of fiber rolled out in the last three years.\n- Fiber home passes and FWA now cover 2,500 cities.[C6]\n\n**5. Outlook and Focus Areas:**\n- Continued focus on quality customer acquisition, ARPU growth, and digital transformation.\n- Emphasis on financial discipline, operational excellence, and deleveraging.\n- Strategic investments in digital services and future-proofing the network.[C6][C4]\n\nThese highlights reflect Bharti Airtel\u2019s strong operational and financial performance, ongoing digital and network investments, and commitment to ESG and customer-centric strategies for Q1 FY2026.",
+      "citations": [
+        {
+          "id": "C1",
+          "source": "e7bdada9-733e-41a6-bdd9-f61d71d30335.pdf",
+          "page": null,
+          "chunk_id": "e7bdada9-733e-41a6-bdd9-f61d71d30335.pdf::text::0",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C2",
+          "source": "b8f70dc5-c46b-481a-961c-ecbd39a6f45d.pdf",
+          "page": null,
+          "chunk_id": "b8f70dc5-c46b-481a-961c-ecbd39a6f45d.pdf::text::48",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C3",
+          "source": "75c7f6b8-2b0d-4c5f-9404-f1778e5acab2.pdf",
+          "page": null,
+          "chunk_id": "75c7f6b8-2b0d-4c5f-9404-f1778e5acab2.pdf::text::16",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C4",
+          "source": "e7bdada9-733e-41a6-bdd9-f61d71d30335.pdf",
+          "page": null,
+          "chunk_id": "e7bdada9-733e-41a6-bdd9-f61d71d30335.pdf::text::4",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C5",
+          "source": "06861a12-3ad9-4a7b-808a-566a9e7abb09.pdf",
+          "page": null,
+          "chunk_id": "06861a12-3ad9-4a7b-808a-566a9e7abb09.pdf::text::5",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C6",
+          "source": "e7bdada9-733e-41a6-bdd9-f61d71d30335.pdf",
+          "page": null,
+          "chunk_id": "e7bdada9-733e-41a6-bdd9-f61d71d30335.pdf::text::3",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C7",
+          "source": "e7bdada9-733e-41a6-bdd9-f61d71d30335.pdf",
+          "page": null,
+          "chunk_id": "e7bdada9-733e-41a6-bdd9-f61d71d30335.pdf::text::51",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C8",
+          "source": "25774a12-2089-4653-9e26-972643e5fe4c.pdf",
+          "page": null,
+          "chunk_id": "25774a12-2089-4653-9e26-972643e5fe4c.pdf::text::4",
+          "reference_chunk_id": null
+        }
+      ],
+      "metrics": {
+        "recall": 1.0,
+        "citation_coverage": 0.11904761904761904,
+        "citations_present": true,
+        "faithfulness": 1.0
+      },
+      "expected_sources": [
+        "e7bdada9-733e-41a6-bdd9-f61d71d30335.pdf"
+      ],
+      "retrieved_sources": [
+        "e7bdada9-733e-41a6-bdd9-f61d71d30335.pdf",
+        "b8f70dc5-c46b-481a-961c-ecbd39a6f45d.pdf",
+        "75c7f6b8-2b0d-4c5f-9404-f1778e5acab2.pdf",
+        "e7bdada9-733e-41a6-bdd9-f61d71d30335.pdf",
+        "06861a12-3ad9-4a7b-808a-566a9e7abb09.pdf",
+        "e7bdada9-733e-41a6-bdd9-f61d71d30335.pdf",
+        "e7bdada9-733e-41a6-bdd9-f61d71d30335.pdf",
+        "25774a12-2089-4653-9e26-972643e5fe4c.pdf",
+        "55b5e9bb-e2f4-4c54-9865-f0b7f789f6ed.pdf",
+        "06861a12-3ad9-4a7b-808a-566a9e7abb09.pdf"
+      ],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q26",
+      "question": "Summarize the major updates in ADANIPORTS's investor-presentation document (2024-10-05).",
+      "answer": "No relevant sources found.",
+      "citations": [],
+      "metrics": {
+        "recall": 0.0,
+        "citation_coverage": 0.0,
+        "citations_present": false,
+        "faithfulness": 0.0
+      },
+      "expected_sources": [
+        "2ad483f8-cbb8-4cb5-9132-a24764a0126d.pdf"
+      ],
+      "retrieved_sources": [],
+      "route": {
+        "use_rag": false,
+        "confidence": 0.5,
+        "reason": "generic query"
+      }
+    },
+    {
+      "id": "Q27",
+      "question": "What guidance or outlook is shared in the annual-report document for ADANIENT dated 2024-05-29?",
+      "answer": "The provided contexts from the Adani Enterprises Limited (ADANIENT) Integrated Annual Report for the financial year 2023-24, dated May 29, 2024, primarily include procedural information about the Annual General Meeting (AGM), regulatory compliance, and shareholder instructions. They do not contain specific guidance or outlook statements regarding the company's future performance, strategy, or business environment.\n\nThe contexts detail the date and mode of the AGM, instructions for e-voting, dividend entitlement, and compliance with Ministry of Corporate Affairs and SEBI circulars. There is also mention of the availability of the full annual report and related documents on the company\u2019s website for further reference. However, there is no explicit section or statement in the provided excerpts that discusses management\u2019s guidance or outlook for the upcoming year or beyond[ C1][C6][C7].\n\nIf you require the company\u2019s outlook or guidance, you may need to refer directly to the full Integrated Annual Report 2023-24 available on the Adani Enterprises website, as the provided contexts do not include this information.",
+      "citations": [
+        {
+          "id": "C1",
+          "source": "045307f4-4c12-4e61-9764-d48b84c5b233.pdf",
+          "page": null,
+          "chunk_id": "045307f4-4c12-4e61-9764-d48b84c5b233.pdf::text::2",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C2",
+          "source": "045307f4-4c12-4e61-9764-d48b84c5b233.pdf",
+          "page": null,
+          "chunk_id": "045307f4-4c12-4e61-9764-d48b84c5b233.pdf::text::1581",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C3",
+          "source": "045307f4-4c12-4e61-9764-d48b84c5b233.pdf",
+          "page": null,
+          "chunk_id": "045307f4-4c12-4e61-9764-d48b84c5b233.pdf::text::2446",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C4",
+          "source": "045307f4-4c12-4e61-9764-d48b84c5b233.pdf",
+          "page": null,
+          "chunk_id": "045307f4-4c12-4e61-9764-d48b84c5b233.pdf::text::1464",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C5",
+          "source": "045307f4-4c12-4e61-9764-d48b84c5b233.pdf",
+          "page": null,
+          "chunk_id": "045307f4-4c12-4e61-9764-d48b84c5b233.pdf::text::753",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C6",
+          "source": "045307f4-4c12-4e61-9764-d48b84c5b233.pdf",
+          "page": null,
+          "chunk_id": "045307f4-4c12-4e61-9764-d48b84c5b233.pdf::text::2553",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C7",
+          "source": "045307f4-4c12-4e61-9764-d48b84c5b233.pdf",
+          "page": null,
+          "chunk_id": "045307f4-4c12-4e61-9764-d48b84c5b233.pdf::text::1146",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C8",
+          "source": "045307f4-4c12-4e61-9764-d48b84c5b233.pdf",
+          "page": null,
+          "chunk_id": "045307f4-4c12-4e61-9764-d48b84c5b233.pdf::text::1462",
+          "reference_chunk_id": null
+        }
+      ],
+      "metrics": {
+        "recall": 1.0,
+        "citation_coverage": 0.16666666666666666,
+        "citations_present": true,
+        "faithfulness": 1.0
+      },
+      "expected_sources": [
+        "045307f4-4c12-4e61-9764-d48b84c5b233.pdf"
+      ],
+      "retrieved_sources": [
+        "045307f4-4c12-4e61-9764-d48b84c5b233.pdf",
+        "045307f4-4c12-4e61-9764-d48b84c5b233.pdf",
+        "045307f4-4c12-4e61-9764-d48b84c5b233.pdf",
+        "045307f4-4c12-4e61-9764-d48b84c5b233.pdf",
+        "045307f4-4c12-4e61-9764-d48b84c5b233.pdf",
+        "045307f4-4c12-4e61-9764-d48b84c5b233.pdf",
+        "045307f4-4c12-4e61-9764-d48b84c5b233.pdf",
+        "045307f4-4c12-4e61-9764-d48b84c5b233.pdf",
+        "045307f4-4c12-4e61-9764-d48b84c5b233.pdf",
+        "045307f4-4c12-4e61-9764-d48b84c5b233.pdf"
+      ],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.6,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q28",
+      "question": "What were the main topics discussed in the concall document for ASIANPAINT (2025-08-02)?",
+      "answer": "The main topics discussed in the Asian Paints concall document for August 2, 2025, centered around the financial results for the Fourth Quarter and the full year ended March 31, 2025. The management team, including the MD & CEO, CFO & Company Secretary, and AVP - Finance, addressed the following key areas:\n\n1. Review of Q4 and full year 2025 financial performance.\n2. Opening comments from the MD & CEO regarding the company's performance and outlook.\n3. Discussion of demand conditions, including challenges and expectations for recovery, especially in rural demand due to monsoons and government spending.\n4. Focus on strengthening the core brand and scaling up the Industrial Businesses, particularly in the auto OE and protective paint segments.\n5. Analysis of the macro-economic situation in key international geographies, especially Asia and Africa.\n6. Commentary on raw material price trends, particularly the volatility in crude and other key inputs, and the need for caution due to geopolitical uncertainties[ C2][C3][C8].\n\nThese topics reflect the company's strategic focus areas and the external factors influencing its performance and outlook.",
+      "citations": [
+        {
+          "id": "C1",
+          "source": "0fa40d4c-f4d4-4d36-80cc-86be1f64817e.pdf",
+          "page": null,
+          "chunk_id": "0fa40d4c-f4d4-4d36-80cc-86be1f64817e.pdf::text::2",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C2",
+          "source": "095fd538-6e08-4480-9795-3d6c9607cc85.pdf",
+          "page": null,
+          "chunk_id": "095fd538-6e08-4480-9795-3d6c9607cc85.pdf::text::3",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C3",
+          "source": "095fd538-6e08-4480-9795-3d6c9607cc85.pdf",
+          "page": null,
+          "chunk_id": "095fd538-6e08-4480-9795-3d6c9607cc85.pdf::text::4",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C4",
+          "source": "ac9fe29f-3099-4479-b4f2-fdf0fa79e540.pdf",
+          "page": null,
+          "chunk_id": "ac9fe29f-3099-4479-b4f2-fdf0fa79e540.pdf::text::2",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C5",
+          "source": "cfd25bff-1623-40b0-a6d6-c8ddab10b398.pdf",
+          "page": null,
+          "chunk_id": "cfd25bff-1623-40b0-a6d6-c8ddab10b398.pdf::text::3",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C6",
+          "source": "0fa40d4c-f4d4-4d36-80cc-86be1f64817e.pdf",
+          "page": null,
+          "chunk_id": "0fa40d4c-f4d4-4d36-80cc-86be1f64817e.pdf::text::3",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C7",
+          "source": "528997a6-2e4e-47f5-b0e7-c255971db8c9.pdf",
+          "page": null,
+          "chunk_id": "528997a6-2e4e-47f5-b0e7-c255971db8c9.pdf::text::3",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C8",
+          "source": "528997a6-2e4e-47f5-b0e7-c255971db8c9.pdf",
+          "page": null,
+          "chunk_id": "528997a6-2e4e-47f5-b0e7-c255971db8c9.pdf::text::74",
+          "reference_chunk_id": null
+        }
+      ],
+      "metrics": {
+        "recall": 1.0,
+        "citation_coverage": 0.07142857142857142,
+        "citations_present": true,
+        "faithfulness": 1.0
+      },
+      "expected_sources": [
+        "cfd25bff-1623-40b0-a6d6-c8ddab10b398.pdf"
+      ],
+      "retrieved_sources": [
+        "0fa40d4c-f4d4-4d36-80cc-86be1f64817e.pdf",
+        "095fd538-6e08-4480-9795-3d6c9607cc85.pdf",
+        "095fd538-6e08-4480-9795-3d6c9607cc85.pdf",
+        "ac9fe29f-3099-4479-b4f2-fdf0fa79e540.pdf",
+        "cfd25bff-1623-40b0-a6d6-c8ddab10b398.pdf",
+        "0fa40d4c-f4d4-4d36-80cc-86be1f64817e.pdf",
+        "528997a6-2e4e-47f5-b0e7-c255971db8c9.pdf",
+        "528997a6-2e4e-47f5-b0e7-c255971db8c9.pdf",
+        "528997a6-2e4e-47f5-b0e7-c255971db8c9.pdf",
+        "ac9fe29f-3099-4479-b4f2-fdf0fa79e540.pdf"
+      ],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q29",
+      "question": "In the investor-presentation document dated 2024-05-09 for ASIANPAINT, what are the key highlights?",
+      "answer": "The investor-presentation document dated 2024-05-09 for ASIANPAINT provides an overview of the business and financial performance of the company for the quarter and nine months period ended 31st December 2024. However, the specific key highlights of the presentation are not detailed in the available context. The document mainly serves as an intimation of the presentation and mentions that the audio recording and transcript of the Investor Conference will be uploaded on the company's website and the stock exchanges as prescribed under SEBI regulations. No further details or highlights from the actual presentation are provided in the context given[ C1]. [C1]",
+      "citations": [
+        {
+          "id": "C1",
+          "source": "d36025bc-68a0-4070-91b7-ecdb2b4e5ac2.pdf",
+          "page": null,
+          "chunk_id": "d36025bc-68a0-4070-91b7-ecdb2b4e5ac2.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C2",
+          "source": "fa64a601-c78f-4fca-ad0f-e3487d2f2c20.pdf",
+          "page": null,
+          "chunk_id": "fa64a601-c78f-4fca-ad0f-e3487d2f2c20.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C3",
+          "source": "0920c8b8-9913-4f2f-8cee-a731aa310919.pdf",
+          "page": null,
+          "chunk_id": "0920c8b8-9913-4f2f-8cee-a731aa310919.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C4",
+          "source": "70255f9a-65f2-4439-965b-20c61aac94d3.pdf",
+          "page": null,
+          "chunk_id": "70255f9a-65f2-4439-965b-20c61aac94d3.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C5",
+          "source": "63a2696f-f94d-4133-a636-a33645aaa4f3.pdf",
+          "page": null,
+          "chunk_id": "63a2696f-f94d-4133-a636-a33645aaa4f3.pdf::text::1",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C6",
+          "source": "fa64a601-c78f-4fca-ad0f-e3487d2f2c20.pdf",
+          "page": null,
+          "chunk_id": "fa64a601-c78f-4fca-ad0f-e3487d2f2c20.pdf::text::0",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C7",
+          "source": "fa64a601-c78f-4fca-ad0f-e3487d2f2c20.pdf",
+          "page": null,
+          "chunk_id": "fa64a601-c78f-4fca-ad0f-e3487d2f2c20.pdf::text::45",
+          "reference_chunk_id": null
+        },
+        {
+          "id": "C8",
+          "source": "d36025bc-68a0-4070-91b7-ecdb2b4e5ac2.pdf",
+          "page": null,
+          "chunk_id": "d36025bc-68a0-4070-91b7-ecdb2b4e5ac2.pdf::text::59",
+          "reference_chunk_id": null
+        }
+      ],
+      "metrics": {
+        "recall": 1.0,
+        "citation_coverage": 0.2,
+        "citations_present": true,
+        "faithfulness": 1.0
+      },
+      "expected_sources": [
+        "63a2696f-f94d-4133-a636-a33645aaa4f3.pdf"
+      ],
+      "retrieved_sources": [
+        "d36025bc-68a0-4070-91b7-ecdb2b4e5ac2.pdf",
+        "fa64a601-c78f-4fca-ad0f-e3487d2f2c20.pdf",
+        "0920c8b8-9913-4f2f-8cee-a731aa310919.pdf",
+        "70255f9a-65f2-4439-965b-20c61aac94d3.pdf",
+        "63a2696f-f94d-4133-a636-a33645aaa4f3.pdf",
+        "fa64a601-c78f-4fca-ad0f-e3487d2f2c20.pdf",
+        "fa64a601-c78f-4fca-ad0f-e3487d2f2c20.pdf",
+        "d36025bc-68a0-4070-91b7-ecdb2b4e5ac2.pdf",
+        "0920c8b8-9913-4f2f-8cee-a731aa310919.pdf",
+        "0920c8b8-9913-4f2f-8cee-a731aa310919.pdf"
+      ],
+      "route": {
+        "use_rag": true,
+        "confidence": 0.8,
+        "reason": "rag signals"
+      }
+    },
+    {
+      "id": "Q30",
+      "question": "Summarize the major updates in BAJAJ-AUTO's concall document (2024-04-25).",
+      "answer": "No relevant sources found.",
+      "citations": [],
+      "metrics": {
+        "recall": 0.0,
+        "citation_coverage": 0.0,
+        "citations_present": false,
+        "faithfulness": 0.0
+      },
+      "expected_sources": [
+        "5339fa5f-b7cf-4abc-a496-3c8d7b24f4a5.pdf"
+      ],
+      "retrieved_sources": [],
+      "route": {
+        "use_rag": false,
+        "confidence": 0.5,
+        "reason": "generic query"
+      }
+    }
+  ],
+  "overall_metrics": {
+    "total_questions": 30,
+    "avg_recall": 0.6666666666666666,
+    "avg_citation_coverage": 0.1998891293891294,
+    "avg_faithfulness": 0.73,
+    "citation_rate": 0.7333333333333333
+  },
+  "generated_from": "c:\\Users\\Anant\\Downloads\\embed-documents-main\\embed-documents-main\\questions_filtered.json"
+}

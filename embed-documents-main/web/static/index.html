@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Documents Viewer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Embedded Documents Database</h1>
+            <p class="subtitle">View and download embedded company documents</p>
+        </header>
+
+        <!-- Query Section -->
+        <section class="query-section">
+            <h2>Ask a Question</h2>
+            <div class="query-input-container">
+                <textarea
+                    id="query-input"
+                    placeholder="Ask a question about the embedded documents... (e.g., 'What was TCS revenue in FY2024?')"
+                    class="query-input"
+                    rows="3"
+                ></textarea>
+                <div class="query-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="use-hyde" checked>
+                        Use HYDE (Hypothetical Document Embeddings)
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="synthesize" checked>
+                        Generate Answer
+                    </label>
+                    <select id="top-k" class="select-input">
+                        <option value="5">Top 5 results</option>
+                        <option value="10" selected>Top 10 results</option>
+                        <option value="20">Top 20 results</option>
+                    </select>
+                </div>
+                <button id="query-btn" class="btn btn-primary" onclick="submitQuery()">
+                    Search Documents
+                </button>
+            </div>
+            
+            <!-- Query Results -->
+            <div id="query-results" class="query-results" style="display: none;">
+                <div id="query-loading" class="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Searching documents...</p>
+                </div>
+                <div id="query-answer" class="answer-section" style="display: none;">
+                    <h3>Answer</h3>
+                    <div id="answer-content" class="answer-content"></div>
+                    <div id="citations" class="citations"></div>
+                </div>
+                <div id="query-chunks" class="chunks-section" style="display: none;">
+                    <h3>Retrieved Chunks</h3>
+                    <div id="chunks-list" class="chunks-list"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Dashboard -->
+        <section class="stats-section">
+            <div class="stat-card">
+                <div class="stat-value" id="total-documents">-</div>
+                <div class="stat-label">Total Documents</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="total-symbols">-</div>
+                <div class="stat-label">Companies</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="total-chunks">-</div>
+                <div class="stat-label">Document Chunks</div>
+            </div>
+        </section>
+
+        <!-- Search and Filter -->
+        <section class="search-section">
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Search by symbol or company name..."
+                class="search-input"
+            >
+            <button id="refresh-btn" class="btn btn-secondary">Refresh</button>
+        </section>
+
+        <!-- Loading Indicator -->
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Loading data...</p>
+        </div>
+
+        <!-- Error Message -->
+        <div id="error" class="error-message" style="display: none;">
+            <p id="error-text"></p>
+        </div>
+
+        <!-- Main Table -->
+        <section class="table-section">
+            <table id="symbols-table">
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Fincode</th>
+                        <th>Total Files</th>
+                        <th>Total Chunks</th>
+                        <th>Collections</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- Will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Modal for File Details -->
+        <div id="file-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modal-title">Files for <span id="modal-symbol"></span></h2>
+                    <button class="close-btn" onclick="closeModal()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div id="modal-loading" class="loading">
+                        <div class="spinner"></div>
+                        <p>Loading files...</p>
+                    </div>
+                    <table id="files-table" style="display: none;">
+                        <thead>
+                            <tr>
+                                <th>Filename</th>
+                                <th>Sub-Category</th>
+                                <th>Document Date</th>
+                                <th>Collection</th>
+                                <th>Chunks</th>
+                                <th>Embedded Date</th>
+                                <th>Download</th>
+                            </tr>
+                        </thead>
+                        <tbody id="files-table-body">
+                            <!-- Will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
