@@ -38,6 +38,33 @@
                         <option value="20">Top 20 results</option>
                     </select>
                 </div>
+                <div class="query-filters">
+                    <div class="filter-group">
+                        <label for="filter-symbol">Limit to symbol</label>
+                        <select id="filter-symbol" class="select-input">
+                            <option value="">All symbols</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-category">Document category</label>
+                        <select id="filter-category" class="select-input">
+                            <option value="">All categories</option>
+                            <option value="annual-report">Annual reports</option>
+                            <option value="concall">Concall transcripts</option>
+                            <option value="investor-presentation">Investor presentations</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Document date range</label>
+                        <div class="date-range">
+                            <input type="date" id="filter-date-from" class="date-input">
+                            <span class="date-separator">to</span>
+                            <input type="date" id="filter-date-to" class="date-input">
+                        </div>
+                    </div>
+                    <button id="clear-filters" class="btn btn-secondary btn-sm" type="button">Clear Filters</button>
+                </div>
+                <div id="active-filter-chips" class="filter-chips"></div>
                 <button id="query-btn" class="btn btn-primary" onclick="submitQuery()">
                     Search Documents
                 </button>
@@ -48,6 +75,13 @@
                 <div id="query-loading" class="loading" style="display: none;">
                     <div class="spinner"></div>
                     <p>Searching documents...</p>
+                </div>
+                <div id="query-context" class="query-context" style="display: none;">
+                    <div id="route-info" class="route-info"></div>
+                    <div class="context-filters">
+                        <span class="context-label">Applied filters</span>
+                        <div id="context-filters" class="filter-chips"></div>
+                    </div>
                 </div>
                 <div id="query-answer" class="answer-section" style="display: none;">
                     <h3>Answer</h3>
@@ -149,8 +183,60 @@
                 </div>
             </div>
         </div>
+
+        <!-- Modal for PDF Viewer -->
+        <div id="pdf-modal" class="modal pdf-modal">
+            <div class="modal-content pdf-content">
+                <div class="modal-header">
+                    <h2 id="pdf-title">Document Viewer</h2>
+                    <button class="close-btn" onclick="closePdfModal()">&times;</button>
+                </div>
+                <div class="pdf-body">
+                    <div class="pdf-toolbar">
+                        <div class="pdf-meta">
+                            <span id="pdf-symbol" class="badge" style="display: none;"></span>
+                            <span id="pdf-filename" class="pdf-filename"></span>
+                        </div>
+                        <div class="pdf-controls">
+                            <button id="pdf-prev-btn" class="btn btn-secondary btn-sm" type="button" onclick="changePdfPage(-1)">◀ Prev</button>
+                            <span id="pdf-page-indicator" class="pdf-page-indicator">-</span>
+                            <button id="pdf-next-btn" class="btn btn-secondary btn-sm" type="button" onclick="changePdfPage(1)">Next ▶</button>
+                            <span class="pdf-zoom-separator">|</span>
+                            <button id="pdf-zoom-out-btn" class="btn btn-secondary btn-sm" type="button" onclick="changePdfZoom(-0.25)">−</button>
+                            <span id="pdf-zoom-indicator" class="pdf-page-indicator">125%</span>
+                            <button id="pdf-zoom-in-btn" class="btn btn-secondary btn-sm" type="button" onclick="changePdfZoom(0.25)">+</button>
+                        </div>
+                    </div>
+                    <div id="pdf-loading" class="loading" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Loading PDF...</p>
+                    </div>
+                    <div id="pdf-error" class="error-message" style="display: none;">
+                        <p id="pdf-error-text"></p>
+                    </div>
+                    <div id="pdf-viewer" class="pdf-viewer" style="display: none;">
+                        <div class="pdf-canvas-wrapper">
+                            <div id="pdf-page-container" class="pdf-page-container">
+                                <canvas id="pdf-canvas"></canvas>
+                                <!-- Citation highlight overlays appended here -->
+                            </div>
+                        </div>
+                        <div class="pdf-chunk-preview">
+                            <h4>Highlighted Chunk</h4>
+                            <p id="pdf-chunk-text"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <script src="/static/vendor/pdf.min.js"></script>
+    <script>
+        if (window.pdfjsLib) {
+            pdfjsLib.GlobalWorkerOptions.workerSrc = '/static/vendor/pdf.worker.min.js';
+        }
+    </script>
     <script src="/static/app.js"></script>
 </body>
 </html>

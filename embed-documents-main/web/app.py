@@ -2,6 +2,7 @@
 
 import json
 import logging
+from pathlib import Path
 from typing import Optional
 
 import aiosqlite
@@ -23,6 +24,11 @@ from utils.data_helpers import (
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+# Base paths for static assets
+BASE_DIR = Path(__file__).resolve().parent
+STATIC_DIR = BASE_DIR / "static"
+INDEX_FILE = STATIC_DIR / "index.html"
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -56,7 +62,7 @@ async def startup_event():
 @app.get("/")
 async def root():
     """Redirect to the static index page."""
-    return FileResponse("web/static/index.html")
+    return FileResponse(INDEX_FILE)
 
 
 @app.get("/api/stats")
@@ -350,7 +356,7 @@ async def query_documents(request: QueryRequest):
 
 
 # Mount static files directory (must be last)
-app.mount("/static", StaticFiles(directory="web/static"), name="static")
+app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
 
 if __name__ == "__main__":
