@@ -20,6 +20,7 @@ from pathlib import Path
 from typing import Any, Optional
 
 import aiosqlite
+from langchain_core.documents import Document
 
 from rag.config import rag_config
 from utils.data_helpers import (
@@ -66,6 +67,9 @@ class DocumentTracker:
         Safe to call multiple times (idempotent).
         """
         async with aiosqlite.connect(self.db_path) as db:
+            # Enable WAL mode for better concurrent read/write
+            await db.execute("PRAGMA journal_mode=WAL")
+
             # Create main tracking table
             await db.execute(
                 """
@@ -94,6 +98,28 @@ class DocumentTracker:
                 """
                 CREATE INDEX IF NOT EXISTS idx_embedded_at
                 ON embedded_documents(embedded_at)
+                """
+            )
+
+            # Create parsed documents cache table
+            await db.execute(
+                """
+                CREATE TABLE IF NOT EXISTS parsed_documents_cache (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    source_filename TEXT NOT NULL,
+                    chunk_index INTEGER NOT NULL,
+                    page_content TEXT NOT NULL,
+                    metadata_json TEXT NOT NULL,
+                    parsed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    UNIQUE(source_filename, chunk_index)
+                )
+                """
+            )
+
+            await db.execute(
+                """
+                CREATE INDEX IF NOT EXISTS idx_cache_source
+                ON parsed_documents_cache(source_filename)
                 """
             )
 
@@ -514,3 +540,158 @@ class DocumentTracker:
 
         logger.info(f"Cleared {deleted} records for collection '{collection}'")
         return deleted
+
+    # ── Parsed Document Cache Methods ──────────────────────────────────
+
+    async def cache_parsed_documents(
+        self,
+        source_filename: str,
+        documents: list[Document],
+    ) -> None:
+        """Cache parsed Document chunks for a source file.
+
+        Replaces any existing cache for this source in a single transaction.
+
+        Args:
+            source_filename: The PDF filename (cache key)
+            documents: List of parsed Document objects to cache
+        """
+        async with aiosqlite.connect(self.db_path) as db:
+            # Clear existing cache for this source
+            await db.execute(
+                "DELETE FROM parsed_documents_cache WHERE source_filename = ?",
+                (source_filename,),
+            )
+
+            # Insert all chunks
+            await db.executemany(
+                """
+                INSERT INTO parsed_documents_cache
+                (source_filename, chunk_index, page_content, metadata_json)
+                VALUES (?, ?, ?, ?)
+                """,
+                [
+                    (
+                        source_filename,
+                        idx,
+                        doc.page_content,
+                        json.dumps(doc.metadata),
+                    )
+                    for idx, doc in enumerate(documents)
+                ],
+            )
+            await db.commit()
+
+        logger.info(
+            f"Cached {len(documents)} chunks for '{source_filename}'"
+        )
+
+    async def get_cached_documents(
+        self,
+        source_filename: str,
+    ) -> Optional[list[Document]]:
+        """Retrieve cached parsed Documents for a source file.
+
+        Args:
+            source_filename: The PDF filename to look up
+
+        Returns:
+            List of Document objects if cached, None on cache miss
+        """
+        async with aiosqlite.connect(self.db_path) as db:
+            async with db.execute(
+                """
+                SELECT page_content, metadata_json
+                FROM parsed_documents_cache
+                WHERE source_filename = ?
+                ORDER BY chunk_index
+                """,
+                (source_filename,),
+            ) as cursor:
+                rows = await cursor.fetchall()
+
+        if not rows:
+            return None
+
+        documents = []
+        for page_content, metadata_json in rows:
+            metadata = json.loads(metadata_json)
+            documents.append(Document(page_content=page_content, metadata=metadata))
+
+        return documents
+
+    async def is_cached(self, source_filename: str) -> bool:
+        """Check if parsed documents are cached for a source file.
+
+        Args:
+            source_filename: The PDF filename to check
+
+        Returns:
+            True if cache exists, False otherwise
+        """
+        async with aiosqlite.connect(self.db_path) as db:
+            async with db.execute(
+                """
+                SELECT 1 FROM parsed_documents_cache
+                WHERE source_filename = ?
+                LIMIT 1
+                """,
+                (source_filename,),
+            ) as cursor:
+                return await cursor.fetchone() is not None
+
+    async def clear_parse_cache(
+        self,
+        source_filename: Optional[str] = None,
+    ) -> int:
+        """Clear the parsed documents cache.
+
+        Args:
+            source_filename: If provided, clear only this source's cache.
+                             If None, clear all cached documents.
+
+        Returns:
+            Number of rows deleted
+        """
+        async with aiosqlite.connect(self.db_path) as db:
+            if source_filename:
+                cursor = await db.execute(
+                    "DELETE FROM parsed_documents_cache WHERE source_filename = ?",
+                    (source_filename,),
+                )
+            else:
+                cursor = await db.execute("DELETE FROM parsed_documents_cache")
+            await db.commit()
+            deleted = cursor.rowcount
+
+        logger.info(
+            f"Cleared {deleted} rows from parse cache"
+            + (f" for '{source_filename}'" if source_filename else " (all)")
+        )
+        return deleted
+
+    async def get_cache_stats(self) -> dict[str, Any]:
+        """Get statistics about the parsed documents cache.
+
+        Returns:
+            Dictionary with cache statistics
+        """
+        async with aiosqlite.connect(self.db_path) as db:
+            async with db.execute(
+                """
+                SELECT
+                    COUNT(DISTINCT source_filename) as cached_sources,
+                    COUNT(*) as total_chunks,
+                    MIN(parsed_at) as first_cached,
+                    MAX(parsed_at) as last_cached
+                FROM parsed_documents_cache
+                """
+            ) as cursor:
+                row = await cursor.fetchone()
+
+                return {
+                    "cached_sources": row[0] or 0,
+                    "total_chunks": row[1] or 0,
+                    "first_cached": row[2],
+                    "last_cached": row[3],
+                }

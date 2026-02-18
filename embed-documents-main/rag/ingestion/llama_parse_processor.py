@@ -8,6 +8,7 @@ Supports:
 
 from __future__ import annotations
 
+import asyncio
 import json
 import logging
 import re
@@ -39,7 +40,9 @@ class ChunkArtifact:
     chunk_type: str
     chunk_id: str
     page: Optional[int] = None
-    bbox: Optional[dict] = None  # {"l": 0.1, "t": 0.2, "r": 0.9, "b": 0.8}
+    bbox: Optional[dict] = None  # {"x": 257, "y": 62, "w": 81, "h": 21} in PDF points
+    page_width: Optional[float] = None  # page width in PDF points
+    page_height: Optional[float] = None  # page height in PDF points
     coord_origin: str = "TOPLEFT"  # "TOPLEFT" or "BOTTOMLEFT"
     table_caption: Optional[str] = None
     table_summary: Optional[str] = None
@@ -181,36 +184,52 @@ def _get_llamaparse_text(doc) -> str:
     return str(doc)
 
 
-def _normalize_bbox(raw_bbox: dict, page_width: float = 1.0, page_height: float = 1.0) -> Optional[dict]:
-    """Normalize bounding box to 0-1 range with l/t/r/b keys.
-    
-    LlamaParse can return bbox in various formats:
-    - {"x1", "y1", "x2", "y2"} - absolute coordinates
-    - {"x", "y", "width", "height"} - position + size
-    - {"left", "top", "right", "bottom"} - already normalized
+def _extract_bbox(raw_bbox: dict) -> Optional[dict]:
+    """Extract bounding box as {x, y, w, h} in absolute PDF points.
+
+    Stores raw coordinates without normalization so the consumer (PDF viewer)
+    can convert to whatever coordinate system it needs using page_width/page_height
+    stored alongside in metadata.
+
+    LlamaParse returns bbox as {"x", "y", "w", "h"} in PDF points with
+    top-left origin. Other formats are converted to the same structure.
     """
     if not raw_bbox:
         return None
-    
+
     try:
-        # Format: x1/y1/x2/y2 (common in LlamaParse)
-        if "x1" in raw_bbox and "y1" in raw_bbox:
+        # Format: x/y/w/h (LlamaParse JSON bBox format) — pass through
+        if "x" in raw_bbox and "w" in raw_bbox:
             return {
-                "l": raw_bbox["x1"] / page_width if page_width > 1 else raw_bbox["x1"],
-                "t": raw_bbox["y1"] / page_height if page_height > 1 else raw_bbox["y1"],
-                "r": raw_bbox["x2"] / page_width if page_width > 1 else raw_bbox["x2"],
-                "b": raw_bbox["y2"] / page_height if page_height > 1 else raw_bbox["y2"],
+                "x": raw_bbox["x"],
+                "y": raw_bbox["y"],
+                "w": raw_bbox["w"],
+                "h": raw_bbox["h"],
             }
-        
+
         # Format: x/y/width/height
         if "x" in raw_bbox and "width" in raw_bbox:
-            x = raw_bbox["x"] / page_width if page_width > 1 else raw_bbox["x"]
-            y = raw_bbox["y"] / page_height if page_height > 1 else raw_bbox["y"]
-            w = raw_bbox["width"] / page_width if page_width > 1 else raw_bbox["width"]
-            h = raw_bbox["height"] / page_height if page_height > 1 else raw_bbox["height"]
-            return {"l": x, "t": y, "r": x + w, "b": y + h}
-        
-        # Format: left/top/right/bottom (already normalized)
+            return {
+                "x": raw_bbox["x"],
+                "y": raw_bbox["y"],
+                "w": raw_bbox["width"],
+                "h": raw_bbox["height"],
+            }
+
+        # Format: x1/y1/x2/y2
+        if "x1" in raw_bbox and "y1" in raw_bbox:
+            return {
+                "x": raw_bbox["x1"],
+                "y": raw_bbox["y1"],
+                "w": raw_bbox["x2"] - raw_bbox["x1"],
+                "h": raw_bbox["y2"] - raw_bbox["y1"],
+            }
+
+        # Format: l/t/r/b (normalized — store as-is, no page dims needed)
+        if "l" in raw_bbox:
+            return raw_bbox
+
+        # Format: left/top/right/bottom
         if "left" in raw_bbox:
             return {
                 "l": raw_bbox["left"],
@@ -218,91 +237,164 @@ def _normalize_bbox(raw_bbox: dict, page_width: float = 1.0, page_height: float 
                 "r": raw_bbox["right"],
                 "b": raw_bbox["bottom"],
             }
-        
-        # Format: l/t/r/b (already correct)
-        if "l" in raw_bbox:
-            return raw_bbox
-            
-    except (KeyError, TypeError, ZeroDivisionError) as e:
-        logger.warning(f"Failed to normalize bbox {raw_bbox}: {e}")
-    
+
+    except (KeyError, TypeError) as e:
+        logger.warning(f"Failed to extract bbox {raw_bbox}: {e}")
+
     return None
+
+
+def _merge_bboxes(bboxes: list[dict]) -> Optional[dict]:
+    """Compute the union (enclosing) bounding box for a list of bboxes.
+
+    All bboxes must be in {x, y, w, h} format (absolute PDF points, top-left origin).
+    Returns None if the list is empty or all entries are None.
+    """
+    valid = [b for b in bboxes if b is not None]
+    if not valid:
+        return None
+
+    x_min = min(b["x"] for b in valid)
+    y_min = min(b["y"] for b in valid)
+    x_max = max(b["x"] + b["w"] for b in valid)
+    y_max = max(b["y"] + b["h"] for b in valid)
+
+    return {"x": x_min, "y": y_min, "w": x_max - x_min, "h": y_max - y_min}
 
 
 def _parse_llamaparse_json_elements(json_data: dict, source: str) -> list[ChunkArtifact]:
     """Parse LlamaParse JSON response into ChunkArtifacts with bbox info.
-    
-    Handles various LlamaParse JSON structures:
-    - pages[].items[] structure
-    - pages[].elements[] structure
-    - Direct elements[] array
+
+    Merges consecutive text/heading items on the same page into section-level
+    chunks, splitting at headings and tables. Each merged chunk gets a union
+    bounding box encompassing all its source items.
+
+    Tables are always emitted as standalone chunks.
     """
     chunks: list[ChunkArtifact] = []
     text_index = 0
     table_index = 0
-    
+
     # Try to find pages array
     pages = json_data.get("pages", [])
+    logger.info(f"[PARSE] Found {len(pages)} pages in json_data")
+
     if not pages and "elements" in json_data:
-        # Wrap single-page structure
+        logger.info(f"[PARSE] No 'pages' key, using 'elements' directly ({len(json_data['elements'])} elements)")
         pages = [{"page": 1, "items": json_data["elements"]}]
-    
-    for page_data in pages:
+
+    if not pages:
+        logger.warning(f"[PARSE] No 'pages' or 'elements' found in json_data. "
+                       f"Available keys: {list(json_data.keys()) if isinstance(json_data, dict) else type(json_data).__name__}")
+        return chunks
+
+    # --- per-page accumulator state ---
+    buf_texts: list[str] = []
+    buf_bboxes: list[Optional[dict]] = []
+    buf_page: Optional[int] = None
+    buf_page_width: Optional[float] = None
+    buf_page_height: Optional[float] = None
+    buf_coord_origin: str = "TOPLEFT"
+
+    def flush_text_buffer():
+        nonlocal buf_texts, buf_bboxes, buf_page, text_index
+        if not buf_texts:
+            return
+        merged_text = "\n".join(buf_texts).strip()
+        if not merged_text:
+            buf_texts, buf_bboxes = [], []
+            return
+        merged_bbox = _merge_bboxes(buf_bboxes)
+        chunk_id = f"{source}::text::{text_index}"
+        text_index += 1
+        chunks.append(ChunkArtifact(
+            text=merged_text,
+            chunk_type="text",
+            chunk_id=chunk_id,
+            page=buf_page,
+            bbox=merged_bbox,
+            page_width=buf_page_width,
+            page_height=buf_page_height,
+            coord_origin=buf_coord_origin,
+        ))
+        buf_texts, buf_bboxes = [], []
+
+    for page_idx, page_data in enumerate(pages):
         page_num = page_data.get("page", page_data.get("page_number", 1))
         page_width = page_data.get("width", 1.0)
         page_height = page_data.get("height", 1.0)
-        
-        # Get items/elements array
+
+        if page_idx == 0:
+            logger.info(f"[PARSE] Page {page_num} keys: {list(page_data.keys())}")
+
         items = page_data.get("items", page_data.get("elements", []))
-        
+
+        if page_idx == 0:
+            logger.info(f"[PARSE] Page {page_num}: {len(items)} items/elements")
+            if items:
+                logger.info(f"[PARSE] First item keys: {list(items[0].keys()) if isinstance(items[0], dict) else type(items[0]).__name__}")
+                logger.info(f"[PARSE] First item preview: {str(items[0])[:300]}")
+
+        # Flush any leftover buffer from the previous page
+        flush_text_buffer()
+        buf_page = page_num
+        buf_page_width = page_width
+        buf_page_height = page_height
+
         for item in items:
             item_type = item.get("type", "text").lower()
-            text = item.get("value", item.get("text", item.get("content", "")))
-            
+            text = item.get("value", item.get("md", item.get("text", item.get("content", ""))))
+
             if not text or not text.strip():
                 continue
-            
-            # Extract and normalize bbox
-            raw_bbox = item.get("bbox", item.get("bounding_box", item.get("boundingBox")))
-            bbox = _normalize_bbox(raw_bbox, page_width, page_height)
-            
-            # Determine coord origin (LlamaParse typically uses top-left)
+
+            raw_bbox = item.get("bBox", item.get("bbox", item.get("bounding_box", item.get("boundingBox"))))
+            bbox = _extract_bbox(raw_bbox)
             coord_origin = item.get("coord_origin", "TOPLEFT")
-            
-            # Classify chunk type
+
             if item_type in ("table", "structured_table"):
-                chunk_type = "table"
+                # Flush accumulated text before the table
+                flush_text_buffer()
+                buf_page = page_num
+                buf_page_width = page_width
+                buf_page_height = page_height
+
                 chunk_id = f"{source}::table::{table_index}"
                 table_index += 1
-                
-                # Try to extract table caption/summary
                 caption = item.get("caption", item.get("title"))
                 summary = _summarize_table_text(text)
-                
+
                 chunks.append(ChunkArtifact(
                     text=text.strip(),
-                    chunk_type=chunk_type,
+                    chunk_type="table",
                     chunk_id=chunk_id,
                     page=page_num,
                     bbox=bbox,
+                    page_width=page_width,
+                    page_height=page_height,
                     coord_origin=coord_origin,
                     table_caption=caption,
                     table_summary=summary,
                 ))
+            elif item_type == "heading":
+                # Headings start a new section — flush previous text
+                flush_text_buffer()
+                buf_page = page_num
+                buf_page_width = page_width
+                buf_page_height = page_height
+                buf_coord_origin = coord_origin
+                buf_texts.append(text.strip())
+                buf_bboxes.append(bbox)
             else:
-                chunk_type = "text"
-                chunk_id = f"{source}::text::{text_index}"
-                text_index += 1
-                
-                chunks.append(ChunkArtifact(
-                    text=text.strip(),
-                    chunk_type=chunk_type,
-                    chunk_id=chunk_id,
-                    page=page_num,
-                    bbox=bbox,
-                    coord_origin=coord_origin,
-                ))
-    
+                # Accumulate consecutive text items
+                buf_coord_origin = coord_origin
+                buf_texts.append(text.strip())
+                buf_bboxes.append(bbox)
+
+    # Flush any remaining buffer from the last page
+    flush_text_buffer()
+
+    logger.info(f"[PARSE] Total chunks parsed: {len(chunks)} (text={text_index}, tables={table_index})")
     return chunks
 
 
@@ -319,60 +411,51 @@ def _summarize_table_text(text: str) -> str:
 
 async def _load_with_llamaparse_json(file_path: Path, source: str) -> list[ChunkArtifact]:
     """Load document with LlamaParse JSON mode and extract elements with bbox.
-    
+
+    Uses get_json_result() to get structured JSON with page-level items and
+    bounding boxes. aload_data() does not work with result_type="json".
+
     Returns list of ChunkArtifacts with page numbers and bounding boxes.
     """
-    # Enable bbox extraction with these parameters:
-    # - result_type="json" for structured output
-    # - extract_layout=True for layout information
-    # - precise_bounding_box=True for accurate bbox coordinates
-    # - line_level_bounding_box=True for line-level coordinates
     parser = LlamaParse(
         result_type="json",
         extract_layout=True,
         precise_bounding_box=True,
         line_level_bounding_box=True,
-        split_by_page=True,  # Split output by page for better page-level tracking
+        split_by_page=True,
     )
-    
+
     try:
-        docs = await parser.aload_data(str(file_path))
+        # get_json_result returns the raw JSON structure (list of result dicts)
+        # aload_data() is broken for result_type="json" — returns 0 docs
+        json_results = await asyncio.to_thread(parser.get_json_result, str(file_path))
     except Exception as e:
-        logger.error(f"LlamaParse failed for {file_path}: {e}")
+        logger.error(f"[JSON] LlamaParse get_json_result failed for {source}: {e}")
         return []
-    
-    if not docs:
+
+    if not json_results:
+        logger.warning(f"[JSON] LlamaParse returned no results for {source}")
         return []
-    
+
+    logger.info(f"[JSON] LlamaParse returned {len(json_results)} result(s) for {source}")
+
     all_chunks: list[ChunkArtifact] = []
-    
-    for doc in docs:
-        # Get the raw response - could be JSON string or dict
-        raw_content = _get_llamaparse_text(doc)
-        
-        # Try to parse as JSON
-        try:
-            if isinstance(raw_content, str):
-                json_data = json.loads(raw_content)
-            elif isinstance(raw_content, dict):
-                json_data = raw_content
-            else:
-                logger.warning(f"Unexpected LlamaParse response type: {type(raw_content)}")
-                continue
-                
-            chunks = _parse_llamaparse_json_elements(json_data, source)
-            all_chunks.extend(chunks)
-            
-        except json.JSONDecodeError as e:
-            logger.warning(f"Failed to parse LlamaParse JSON response: {e}")
-            # Fallback: treat as plain text without bbox
-            all_chunks.append(ChunkArtifact(
-                text=raw_content,
-                chunk_type="text",
-                chunk_id=f"{source}::text::fallback",
-                page=1,
-            ))
-    
+
+    for result_idx, result in enumerate(json_results):
+        if not isinstance(result, dict):
+            logger.warning(f"[JSON] Result {result_idx}: unexpected type {type(result).__name__}")
+            continue
+
+        logger.info(f"[JSON] Result {result_idx} top-level keys: {list(result.keys())}")
+
+        chunks = _parse_llamaparse_json_elements(result, source)
+        logger.info(f"[JSON] Result {result_idx}: parsed {len(chunks)} chunks")
+        if chunks:
+            with_bbox = sum(1 for c in chunks if c.bbox is not None)
+            logger.info(f"[JSON] Result {result_idx}: {with_bbox}/{len(chunks)} chunks have bbox")
+        all_chunks.extend(chunks)
+
+    logger.info(f"[JSON] Total chunks for {source}: {len(all_chunks)}")
     return all_chunks
 
 
@@ -460,9 +543,15 @@ def _build_documents(
             base_meta["page"] = chunk.page
         
         # Add bounding box if available (for PDF viewer highlighting)
+        # bbox is in absolute PDF points; page_width/page_height let the
+        # consumer normalize or scale as needed for any page size.
         if chunk.bbox is not None:
             base_meta["bbox"] = chunk.bbox
             base_meta["coord_origin"] = chunk.coord_origin
+            if chunk.page_width is not None:
+                base_meta["page_width"] = chunk.page_width
+            if chunk.page_height is not None:
+                base_meta["page_height"] = chunk.page_height
         
         docs.append(Document(page_content=chunk.text, metadata=base_meta))
 
@@ -521,21 +610,34 @@ async def process_document(
     try:
         if use_json_mode:
             # JSON mode: extracts page numbers and bounding boxes
+            logger.info(f"[PROCESS] Starting JSON mode for {doc_stream.name}")
             chunks = await _load_with_llamaparse_json(tmp_path, doc_stream.name)
             if not chunks:
-                logger.warning(f"JSON mode returned no chunks for {doc_stream.name}, trying markdown fallback")
+                logger.warning(f"[PROCESS] JSON mode returned no chunks for {doc_stream.name}, trying markdown fallback")
                 md_text = await _load_with_llamaparse_markdown(tmp_path)
                 if not md_text:
+                    logger.warning(f"[PROCESS] Markdown fallback also returned nothing for {doc_stream.name}")
                     return []
                 chunks = _extract_markdown_tables(md_text, doc_stream.name)
+                logger.info(f"[PROCESS] Markdown fallback produced {len(chunks)} chunks (no bbox)")
+            else:
+                with_bbox = sum(1 for c in chunks if c.bbox is not None)
+                with_page = sum(1 for c in chunks if c.page is not None)
+                logger.info(f"[PROCESS] JSON mode produced {len(chunks)} chunks: "
+                            f"{with_bbox} with bbox, {with_page} with page number")
         else:
             # Markdown mode: faster but no bbox info
+            logger.info(f"[PROCESS] Starting Markdown mode for {doc_stream.name}")
             md_text = await _load_with_llamaparse_markdown(tmp_path)
             if not md_text:
                 return []
             chunks = _extract_markdown_tables(md_text, doc_stream.name)
-        
-        return _build_documents(chunks, doc_stream.name)
+
+        docs = _build_documents(chunks, doc_stream.name)
+        docs_with_bbox = sum(1 for d in docs if d.metadata.get("bbox") is not None)
+        logger.info(f"[PROCESS] Final result for {doc_stream.name}: {len(docs)} documents, "
+                    f"{docs_with_bbox} with bbox metadata")
+        return docs
     finally:
         try:
             tmp_path.unlink(missing_ok=True)
