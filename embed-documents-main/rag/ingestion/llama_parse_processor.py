@@ -244,6 +244,25 @@ def _extract_bbox(raw_bbox: dict) -> Optional[dict]:
     return None
 
 
+def _is_full_page_bbox(bbox: dict, page_width: float, page_height: float, threshold: float = 0.90) -> bool:
+    """Check if a bbox covers most of the page (likely not useful for highlighting).
+    
+    Returns True if bbox covers ≥90% of page area and starts near origin.
+    """
+    if not bbox or not page_width or not page_height:
+        return False
+    
+    # Check if bbox starts near origin (within 5 points)
+    near_origin = bbox.get("x", 0) <= 5 and bbox.get("y", 0) <= 5
+    
+    # Check if bbox covers most of the page area
+    bbox_area = bbox.get("w", 0) * bbox.get("h", 0)
+    page_area = page_width * page_height
+    coverage = bbox_area / page_area if page_area > 0 else 0
+    
+    return near_origin and coverage >= threshold
+
+
 def _merge_bboxes(bboxes: list[dict]) -> Optional[dict]:
     """Compute the union (enclosing) bounding box for a list of bboxes.
 
@@ -295,6 +314,9 @@ def _parse_llamaparse_json_elements(json_data: dict, source: str) -> list[ChunkA
     buf_page_width: Optional[float] = None
     buf_page_height: Optional[float] = None
     buf_coord_origin: str = "TOPLEFT"
+    
+    # Maximum bbox coverage before forcing a split (60% of page area)
+    MAX_BBOX_COVERAGE = 0.60
 
     def flush_text_buffer():
         nonlocal buf_texts, buf_bboxes, buf_page, text_index
@@ -321,11 +343,27 @@ def _parse_llamaparse_json_elements(json_data: dict, source: str) -> list[ChunkA
 
     for page_idx, page_data in enumerate(pages):
         page_num = page_data.get("page", page_data.get("page_number", 1))
-        page_width = page_data.get("width", 1.0)
-        page_height = page_data.get("height", 1.0)
+        
+        # Try to get page dimensions from the page itself first
+        page_width = page_data.get("width")
+        page_height = page_data.get("height")
+        
+        # If not present, look for full_page_screenshot in images array
+        if not page_width or not page_height:
+            images = page_data.get("images", [])
+            for img in images:
+                if img.get("type") == "full_page_screenshot":
+                    page_width = img.get("width", 595.0)  # A4 default
+                    page_height = img.get("height", 842.0)
+                    break
+        
+        # Final fallback to A4 dimensions
+        page_width = page_width or 595.0
+        page_height = page_height or 842.0
 
         if page_idx == 0:
             logger.info(f"[PARSE] Page {page_num} keys: {list(page_data.keys())}")
+            logger.info(f"[PARSE] Page dimensions: {page_width} x {page_height}")
 
         items = page_data.get("items", page_data.get("elements", []))
 
@@ -386,6 +424,19 @@ def _parse_llamaparse_json_elements(json_data: dict, source: str) -> list[ChunkA
                 buf_texts.append(text.strip())
                 buf_bboxes.append(bbox)
             else:
+                # Check if adding this item would make bbox too large
+                if buf_bboxes and bbox:
+                    test_bboxes = buf_bboxes + [bbox]
+                    merged = _merge_bboxes(test_bboxes)
+                    if merged and page_width and page_height:
+                        coverage = (merged["w"] * merged["h"]) / (page_width * page_height)
+                        if coverage > MAX_BBOX_COVERAGE:
+                            # Flush current buffer before adding this item
+                            flush_text_buffer()
+                            buf_page = page_num
+                            buf_page_width = page_width
+                            buf_page_height = page_height
+                
                 # Accumulate consecutive text items
                 buf_coord_origin = coord_origin
                 buf_texts.append(text.strip())
@@ -545,13 +596,20 @@ def _build_documents(
         # Add bounding box if available (for PDF viewer highlighting)
         # bbox is in absolute PDF points; page_width/page_height let the
         # consumer normalize or scale as needed for any page size.
+        # Skip full-page bboxes as they're not useful for highlighting specific text
         if chunk.bbox is not None:
-            base_meta["bbox"] = chunk.bbox
-            base_meta["coord_origin"] = chunk.coord_origin
-            if chunk.page_width is not None:
-                base_meta["page_width"] = chunk.page_width
-            if chunk.page_height is not None:
-                base_meta["page_height"] = chunk.page_height
+            is_full_page = _is_full_page_bbox(
+                chunk.bbox, 
+                chunk.page_width or 595.0, 
+                chunk.page_height or 842.0
+            )
+            if not is_full_page:
+                base_meta["bbox"] = chunk.bbox
+                base_meta["coord_origin"] = chunk.coord_origin
+                if chunk.page_width is not None:
+                    base_meta["page_width"] = chunk.page_width
+                if chunk.page_height is not None:
+                    base_meta["page_height"] = chunk.page_height
         
         docs.append(Document(page_content=chunk.text, metadata=base_meta))
 

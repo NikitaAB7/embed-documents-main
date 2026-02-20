@@ -873,7 +873,12 @@ async function openPdfViewer(chunk) {
         bboxPage = pageHint;
     }
     
+    // Get page dimensions for normalization (if stored)
+    const pageWidth = metadata.page_width || null;
+    const pageHeight = metadata.page_height || null;
+    
     console.log('Final bbox:', bbox, 'page:', bboxPage, 'origin:', bboxCoordOrigin);
+    console.log('Page dimensions:', pageWidth, 'x', pageHeight);
 
     try {
         const pdfBytes = await fetchPdfBytes(filename, category);
@@ -891,6 +896,8 @@ async function openPdfViewer(chunk) {
         pdfViewerState.bbox = bbox;
         pdfViewerState.bboxPage = bboxPage;
         pdfViewerState.bboxCoordOrigin = bboxCoordOrigin;
+        pdfViewerState.bboxPageWidth = pageWidth;
+        pdfViewerState.bboxPageHeight = pageHeight;
        
         await renderPdfPage(pdfViewerState.currentPage);
         setPdfLoadingState(false);
@@ -982,7 +989,13 @@ async function renderPdfPage(pageNumber) {
 
     // Draw bbox highlight if on the correct page
     if (pdfViewerState.bbox && pdfViewerState.bboxPage === pageNumber) {
-        drawBboxHighlight(canvas, pdfViewerState.bbox, pdfViewerState.bboxCoordOrigin);
+        drawBboxHighlight(
+            canvas, 
+            pdfViewerState.bbox, 
+            pdfViewerState.bboxCoordOrigin,
+            pdfViewerState.bboxPageWidth,
+            pdfViewerState.bboxPageHeight
+        );
     }
 
     // Update page indicator
@@ -1005,26 +1018,65 @@ function clearHighlightOverlays() {
     overlays.forEach(el => el.remove());
 }
 
-function drawBboxHighlight(canvas, bbox, coordOrigin) {
+function drawBboxHighlight(canvas, bbox, coordOrigin, pageWidth, pageHeight) {
     if (!bbox || !canvas) return;
 
     const pageContainer = document.getElementById('pdf-page-container');
     if (!pageContainer) return;
 
-    // Convert normalized bbox coordinates to pixel coordinates
-    let top, bottom;
-    if (coordOrigin === 'BOTTOMLEFT') {
-        // In BOTTOMLEFT, t is distance from bottom (higher t = closer to top)
-        // Convert to TOPLEFT where 0 is top
-        top = (1 - bbox.t) * canvas.height;
-        bottom = (1 - bbox.b) * canvas.height;
+    console.log('Drawing bbox:', bbox, 'origin:', coordOrigin, 'pageSize:', pageWidth, 'x', pageHeight);
+
+    // Determine bbox format and normalize to pixel coordinates
+    let left, top, width, height;
+    
+    // Check if bbox is in {x, y, w, h} format (absolute PDF points)
+    if (bbox.x !== undefined && bbox.y !== undefined && bbox.w !== undefined && bbox.h !== undefined) {
+        // Absolute PDF points format - need to scale to canvas size
+        const pdfWidth = pageWidth || 595;  // Default A4 width in points
+        const pdfHeight = pageHeight || 842; // Default A4 height in points
+        
+        // Skip full-page bboxes (covers ≥90% of page area and starts near origin)
+        const nearOrigin = bbox.x <= 5 && bbox.y <= 5;
+        const bboxArea = bbox.w * bbox.h;
+        const pageArea = pdfWidth * pdfHeight;
+        const coverage = pageArea > 0 ? bboxArea / pageArea : 0;
+        if (nearOrigin && coverage >= 0.90) {
+            console.log('Skipping full-page bbox (coverage:', (coverage * 100).toFixed(1) + '%)');
+            return;
+        }
+        
+        const scaleX = canvas.width / pdfWidth;
+        const scaleY = canvas.height / pdfHeight;
+        
+        left = bbox.x * scaleX;
+        width = bbox.w * scaleX;
+        
+        if (coordOrigin === 'BOTTOMLEFT') {
+            // y is from bottom in PDF coordinates
+            top = canvas.height - (bbox.y + bbox.h) * scaleY;
+        } else {
+            // y is from top
+            top = bbox.y * scaleY;
+        }
+        height = bbox.h * scaleY;
+    } else if (bbox.l !== undefined && bbox.t !== undefined && bbox.r !== undefined && bbox.b !== undefined) {
+        // Normalized {l, t, r, b} format (0-1 range)
+        if (coordOrigin === 'BOTTOMLEFT') {
+            top = (1 - bbox.t) * canvas.height;
+            const bottom = (1 - bbox.b) * canvas.height;
+            height = bottom - top;
+        } else {
+            top = bbox.t * canvas.height;
+            height = (bbox.b - bbox.t) * canvas.height;
+        }
+        left = bbox.l * canvas.width;
+        width = (bbox.r - bbox.l) * canvas.width;
     } else {
-        // TOPLEFT origin
-        top = bbox.t * canvas.height;
-        bottom = bbox.b * canvas.height;
+        console.warn('Unknown bbox format:', bbox);
+        return;
     }
-    const left = bbox.l * canvas.width;
-    const right = bbox.r * canvas.width;
+    
+    console.log('Computed highlight rect:', left, top, width, height);
 
     // Create highlight overlay div
     const highlight = document.createElement('div');
@@ -1032,8 +1084,8 @@ function drawBboxHighlight(canvas, bbox, coordOrigin) {
     highlight.style.position = 'absolute';
     highlight.style.left = `${left}px`;
     highlight.style.top = `${top}px`;
-    highlight.style.width = `${right - left}px`;
-    highlight.style.height = `${bottom - top}px`;
+    highlight.style.width = `${width}px`;
+    highlight.style.height = `${height}px`;
 
     pageContainer.appendChild(highlight);
 
