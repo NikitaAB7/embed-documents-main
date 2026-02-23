@@ -3,6 +3,7 @@ let allSymbols = [];
 let currentSymbol = null;
 let lastQueryFilters = null;
 let currentChunks = [];
+let currentCitations = []; // Store citations for clickable links
 const pdfCache = new Map();
 let currentRenderTask = null; // Track current PDF render task
 const pdfViewerState = {
@@ -20,6 +21,8 @@ const pdfViewerState = {
     bbox: null,
     bboxPage: null,
     bboxCoordOrigin: null,
+    // Citation ID for scrolling back to chunk
+    citationId: null,
 };
 
 // Initialize app when DOM is loaded
@@ -211,7 +214,12 @@ function displayQueryResults(data, appliedFilters = null) {
         const answerContent = document.getElementById('answer-content');
         const citationsDiv = document.getElementById('citations');
 
-        answerContent.textContent = data.answer;
+        // Store citations globally for click handlers
+        currentCitations = data.citations || [];
+
+        // Make citations clickable in the answer text
+        const answerHtml = makeAnswerCitationsClickable(escapeHtml(data.answer), currentCitations);
+        answerContent.innerHTML = answerHtml;
 
         // Display citations
         if (data.citations && data.citations.length > 0) {
@@ -285,6 +293,103 @@ function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
+}
+
+// Make citation references in answer text clickable
+function makeAnswerCitationsClickable(answerHtml, citations) {
+    console.log('[CITATION DEBUG] makeAnswerCitationsClickable called');
+    console.log('[CITATION DEBUG] citations count:', citations?.length);
+    console.log('[CITATION DEBUG] answerHtml (first 300 chars):', answerHtml?.substring(0, 300));
+    
+    if (!citations || citations.length === 0) {
+        console.log('[CITATION DEBUG] No citations available, returning original');
+        return answerHtml;
+    }
+    
+    // Match [C1], [C2], etc. in the answer text
+    let matchCount = 0;
+    const result = answerHtml.replace(/\[C(\d+)\]/g, (match, num) => {
+        matchCount++;
+        const citationIndex = parseInt(num, 10) - 1;
+        console.log('[CITATION DEBUG] Match #' + matchCount + ':', match, '-> index', citationIndex);
+        
+        if (citationIndex >= 0 && citationIndex < citations.length) {
+            const citation = citations[citationIndex];
+            const tooltipText = (citation.source || 'Source') + (citation.page ? ', Page ' + citation.page : '');
+            return '<a href="#" class="citation-link" data-citation-index="' + citationIndex + '" title="' + tooltipText.replace(/"/g, '&quot;') + '" onclick="openCitationPdf(' + citationIndex + '); return false;">[C' + num + ']</a>';
+        }
+        return match;
+    });
+    
+    console.log('[CITATION DEBUG] Total matches found:', matchCount);
+    console.log('[CITATION DEBUG] Result (first 500 chars):', result?.substring(0, 500));
+    return result;
+}
+
+// Open PDF from citation link clicked in answer
+function openCitationPdf(citationIndex) {
+    console.log('[CITATION PDF] Opening citation index:', citationIndex);
+    
+    if (citationIndex < 0 || citationIndex >= currentCitations.length) {
+        console.warn('[CITATION PDF] Invalid citation index:', citationIndex);
+        return;
+    }
+    
+    const citation = currentCitations[citationIndex];
+    console.log('[CITATION PDF] Citation data:', JSON.stringify(citation, null, 2));
+    
+    const filename = citation.source;
+    const page = parseInt(citation.page, 10) || 1;
+    const bbox = citation.bbox || null;
+    const coordOrigin = citation.coord_origin || citation.bbox?.coord_origin || 'TOPLEFT';
+    const citationId = citation.id || `C${citationIndex + 1}`;
+    
+    console.log('[CITATION PDF] filename:', filename, 'page:', page, 'bbox:', bbox);
+    
+    if (!filename) {
+        console.warn('[CITATION PDF] No source filename for citation:', citation);
+        return;
+    }
+    
+    // Try to find the matching chunk in currentChunks
+    const matchingChunk = currentChunks.find(chunk => {
+        const meta = chunk.metadata || {};
+        const chunkSource = chunk.source || meta.source || '';
+        const chunkPage = parseInt(meta.page || meta.page_no, 10);
+        return chunkSource === filename && chunkPage === page;
+    });
+    
+    console.log('[CITATION PDF] matchingChunk found:', !!matchingChunk);
+    
+    if (matchingChunk) {
+        console.log('[CITATION PDF] Using matching chunk, bbox in chunk:', matchingChunk.metadata?.bbox);
+        // Use existing chunk with bbox data
+        if (bbox && !matchingChunk.metadata?.bbox) {
+            matchingChunk.metadata = matchingChunk.metadata || {};
+            matchingChunk.metadata.bbox = bbox;
+            matchingChunk.metadata.coord_origin = coordOrigin;
+        }
+        openPdfViewer(matchingChunk, citationId).catch(error => {
+            console.error('PDF viewer error:', error);
+            showPdfError('Failed to open PDF: ' + error.message);
+        });
+    } else {
+        // Create synthetic chunk
+        const syntheticChunk = {
+            source: filename,
+            content: `Citation ${citationId} from ${filename}`,
+            metadata: {
+                source: filename,
+                page: page,
+                bbox: bbox,
+                coord_origin: coordOrigin
+            }
+        };
+        openPdfViewer(syntheticChunk, citationId).catch(error => {
+            console.error('PDF viewer error:', error);
+            showPdfError('Failed to open PDF: ' + error.message);
+        });
+    }
 }
 
 // Initialize the application
@@ -700,6 +805,16 @@ function openPdfFromCitation(button) {
         console.warn('Failed to parse bbox:', e);
     }
     
+    // Extract citation ID from the parent card's label
+    let citationId = null;
+    const citationCard = button.closest('.citation-card');
+    if (citationCard) {
+        const labelEl = citationCard.querySelector('.citation-label');
+        if (labelEl) {
+            citationId = labelEl.textContent.trim();
+        }
+    }
+    
     // Try to find the chunk in currentChunks that matches this citation
     const matchingChunk = currentChunks.find(chunk => {
         const meta = chunk.metadata || {};
@@ -715,7 +830,7 @@ function openPdfFromCitation(button) {
             matchingChunk.metadata.bbox = bbox;
             matchingChunk.metadata.coord_origin = coordOrigin;
         }
-        openPdfViewer(matchingChunk).catch(error => {
+        openPdfViewer(matchingChunk, citationId).catch(error => {
             console.error('PDF viewer error:', error);
             showPdfError('Failed to open PDF: ' + error.message);
         });
@@ -731,7 +846,7 @@ function openPdfFromCitation(button) {
                 coord_origin: coordOrigin
             }
         };
-        openPdfViewer(syntheticChunk).catch(error => {
+        openPdfViewer(syntheticChunk, citationId).catch(error => {
             console.error('PDF viewer error:', error);
             showPdfError('Failed to open PDF: ' + error.message);
         });
@@ -780,13 +895,15 @@ function openPdfViewerByIndex(index) {
         alert('Unable to locate this chunk. Please refresh and try again.');
         return;
     }
-    openPdfViewer(chunk).catch(error => {
+    // Pass citation ID (C1, C2, etc.) based on index
+    const citationId = `C${index + 1}`;
+    openPdfViewer(chunk, citationId).catch(error => {
         console.error('PDF viewer error:', error);
         showPdfError('Failed to open PDF: ' + error.message);
     });
 }
 
-async function openPdfViewer(chunk) {
+async function openPdfViewer(chunk, citationId = null) {
     const modal = document.getElementById('pdf-modal');
     if (!modal) return;
 
@@ -898,6 +1015,7 @@ async function openPdfViewer(chunk) {
         pdfViewerState.bboxCoordOrigin = bboxCoordOrigin;
         pdfViewerState.bboxPageWidth = pageWidth;
         pdfViewerState.bboxPageHeight = pageHeight;
+        pdfViewerState.citationId = citationId;
        
         await renderPdfPage(pdfViewerState.currentPage);
         setPdfLoadingState(false);
@@ -994,7 +1112,8 @@ async function renderPdfPage(pageNumber) {
             pdfViewerState.bbox, 
             pdfViewerState.bboxCoordOrigin,
             pdfViewerState.bboxPageWidth,
-            pdfViewerState.bboxPageHeight
+            pdfViewerState.bboxPageHeight,
+            pdfViewerState.citationId
         );
     }
 
@@ -1018,7 +1137,7 @@ function clearHighlightOverlays() {
     overlays.forEach(el => el.remove());
 }
 
-function drawBboxHighlight(canvas, bbox, coordOrigin, pageWidth, pageHeight) {
+function drawBboxHighlight(canvas, bbox, coordOrigin, pageWidth, pageHeight, citationId) {
     if (!bbox || !canvas) return;
 
     const pageContainer = document.getElementById('pdf-page-container');
@@ -1086,6 +1205,19 @@ function drawBboxHighlight(canvas, bbox, coordOrigin, pageWidth, pageHeight) {
     highlight.style.top = `${top}px`;
     highlight.style.width = `${width}px`;
     highlight.style.height = `${height}px`;
+    
+    // Make highlight clickable if we have a citationId
+    if (citationId) {
+        highlight.style.cursor = 'pointer';
+        highlight.title = 'Click to jump to this citation';
+        highlight.addEventListener('click', () => {
+            closePdfModal();
+            // Small delay to let modal close before scrolling
+            setTimeout(() => {
+                scrollToChunk(citationId);
+            }, 100);
+        });
+    }
 
     pageContainer.appendChild(highlight);
 

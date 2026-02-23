@@ -1,0 +1,160 @@
+{
+  "generated_at": "2026-02-23T21:30:00.000000Z",
+  "description": "Cross-company questions for concall documents - testing RAG across multiple companies",
+  "questions": [
+    {
+      "id": "CC-Q1",
+      "question": "What revenue growth did each company report in their latest quarter?",
+      "category": "concall",
+      "question_type": "cross-company",
+      "topics": ["revenue", "growth", "financial performance"]
+    },
+    {
+      "id": "CC-Q2",
+      "question": "What are the operating margin trends mentioned by different companies?",
+      "category": "concall",
+      "question_type": "cross-company",
+      "topics": ["margins", "profitability", "operating efficiency"]
+    },
+    {
+      "id": "CC-Q3",
+      "question": "What capex or capital expenditure plans were announced?",
+      "category": "concall",
+      "question_type": "cross-company",
+      "topics": ["capex", "investments", "expansion"]
+    },
+    {
+      "id": "CC-Q4",
+      "question": "What guidance did management provide for future quarters?",
+      "category": "concall",
+      "question_type": "cross-company",
+      "topics": ["guidance", "outlook", "forecasts"]
+    },
+    {
+      "id": "CC-Q5",
+      "question": "What challenges or headwinds were discussed by management?",
+      "category": "concall",
+      "question_type": "cross-company",
+      "topics": ["challenges", "risks", "headwinds"]
+    },
+    {
+      "id": "CC-Q6",
+      "question": "What new products, services, or initiatives were announced?",
+      "category": "concall",
+      "question_type": "cross-company",
+      "topics": ["products", "innovation", "strategy"]
+    },
+    {
+      "id": "CC-Q7",
+      "question": "What are companies saying about raw material costs and input prices?",
+      "category": "concall",
+      "question_type": "cross-company",
+      "topics": ["raw materials", "costs", "inflation"]
+    },
+    {
+      "id": "CC-Q8",
+      "question": "What debt levels or leverage ratios were mentioned?",
+      "category": "concall",
+      "question_type": "cross-company",
+      "topics": ["debt", "leverage", "balance sheet"]
+    },
+    {
+      "id": "CC-Q9",
+      "question": "What hiring or workforce plans were discussed?",
+      "category": "concall",
+      "question_type": "cross-company",
+      "topics": ["hiring", "workforce", "employees"]
+    },
+    {
+      "id": "CC-Q10",
+      "question": "What market share gains or competitive positioning was mentioned?",
+      "category": "concall",
+      "question_type": "cross-company",
+      "topics": ["market share", "competition", "positioning"]
+    },
+    {
+      "id": "REL-Q1",
+      "question": "What is Reliance's Jio subscriber growth and ARPU trends?",
+      "category": "concall",
+      "question_type": "company-specific",
+      "company": "Reliance Industries",
+      "fincode": 100325,
+      "topics": ["telecom", "subscribers", "ARPU"]
+    },
+    {
+      "id": "REL-Q2",
+      "question": "How is Reliance Retail segment performing in terms of revenue and store expansion?",
+      "category": "concall",
+      "question_type": "company-specific",
+      "company": "Reliance Industries",
+      "fincode": 100325,
+      "topics": ["retail", "stores", "revenue"]
+    },
+    {
+      "id": "REL-Q3",
+      "question": "What updates did Reliance provide on their new energy and green hydrogen initiatives?",
+      "category": "concall",
+      "question_type": "company-specific",
+      "company": "Reliance Industries",
+      "fincode": 100325,
+      "topics": ["new energy", "green hydrogen", "sustainability"]
+    },
+    {
+      "id": "REL-Q4",
+      "question": "What is the refining margin (GRM) for Reliance's O2C business?",
+      "category": "concall",
+      "question_type": "company-specific",
+      "company": "Reliance Industries",
+      "fincode": 100325,
+      "topics": ["refining", "GRM", "petrochemicals"]
+    },
+    {
+      "id": "FAIR-Q1",
+      "question": "What is Fairchem Organics' revenue and margin performance in specialty chemicals?",
+      "category": "concall",
+      "question_type": "company-specific",
+      "company": "Fairchem Organics",
+      "fincode": 299773,
+      "topics": ["specialty chemicals", "revenue", "margins"]
+    },
+    {
+      "id": "BAJAJ-Q1",
+      "question": "How is Bajaj Consumer Care's hair oil portfolio performing?",
+      "category": "concall",
+      "question_type": "company-specific",
+      "company": "Bajaj Consumer Care",
+      "fincode": 220519,
+      "topics": ["hair oil", "FMCG", "brands"]
+    },
+    {
+      "id": "BAJAJ-Q2",
+      "question": "What is Bajaj Consumer Care's rural vs urban demand trend?",
+      "category": "concall",
+      "question_type": "company-specific",
+      "company": "Bajaj Consumer Care",
+      "fincode": 220519,
+      "topics": ["rural", "urban", "demand"]
+    },
+    {
+      "id": "CC-Q11",
+      "question": "What are companies' plans for dividend distribution or share buybacks?",
+      "category": "concall",
+      "question_type": "cross-company",
+      "topics": ["dividends", "buyback", "capital allocation"]
+    },
+    {
+      "id": "CC-Q12",
+      "question": "What export growth or international expansion plans were discussed?",
+      "category": "concall",
+      "question_type": "cross-company",
+      "topics": ["exports", "international", "global expansion"]
+    },
+    {
+      "id": "CC-Q13",
+      "question": "What EBITDA or PAT growth numbers were reported?",
+      "category": "concall",
+      "question_type": "cross-company",
+      "topics": ["EBITDA", "PAT", "profit"]
+    }
+  ]
+}

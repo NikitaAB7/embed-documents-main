@@ -53,6 +53,8 @@ class AnswerSynthesizer:
             chunk_id = meta.get("chunk_id")
             ref_chunk_id = meta.get("reference_chunk_id")
             page = _extract_page(meta, doc.page_content)
+            bbox = meta.get("bbox")
+            coord_origin = meta.get("coord_origin", "TOPLEFT")
             citation_map.append(
                 {
                     "id": citation_id,
@@ -60,6 +62,8 @@ class AnswerSynthesizer:
                     "page": page,
                     "chunk_id": chunk_id,
                     "reference_chunk_id": ref_chunk_id,
+                    "bbox": bbox,
+                    "coord_origin": coord_origin,
                 }
             )
             context_lines.append(
