@@ -37,6 +37,10 @@ class QueryRequest(BaseModel):
     query: str = Field(..., description="User query")
     top_k: Optional[int] = Field(None, description="Number of results to return")
     use_hyde: bool = Field(True, description="Whether to use HYDE for retrieval")
+    use_dynamic_filters: bool = Field(
+        False,
+        description="Use LLM to dynamically extract filters from query",
+    )
     synthesize: bool = Field(True, description="Whether to synthesize an answer")
     strict_citations: bool = Field(
         False, description="Validate sentence-level citations"
@@ -48,7 +52,7 @@ class QueryRequest(BaseModel):
         False, description="Run an LLM-based faithfulness check"
     )
     filters: Optional["QueryFilters"] = Field(
-        None, description="Metadata filters for retrieval"
+        None, description="Metadata filters for retrieval (merged with dynamic filters)"
     )
 
 
@@ -78,6 +82,19 @@ class RetrievedChunk(BaseModel):
     metadata: Optional[dict] = Field(None, description="Raw metadata")
 
 
+class ExtractedFiltersResponse(BaseModel):
+    """Response containing LLM-extracted filters from query."""
+
+    fincode: Optional[int] = Field(None, description="Extracted company fincode")
+    symbol: Optional[str] = Field(None, description="Extracted stock symbol")
+    company_name: Optional[str] = Field(None, description="Extracted company name")
+    category: Optional[str] = Field(None, description="Extracted document category")
+    date_from: Optional[str] = Field(None, description="Extracted start date")
+    date_to: Optional[str] = Field(None, description="Extracted end date")
+    confidence: float = Field(0.0, description="Confidence in extracted filters")
+    reasoning: str = Field("", description="LLM's reasoning for filter extraction")
+
+
 class QueryResponse(BaseModel):
     """Query response from retrieval pipeline."""
 
@@ -90,3 +107,6 @@ class QueryResponse(BaseModel):
     validation: Optional[dict] = None
     structured_answer: Optional[dict] = None
     faithfulness_score: Optional[float] = None
+    extracted_filters: Optional[ExtractedFiltersResponse] = Field(
+        None, description="Filters extracted dynamically from query by LLM"
+    )

@@ -14,9 +14,15 @@ from rag.ingestion.document_fetcher import DocumentFetcher
 from rag.ingestion.document_tracker import DocumentTracker
 from rag.retrieval.pipeline import RetrievalPipeline
 from rag.retrieval.answer_synthesizer import AnswerSynthesizer
-from rag.schemas.rag_schemas import QueryRequest, QueryResponse, RetrievedChunk
+from rag.schemas.rag_schemas import (
+    ExtractedFiltersResponse,
+    QueryRequest,
+    QueryResponse,
+    RetrievedChunk,
+)
 from utils.data_helpers import (
     get_metadata_item_by_attachment_name,
+    get_symbol_map,
     initialize_metadata_data,
     initialize_stock_data,
 )
@@ -40,7 +46,7 @@ app = FastAPI(
 # Initialize document tracker and fetcher
 tracker = DocumentTracker()
 fetcher = DocumentFetcher()
-retrieval_pipeline = RetrievalPipeline()
+retrieval_pipeline = RetrievalPipeline(use_dynamic_filters=True)
 answer_synthesizer = AnswerSynthesizer()
 
 
@@ -55,6 +61,17 @@ async def startup_event():
     # Initialize stock and metadata mappings
     await initialize_stock_data()
     await initialize_metadata_data()
+
+    # Update retrieval pipeline with symbol lookup for dynamic filters
+    try:
+        symbol_map = get_symbol_map()
+        if symbol_map:
+            retrieval_pipeline.symbol_lookup = symbol_map
+            if retrieval_pipeline.dynamic_router:
+                retrieval_pipeline.dynamic_router.symbol_lookup = symbol_map
+            logger.info(f"Loaded {len(symbol_map)} symbols for dynamic filter routing")
+    except RuntimeError:
+        logger.warning("Symbol map not available, dynamic filter routing will work without fincode resolution")
 
     logger.info("Application startup complete")
 
@@ -298,12 +315,21 @@ async def get_categories():
 
 @app.post("/api/query", response_model=QueryResponse)
 async def query_documents(request: QueryRequest):
-    """Run retrieval pipeline (router -> hybrid -> rerank -> RRF -> HYDE)."""
+    """Run retrieval pipeline with optional dynamic filter extraction.
+
+    When use_dynamic_filters=True, the LLM analyzes the query to extract
+    metadata filters (symbol, category, date range) automatically.
+    """
     try:
         filters = request.filters.model_dump() if request.filters else None
         retrieval_pipeline.use_hyde = request.use_hyde
+
+        # Enable dynamic filter extraction if requested
         result = await retrieval_pipeline.retrieve(
-            request.query, k=request.top_k, filters=filters
+            request.query,
+            k=request.top_k,
+            filters=filters,
+            use_dynamic_filters=request.use_dynamic_filters,
         )
 
         chunks: list[RetrievedChunk] = []
@@ -338,6 +364,21 @@ async def query_documents(request: QueryRequest):
             structured_answer = synthesis.structured_answer
             faithfulness_score = synthesis.faithfulness_score
 
+        # Build extracted filters response if available
+        extracted_filters_response = None
+        if result.extracted_filters:
+            ef = result.extracted_filters
+            extracted_filters_response = ExtractedFiltersResponse(
+                fincode=ef.fincode,
+                symbol=ef.symbol,
+                company_name=ef.company_name,
+                category=ef.category,
+                date_from=ef.date_from,
+                date_to=ef.date_to,
+                confidence=ef.confidence,
+                reasoning=ef.reasoning,
+            )
+
         return QueryResponse(
             use_rag=result.route.use_rag,
             confidence=result.route.confidence,
@@ -348,6 +389,7 @@ async def query_documents(request: QueryRequest):
             validation=validation,
             structured_answer=structured_answer,
             faithfulness_score=faithfulness_score,
+            extracted_filters=extracted_filters_response,
         )
 
     except Exception as e:
