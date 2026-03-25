@@ -18,9 +18,15 @@ logger = logging.getLogger(__name__)
 class DocumentFetcher:
     """Fetch and cache corporate documents from the API."""
 
-    def __init__(self):
+    def __init__(
+        self,
+        max_pdf_retries: int = 3,
+        initial_backoff_seconds: float = 1.0,
+    ):
         """Initialize document fetcher with API client."""
         self.api = DefineEdgeFundamentalsAPI()
+        self.max_pdf_retries = max(1, max_pdf_retries)
+        self.initial_backoff_seconds = max(0.1, initial_backoff_seconds)
 
     async def get_available_documents(
         self,
@@ -95,19 +101,43 @@ class DocumentFetcher:
         Returns:
             PDF content as bytes
         """
-        try:
-            response = await self.api.get_file_by_category_and_attachment_name(
-                sub_cat_name=category, attachment_ame=filename
-            )
+        attempt = 1
+        delay = self.initial_backoff_seconds
 
-            pdf_content = response.content
-            buf = BytesIO(pdf_content)
+        while True:
+            try:
+                response = await self.api.get_file_by_category_and_attachment_name(
+                    sub_cat_name=category, attachment_ame=filename
+                )
 
-            return DocumentStream(name=filename, stream=buf)
+                pdf_content = response.content
+                buf = BytesIO(pdf_content)
 
-        except Exception as e:
-            logger.error(f"Failed to fetch document {filename}: {e}")
-            raise
+                return DocumentStream(name=filename, stream=buf)
+
+            except asyncio.CancelledError:
+                raise
+            except Exception as e:
+                if attempt >= self.max_pdf_retries:
+                    logger.error(
+                        "Failed to fetch document %s after %s attempts: %s",
+                        filename,
+                        attempt,
+                        e,
+                    )
+                    raise
+
+                logger.warning(
+                    "Attempt %s/%s failed for %s (%s). Retrying in %.1fs",
+                    attempt,
+                    self.max_pdf_retries,
+                    filename,
+                    e,
+                    delay,
+                )
+                await asyncio.sleep(delay)
+                attempt += 1
+                delay *= 2
 
     async def save_document_to_disk(
         self, filename: str, category: str, output_dir: str = ".cache/rag_pdfs_disk"

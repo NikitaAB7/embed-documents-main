@@ -85,7 +85,9 @@ class QdrantManager:
             raise ValueError(
                 "Qdrant URL not provided. Set QDRANT_URL environment variable."
             )
-        if not self.api_key:
+        # API key is optional for local Qdrant instances
+        self._is_local = "localhost" in self.url or "127.0.0.1" in self.url
+        if not self.api_key and not self._is_local:
             raise ValueError(
                 "Qdrant API key not provided. Set QDRANT_API_KEY environment variable."
             )
@@ -118,6 +120,12 @@ class QdrantManager:
         if self._client is None:
             # Initialize client in thread pool to avoid blocking
             def _create_client():
+                # For local instances, don't pass api_key and disable gRPC
+                if self._is_local:
+                    return QdrantClient(
+                        url=self.url,
+                        prefer_grpc=False,  # HTTP works better for local
+                    )
                 return QdrantClient(
                     url=self.url,
                     api_key=self.api_key,
@@ -335,11 +343,15 @@ class QdrantManager:
             logger.info(f"Successfully embedded {total_embedded} documents")
 
             # Track embedded documents in SQLite for fast future lookups
-            # Group documents by source to get counts
+            # Group documents by source to get counts and collect metadata
             source_counts = {}
+            source_metadata = {}
             for doc in documents:
                 source = doc.metadata.get("source", "unknown")
                 source_counts[source] = source_counts.get(source, 0) + 1
+                # Store first document's metadata for each source
+                if source not in source_metadata:
+                    source_metadata[source] = doc.metadata.copy()
 
             # Mark each unique source as embedded in tracker
             for source, count in source_counts.items():
@@ -354,6 +366,7 @@ class QdrantManager:
                     document_count=count,
                     total_tokens=source_tokens,
                     embedding_cost_usd=source_cost,
+                    metadata=source_metadata.get(source),
                 )
 
             logger.info(

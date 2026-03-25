@@ -1,0 +1,410 @@
+{
+  "dataset_name": "rag_eval",
+  "num_examples": 15,
+  "summary": {
+    "answer_relevance": {
+      "mean": 0.8000000000000002,
+      "min": 0.0,
+      "max": 1.0,
+      "pass_rate": 0.8
+    },
+    "context_relevance": {
+      "mean": 0.3466666666666667,
+      "min": 0.0,
+      "max": 0.7,
+      "pass_rate": 0.4
+    },
+    "faithfulness": {
+      "mean": 0.7733333333333333,
+      "min": 0.0,
+      "max": 1.0,
+      "pass_rate": 0.8666666666666667
+    }
+  },
+  "results": {
+    "answer_relevance": [
+      {
+        "score": 0.9,
+        "reasoning": "The answer directly addresses the question by stating that there is no available information regarding the concall document for TMPV dated 2024-05-16. It clearly communicates the lack of data, which is relevant to the inquiry about key highlights.",
+        "metadata": {
+          "evaluator": "answer_relevance"
+        }
+      },
+      {
+        "score": 0.2,
+        "reasoning": "The answer acknowledges the lack of information regarding SBIN's investor-presentation document and offers to help if the document is provided. However, it does not summarize any updates or directly address the question, making it only partially relevant.",
+        "metadata": {
+          "evaluator": "answer_relevance"
+        }
+      },
+      {
+        "score": 1.0,
+        "reasoning": "The answer directly addresses the question by stating that there is no available information regarding the TMPV investor-presentation document dated 2025-01-29. It clearly explains the lack of relevant context and confirms that the guidance or outlook for TMPV cannot be provided based on the available materials.",
+        "metadata": {
+          "evaluator": "answer_relevance"
+        }
+      },
+      {
+        "score": 0.2,
+        "reasoning": "The answer acknowledges the lack of specific information regarding the SBIN investor presentation, which is relevant to the question. However, it does not provide any insights or context about SBIN or its investor presentation, leading to a low relevance score.",
+        "metadata": {
+          "evaluator": "answer_relevance"
+        }
+      },
+      {
+        "score": 1.0,
+        "reasoning": "The answer directly addresses the question by providing key highlights from the investor-presentation document dated 2024-01-19 for RELIANCE. It includes specific financial metrics and achievements related to the company's performance, which are relevant to the inquiry.",
+        "metadata": {
+          "evaluator": "answer_relevance"
+        }
+      },
+      {
+        "score": 1.0,
+        "reasoning": "The answer provides a comprehensive summary of the major financial and operational updates from Reliance's investor presentation dated October 17, 2025. It includes specific financial metrics, performance highlights, and operational strategies, directly addressing the question.",
+        "metadata": {
+          "evaluator": "answer_relevance"
+        }
+      },
+      {
+        "score": 0.8,
+        "reasoning": "The answer effectively addresses the question by stating that there is no direct reference to the TMPV investor-presentation document dated 2025-06-09. It also provides relevant context about previous guidance from a December 2024 presentation, which is pertinent to understanding the company's outlook. However, it ultimately does not provide the specific information requested, which slightly reduces its relevance.",
+        "metadata": {
+          "evaluator": "answer_relevance"
+        }
+      },
+      {
+        "score": 1.0,
+        "reasoning": "The answer directly addresses the question by summarizing the key topics discussed in the concall document for SUNPHARMA on the specified date. It provides specific details about financial performance, business segments, market conditions, and management responses, which are all relevant to the inquiry.",
+        "metadata": {
+          "evaluator": "answer_relevance"
+        }
+      },
+      {
+        "score": 1.0,
+        "reasoning": "The answer directly addresses the question by providing detailed key highlights from the ITC annual report dated 2024-06-28. It covers various segments of the business, including Retail, Digital Services, O2C, and Electronics, and presents relevant financial metrics and operational achievements, which are essential components of an annual report.",
+        "metadata": {
+          "evaluator": "answer_relevance"
+        }
+      },
+      {
+        "score": 0.0,
+        "reasoning": "The answer explicitly states that there is no information available regarding INFY's concall document for the specified date, which directly addresses the question by indicating a lack of relevant content. However, it does not provide any summary or updates, making it completely irrelevant to the request for a summary.",
+        "metadata": {
+          "evaluator": "answer_relevance"
+        }
+      },
+      {
+        "score": 1.0,
+        "reasoning": "The answer directly addresses the question by stating that there is no explicit guidance or outlook in the concall document for RELIANCE dated 2024-10-15. It clearly explains the absence of forward-looking statements and provides context about the content of the document, making it highly relevant.",
+        "metadata": {
+          "evaluator": "answer_relevance"
+        }
+      },
+      {
+        "score": 1.0,
+        "reasoning": "The answer directly addresses the question by summarizing the key topics discussed in the concall document for INFY on the specified date. It includes relevant details about financial results, management representation, compliance with regulations, and specific discussions during the Q&A session, all of which are pertinent to the inquiry.",
+        "metadata": {
+          "evaluator": "answer_relevance"
+        }
+      },
+      {
+        "score": 1.0,
+        "reasoning": "The answer provides a comprehensive summary of the key highlights from the Reliance concall document dated April 23, 2024. It addresses the question directly by outlining major milestones, retail business performance, segmental and operational highlights, and the structure of the concall, which are all relevant to understanding the key points discussed in the document.",
+        "metadata": {
+          "evaluator": "answer_relevance"
+        }
+      },
+      {
+        "score": 1.0,
+        "reasoning": "The answer provides a comprehensive summary of the major financial and operational updates from Reliance's concall document dated October 19, 2025. It includes specific financial metrics, segment performance details, and operational highlights, directly addressing the question.",
+        "metadata": {
+          "evaluator": "answer_relevance"
+        }
+      },
+      {
+        "score": 0.9,
+        "reasoning": "The answer directly addresses the question by stating that there is no information available regarding the TMPV investor-presentation document dated 2025-05-13. It clearly explains the lack of relevant context and guidance, making it highly relevant to the question asked.",
+        "metadata": {
+          "evaluator": "answer_relevance"
+        }
+      }
+    ],
+    "context_relevance": [
+      {
+        "score": 0.0,
+        "reasoning": "None of the retrieved contexts pertain to the concall document dated 2024-05-16 for TMPV. The contexts provided are related to different companies and dates, primarily focusing on conference calls and financial results from 2025. Therefore, they do not contain the key highlights requested for TMPV's concall.",
+        "metadata": {
+          "evaluator": "context_relevance",
+          "num_contexts": 10
+        }
+      },
+      {
+        "score": 0.7,
+        "reasoning": "Contexts 4, 6, and 8 provide relevant financial and operational updates that could summarize the major points from SBIN's investor-presentation document. Context 4 discusses operational excellence and financial results, while Context 6 mentions the cash position and dividends, which are important financial metrics. Context 8 likely contains financial highlights, although it is not detailed. Contexts 1, 2, and 3 are related to earnings calls but do not directly summarize the investor-presentation document. Contexts 5, 7, 9, and 10 are less relevant as they pertain to other companies or specific operational details not directly related to SBIN's financial updates.",
+        "metadata": {
+          "evaluator": "context_relevance",
+          "num_contexts": 10
+        }
+      },
+      {
+        "score": 0.3,
+        "reasoning": "Context 3 is somewhat relevant as it discusses guidance provided in a previous presentation for FY '25 and '26, which may relate to the investor-presentation document in question. However, it does not directly address the guidance or outlook stated in the TMPV document dated 2025-01-29. The other contexts (1, 2, 4, 5, 6, 7, 8, 9, 10) do not provide relevant information regarding the specific guidance or outlook from the TMPV investor presentation, focusing instead on other companies or unrelated topics.",
+        "metadata": {
+          "evaluator": "context_relevance",
+          "num_contexts": 10
+        }
+      },
+      {
+        "score": 0.2,
+        "reasoning": "The retrieved contexts primarily focus on financial results and presentations from different companies, particularly RIL, which are not directly related to SBIN's investor presentation. Context 1 discusses a conference call for financial results in 2025, while Context 2 mentions financial results for 2023 and 4Q of FY 2024, which may be somewhat relevant but does not specifically address the SBIN investor presentation. Context 3 touches on corporate offerings but lacks direct relevance to SBIN's key topics. The other contexts (4-10) are not relevant to SBIN at all. Overall, there is minimal relevant information regarding SBIN's investor presentation.",
+        "metadata": {
+          "evaluator": "context_relevance",
+          "num_contexts": 10
+        }
+      },
+      {
+        "score": 0.2,
+        "reasoning": "None of the retrieved contexts directly address the key highlights from the investor-presentation document dated 2024-01-19 for RELIANCE. Context 1 mentions a presentation to analysts but does not provide specific highlights from the requested date. Contexts 2 and 3 refer to future events in 2025, while Context 4 discusses financial results but does not relate to the specific date or document requested. The remaining contexts are irrelevant as they pertain to 2020.",
+        "metadata": {
+          "evaluator": "context_relevance",
+          "num_contexts": 10
+        }
+      },
+      {
+        "score": 0.6,
+        "reasoning": "Contexts 1, 2, 3, 5, and 6 provide relevant information regarding the financial and operational performance of Reliance Industries, including details about earnings calls and financial metrics. Context 3 specifically summarizes operational performance and growth, which is directly related to the question. However, some contexts (like 7, 8, 9, and 10) do not provide relevant information about the 2025 investor presentation, which lowers the overall relevance score.",
+        "metadata": {
+          "evaluator": "context_relevance",
+          "num_contexts": 10
+        }
+      },
+      {
+        "score": 0.2,
+        "reasoning": "The retrieved contexts do not directly address the specific guidance or outlook stated in the investor-presentation document for TMPV dated 2025-06-09. Context 3 mentions guidance from a previous PPT in December 2024, but it does not provide information from the requested date. The other contexts primarily focus on conference call transcripts and discussions that do not relate to the specific investor presentation in question.",
+        "metadata": {
+          "evaluator": "context_relevance",
+          "num_contexts": 10
+        }
+      },
+      {
+        "score": 0.0,
+        "reasoning": "None of the retrieved contexts pertain to the SUNPHARMA concall document from May 29, 2024. The contexts are related to different companies and dates, specifically focusing on earnings calls for Camlin Fine Sciences, Bajaj Consumer, and others, all dated in November 2025. Therefore, they do not provide any relevant information regarding the key topics discussed in the SUNPHARMA concall.",
+        "metadata": {
+          "evaluator": "context_relevance",
+          "num_contexts": 10
+        }
+      },
+      {
+        "score": 0.6,
+        "reasoning": "Contexts 1, 2, 4, 5, and 7 provide relevant highlights about business segments and financial performance, which could relate to the key highlights in the annual report for ITC. However, Contexts 3, 6, 8, 9, and 10 are focused on future events or results from 2025, which do not pertain to the 2024 annual report, making them less relevant.",
+        "metadata": {
+          "evaluator": "context_relevance",
+          "num_contexts": 10
+        }
+      },
+      {
+        "score": 0.6,
+        "reasoning": "Contexts 3, 8, and 9 provide relevant information regarding financial and operational updates from the earnings call, including key financial highlights and performance metrics. Context 1 and Context 2 mention the earnings call but do not provide specific updates. Context 4 and Context 6 are unrelated to INFY and its financial updates. Context 5 is too vague to assess relevance. Overall, while some contexts are relevant, others detract from the overall relevance.",
+        "metadata": {
+          "evaluator": "context_relevance",
+          "num_contexts": 10
+        }
+      },
+      {
+        "score": 0.3,
+        "reasoning": "The retrieved contexts do not directly address the guidance or outlook stated in the concall document for RELIANCE dated 2024-10-15. Context 1 mentions guidance for FY '25 and '26 but does not provide specific details from the requested date. Contexts 2, 4, 5, 6, 7, and 8 are related to financial performance but do not contain the specific guidance or outlook for the date in question. Context 3 provides some financial highlights but lacks direct relevance to the specific guidance sought.",
+        "metadata": {
+          "evaluator": "context_relevance",
+          "num_contexts": 10
+        }
+      },
+      {
+        "score": 0.0,
+        "reasoning": "None of the retrieved contexts pertain to the INFY concall document dated January 21, 2025. The contexts provided are related to different companies and dates, such as Bajaj Consumer and other unrelated financial discussions. Therefore, they do not address the key topics discussed in the specific concall for INFY.",
+        "metadata": {
+          "evaluator": "context_relevance",
+          "num_contexts": 10
+        }
+      },
+      {
+        "score": 0.6,
+        "reasoning": "Context 1 provides the date and setting of the concall, which is relevant for identifying the document. Context 2 contains key performance highlights for Reliance Retail, which is pertinent to the question about key highlights from the concall. Context 5 also discusses significant financial milestones, which are relevant highlights. However, Contexts 3, 4, 6, 8, 9, and 10 do not provide specific highlights from the April 23, 2024 concall, making them less relevant. Overall, while some contexts are useful, not all directly answer the question.",
+        "metadata": {
+          "evaluator": "context_relevance",
+          "num_contexts": 10
+        }
+      },
+      {
+        "score": 0.7,
+        "reasoning": "Contexts 2, 4, 7, and 8 provide specific financial and operational updates relevant to RELIANCE's performance, including revenue, EBITDA, and profit figures. Context 1 mentions the earnings call but lacks specific updates. Context 3 outlines the structure of the call but does not provide content. Context 6 is about a different earnings call, making it irrelevant. Overall, while some contexts are directly relevant, others do not contribute to answering the question.",
+        "metadata": {
+          "evaluator": "context_relevance",
+          "num_contexts": 10
+        }
+      },
+      {
+        "score": 0.2,
+        "reasoning": "None of the retrieved contexts directly address the guidance or outlook stated in the investor-presentation document for TMPV dated 2025-05-13. Contexts 1, 2, 4, 6, and 8 discuss earnings calls and financial performance but do not provide specific guidance from the requested document. Contexts 3, 5, 7, 9, and 10 are unrelated to TMPV or do not contain relevant information about the guidance for the specified date.",
+        "metadata": {
+          "evaluator": "context_relevance",
+          "num_contexts": 10
+        }
+      }
+    ],
+    "faithfulness": [
+      {
+        "score": 1.0,
+        "reasoning": [],
+        "metadata": {
+          "evaluator": "faithfulness"
+        }
+      },
+      {
+        "score": 0.0,
+        "reasoning": [
+          "The answer states that the provided contexts do not contain any information or summary from SBIN's (State Bank of India) investor-presentation document dated 2025-05-03. This claim is accurate and supported by the contexts, as none of the contexts mention SBIN or its investor-presentation document.",
+          "The answer suggests that if the relevant document or its contents are provided, a summary can be made. This is a reasonable statement but does not provide any information about SBIN's financial or operational updates, which is the main focus of the question."
+        ],
+        "metadata": {
+          "evaluator": "faithfulness"
+        }
+      },
+      {
+        "score": 1.0,
+        "reasoning": [],
+        "metadata": {
+          "evaluator": "faithfulness"
+        }
+      },
+      {
+        "score": 1.0,
+        "reasoning": [],
+        "metadata": {
+          "evaluator": "faithfulness"
+        }
+      },
+      {
+        "score": 0.9,
+        "reasoning": [
+          "The answer mentions the investor-presentation document dated 2024-01-19, but the contexts provided do not contain any information from that specific date. The closest context is from April 23, 2024, which discusses financial results for the year ended March 31, 2024.",
+          "The specific figures for EBITDA, PBT, and net profit mentioned in the answer are consistent with the information in context [4], but the answer does not explicitly state that these figures are from the January 2024 presentation, which is a potential misalignment.",
+          "The claims about JPL and RRVL's revenue and net profit, as well as the 5G rollout, are supported by context [4], but the answer does not clarify that these figures are derived from the April 2024 presentation, which could lead to confusion regarding the date of the information."
+        ],
+        "metadata": {
+          "evaluator": "faithfulness"
+        }
+      },
+      {
+        "score": 1.0,
+        "reasoning": [],
+        "metadata": {
+          "evaluator": "faithfulness"
+        }
+      },
+      {
+        "score": 0.8,
+        "reasoning": [
+          "The answer correctly states that there is no direct reference to a TMPV investor-presentation document dated 2025-06-09 in the provided contexts.",
+          "The answer mentions a December 2024 PPT that provided guidance for FY '25 and '26, which is supported by context [3].",
+          "The answer claims that there is no confirmation or update from a June 2025 investor presentation, which is accurate based on the provided contexts.",
+          "However, the answer could be seen as slightly misleading because it implies a lack of any guidance or outlook from TMPV, while it does acknowledge previous guidance from December 2024, which could be interpreted as relevant context for understanding TMPV's outlook."
+        ],
+        "metadata": {
+          "evaluator": "faithfulness"
+        }
+      },
+      {
+        "score": 0.0,
+        "reasoning": [
+          "The answer claims that the concall document for SUNPHARMA on 2024-05-29 discussed a revenue of around Rs. 460 crores, representing an 8.6% growth over the previous quarter. However, the provided contexts do not mention SUNPHARMA or any financial results for that date.",
+          "The answer references specific business segments such as trades and blends vertical, TBHQ, BHA, and Aroma vertical, but these details are not found in the provided contexts, which focus on Camlin Fine Sciences and other companies, not SUNPHARMA.",
+          "The answer mentions discussions about channel inventory for Vanillin and the status of de-stocking, but again, this information is not present in the provided contexts."
+        ],
+        "metadata": {
+          "evaluator": "faithfulness"
+        }
+      },
+      {
+        "score": 0.6,
+        "reasoning": [
+          "The answer mentions specific figures for revenue and EBITDA growth in the Retail Segment (18% and 29% respectively), which are not explicitly supported by the provided contexts.",
+          "The claim about footfalls reaching 1 billion and being 36% higher is not found in the contexts.",
+          "The addition of 796 new stores and the operational area expansion to 79.1 million sq. ft. is not verified in the contexts.",
+          "The details about the Digital Services segment, including subscriber numbers and the transition to Jio True5G, are not supported by the contexts provided.",
+          "The O2C segment's EBITDA figure of \u20b962,393 crore is not mentioned in the contexts, nor is the specific mention of a 0.5% increase.",
+          "The Electronics Segment claims regarding average bill values, sales growth, and the resQ service network expansion are not found in the contexts."
+        ],
+        "metadata": {
+          "evaluator": "faithfulness"
+        }
+      },
+      {
+        "score": 1.0,
+        "reasoning": [],
+        "metadata": {
+          "evaluator": "faithfulness"
+        }
+      },
+      {
+        "score": 0.9,
+        "reasoning": [
+          "The answer correctly states that there is no explicit guidance or outlook mentioned in the provided contexts for the concall document dated 2024-10-15.",
+          "The answer accurately reflects that the contexts discuss past performance and milestones without providing forward-looking statements.",
+          "However, the answer could be slightly misleading as it implies a definitive absence of any guidance, while context [1] does reference guidance given in a PPT for FY '25 and '26, albeit not directly from the concall document in question."
+        ],
+        "metadata": {
+          "evaluator": "faithfulness"
+        }
+      },
+      {
+        "score": 0.6,
+        "reasoning": [
+          "The answer mentions a review of Un-audited Financial Results for the quarter and half year ended September 30, 2025, which is supported by context [1].",
+          "The representation by the management team is also mentioned in context [1], which is accurate.",
+          "The assurance that only publicly available information was discussed is supported by context [1].",
+          "The discussion of financial performance, including profit and loss, debt situation, and balance sheet highlights, is partially supported by context [5], but the specific details about recovery from a loss and expectations of further improvement are not explicitly stated in the provided contexts.",
+          "The mention of stable gross debt and loan repayment is also supported by context [5], but the context does not provide specific details about working capital requirements or interest costs remaining stable.",
+          "The Q&A session details about channel inventory for Vanillin and de-stocking are mentioned in context [4], but the broader questions about the company's growth path and financial outlook for the year are not supported by the provided contexts."
+        ],
+        "metadata": {
+          "evaluator": "faithfulness"
+        }
+      },
+      {
+        "score": 0.9,
+        "reasoning": [
+          "The claim that Reliance crossed \u20b91,75,000 crore in EBITDA, over \u20b91,00,000 crore in PBT, and a market capitalization exceeding \u20b920,00,000 crore is not explicitly supported by the provided contexts. While context [5] mentions EBITDA and net profit figures, it does not provide specific figures for market capitalization or PBT.",
+          "The statement about JPL surpassing \u20b91,00,000 crore in revenue and \u20b920,000 crore in net profit is not directly supported by the contexts. Context [5] mentions JPL's performance but does not provide specific revenue and profit figures.",
+          "The claim that RRVL crossed \u20b93,00,000 crore in revenue and over \u20b910,000 crore in net profit is not explicitly supported by the contexts. Context [2] provides some figures for Reliance Retail but does not confirm these specific numbers.",
+          "The mention of a 5-year CAGR of 30% for the consumer business is not supported by the contexts provided."
+        ],
+        "metadata": {
+          "evaluator": "faithfulness"
+        }
+      },
+      {
+        "score": 0.9,
+        "reasoning": [
+          "The answer states that Reliance crossed significant milestones for FY 2023-24, including EBITDA exceeding \u20b91,75,000 crore, PBT surpassing \u20b91,00,000 crore, and market capitalization crossing \u20b920,00,000 crore. These claims are supported by context [2].",
+          "The net profit for the year being \u20b979,000 crore, up 7.3% YoY, and EBITDA growing 16% YoY to \u20b91,79,000 crore are also supported by context [2].",
+          "The consumer business EBITDA approaching \u20b980,000 crore, up nearly 17% YoY, with a 5-year CAGR of 30% is supported by context [2].",
+          "The performance of Reliance Jio Platforms Limited (JPL) and Reliance Retail Ventures Limited (RRVL) regarding revenue and net profit figures is also supported by context [2] and [4].",
+          "The growth rates for different segments in Reliance Retail, including grocery, fashion & lifestyle, and consumer electronics, are supported by context [4].",
+          "The claims about the retail segment's EBITDA margin improvements and the contribution of digital and e-commerce to retail revenue are also supported by context [4].",
+          "The operational updates regarding sequential performance in retail and O2C, as well as Jio's ARPU increase, are supported by context [7] and [8].",
+          "However, the specific mention of the date 'October 19, 2025' in the question does not match the actual date of the concall, which is November 11, 2025, as indicated in context [1]. This discrepancy affects the overall faithfulness of the answer."
+        ],
+        "metadata": {
+          "evaluator": "faithfulness"
+        }
+      },
+      {
+        "score": 1.0,
+        "reasoning": [],
+        "metadata": {
+          "evaluator": "faithfulness"
+        }
+      }
+    ]
+  }
+}

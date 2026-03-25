@@ -1,0 +1,1022 @@
+ID: SEBI-Q1
+Category: scheme-related
+Type: regulatory
+
+QUESTION: What are the mandatory conditions for a close-ended scheme to avoid listing on stock exchanges?
+
+ANSWER:
+A close-ended scheme is not required to be listed on a stock exchange if any of the following mandatory conditions are met:
+
+- The scheme provides for periodic repurchase facility to all unitholders, with any restrictions on the extent of such repurchase clearly specified.
+- The scheme provides for monthly income or caters to special classes of persons (such as senior citizens, women, children, widows, or physically handicapped), and provides for repurchase of units at regular intervals.
+- The details of such repurchase facility are clearly disclosed in the offer document.
+- The scheme opens for repurchase within a period of six months from the closure of subscription.
+
+These exceptions are as per SEBI regulations and allow a close-ended scheme to avoid mandatory listing on stock exchanges if any of the above conditions are fulfilled[C2].
+
+CITATIONS:
+  [C1] Source: SEBI Regulation.pdf, Page: 22
+  [C2] Source: SEBI Regulation.pdf, Page: 22
+  [C3] Source: SEBI Master circular for MF.pdf, Page: 91
+  [C4] Source: Mirae Asset Small Cap SID.pdf, Page: 54
+  [C5] Source: SEBI Regulation.pdf, Page: 30
+  [C6] Source: SEBI Master circular for MF.pdf, Page: 98
+  [C7] Source: SEBI Master circular for MF.pdf, Page: 98
+  [C8] Source: SEBI Regulation.pdf, Page: 22
+
+SOURCES: SEBI Regulation.pdf, SEBI Master circular for MF.pdf, Mirae Asset Small Cap SID.pdf
+
+================================================================================
+ID: SEBI-Q2
+Category: scheme-related
+Type: regulatory
+
+QUESTION: What is the lock-in period and transaction frequency for Infrastructure Debt Fund schemes?
+
+ANSWER:
+The lock-in period and transaction frequency for Infrastructure Debt Fund schemes are as follows:
+
+- The scheme must be launched either as a close-ended scheme maturing after more than five years, or as an interval scheme with a lock-in of five years.
+- For interval schemes, the specified transaction period (i.e., the window during which transactions such as subscriptions and redemptions can occur) must not be more than forty-five days, as specified in the scheme information document[C1].
+
+CITATIONS:
+  [C1] Source: SEBI Regulation.pdf, Page: 32
+  [C2] Source: SEBI Regulation.pdf, Page: 2
+  [C3] Source: SEBI Regulation.pdf, Page: 32
+  [C4] Source: SEBI Regulation.pdf, Page: 32
+  [C5] Source: SEBI Regulation.pdf, Page: 33
+  [C6] Source: SEBI Regulation.pdf, Page: 32
+  [C7] Source: SEBI Regulation.pdf, Page: 34
+  [C8] Source: SEBI Master circular for MF.pdf, Page: 41
+
+SOURCES: SEBI Regulation.pdf, SEBI Master circular for MF.pdf
+
+================================================================================
+ID: SEBI-Q3
+Category: scheme-related
+Type: regulatory
+
+QUESTION: What are the minimum investor requirements for Infrastructure Debt Fund schemes?
+
+ANSWER:
+The minimum investor requirements for Infrastructure Debt Fund schemes are as follows:
+
+- The scheme must have a minimum of five investors.
+- No single investor is allowed to hold more than fifty percent of the net assets of the scheme.
+- No investment from any investor shall be less than Rupees one crore.
+- The minimum size of the unit shall be Rupees ten lakhs[ C1]. [C1]
+
+CITATIONS:
+  [C1] Source: SEBI Regulation.pdf, Page: 32
+  [C2] Source: SEBI Regulation.pdf, Page: 32
+  [C3] Source: SEBI Regulation.pdf, Page: 33
+  [C4] Source: SEBI Regulation.pdf, Page: 34
+  [C5] Source: SEBI Regulation.pdf, Page: 32
+  [C6] Source: SEBI Regulation.pdf, Page: 2
+  [C7] Source: SEBI Master circular for MF.pdf, Page: 326
+  [C8] Source: SEBI Regulation.pdf, Page: 32
+
+SOURCES: SEBI Regulation.pdf, SEBI Master circular for MF.pdf, Mirae Asset Small Cap SID.pdf
+
+================================================================================
+ID: SEBI-Q4
+Category: scheme-related
+Type: regulatory
+
+QUESTION: What are the investment restrictions specific to Gold ETF schemes?
+
+ANSWER:
+The investment restrictions specific to Gold ETF schemes are as follows:
+
+1. The funds of a Gold ETF scheme must be invested only in gold or gold-related instruments in accordance with its investment objective, except to the extent necessary to meet liquidity requirements for honoring repurchases or redemptions, as disclosed in the offer document. Pending deployment of funds, the mutual fund may invest such funds in short-term deposits of scheduled commercial banks [C1].
+
+2. The cumulative exposure to gold-related instruments (such as Gold Deposit Schemes (GDS) of banks, Gold Monetization Scheme (GMS), and Exchange Traded Commodity Derivatives (ETCD) having gold as the underlying) shall not exceed 50% of the net asset value (NAV) of the scheme. Within this 50% limit, the investment limit for GDS of banks and GMS as part of gold-related instruments shall not exceed 20% of the NAV. The unutilized portion of the limit for GDS of banks and GMS can be utilized for ETCD having gold as the underlying [C7].
+
+3. Before investing in GDS of banks, GMS, and ETCDs having gold as the underlying, mutual funds must put in place a written policy regarding such investments with due approval [C7].
+
+4. Existing investments by Gold ETFs of Mutual Funds under the GDS will be allowed to run till maturity unless withdrawn prematurely [C3].
+
+5. The asset allocation must be as per the Scheme Information Document, and all investments must comply with the restrictions specified in the SEBI (Mutual Funds) Regulations, 1996, and applicable circulars [C2][C8].
+
+These restrictions are designed to ensure that Gold ETF schemes remain true to their investment objectives and maintain adequate liquidity.
+
+CITATIONS:
+  [C1] Source: SEBI Regulation.pdf, Page: 27
+  [C2] Source: SEBI Master circular for MF.pdf, Page: 310
+  [C3] Source: SEBI Master circular for MF.pdf, Page: 30
+  [C4] Source: SEBI Master circular for MF.pdf, Page: 368
+  [C5] Source: SEBI Master circular for MF.pdf, Page: 358
+  [C6] Source: SEBI Regulation.pdf, Page: 27
+  [C7] Source: SEBI Master circular for MF.pdf, Page: 29
+  [C8] Source: SEBI Master circular for MF.pdf, Page: 316
+
+SOURCES: SEBI Regulation.pdf, SEBI Master circular for MF.pdf
+
+================================================================================
+ID: SEBI-Q5
+Category: scheme-related
+Type: regulatory
+
+QUESTION: Can a mutual fund scheme invest in another scheme of the same mutual fund? What are the restrictions?
+
+ANSWER:
+Yes, a mutual fund scheme can invest in another scheme of the same mutual fund (i.e., under the same asset management company), but there are specific restrictions:
+
+- The aggregate inter-scheme investment made by all schemes under the same management (or in schemes under the management of any other asset management company) shall not exceed 5% of the net asset value (NAV) of the mutual fund.
+- No fees can be charged for such investments.
+- This 5% limit does not apply to fund of funds schemes, which have separate rules.
+- Additionally, no scheme of a mutual fund shall make any investment in any fund of funds scheme.
+
+These restrictions are as per SEBI regulations and are reflected in scheme documents as well[C1][C8].
+
+CITATIONS:
+  [C1] Source: SEBI Regulation.pdf, Page: 65
+  [C2] Source: SEBI Regulation.pdf, Page: 66
+  [C3] Source: SEBI Master circular for MF.pdf, Page: 158
+  [C4] Source: SEBI Regulation.pdf, Page: 65
+  [C5] Source: SEBI Master circular for MF.pdf, Page: 358
+  [C6] Source: SEBI Master circular for MF.pdf, Page: 368
+  [C7] Source: SEBI Master circular for MF.pdf, Page: 140
+  [C8] Source: Mirae Asset Small Cap SID.pdf, Page: 47
+
+SOURCES: SEBI Regulation.pdf, SEBI Master circular for MF.pdf, Mirae Asset Small Cap SID.pdf
+
+================================================================================
+ID: SEBI-Q6
+Category: scheme-related
+Type: regulatory
+
+QUESTION: What are the deployment timelines for funds raised through New Fund Offers?
+
+ANSWER:
+The deployment timelines for funds raised through New Fund Offers (NFOs) are as follows:
+
+- Mutual Funds/AMCs are allowed to deploy the NFO proceeds in triparty repo on Government securities or treasury bills before the closure of the NFO period. No investment management and advisory fees can be charged on such deployments during the NFO period, and any appreciation from these investments must be passed on to investors. If the minimum subscription amount is not garnered, the interest earned must be returned to investors along with the refund of the subscription amount, in proportion to their investments[C7].
+
+- After the closure of the NFO, the mutual fund should allot units or refund money and dispatch statements of accounts within five business days. All schemes (except ELSS) must be available for ongoing repurchase/sale/trading within five business days of allotment[C8].
+
+CITATIONS:
+  [C1] Source: SEBI Master circular for MF.pdf, Page: 305
+  [C2] Source: SEBI Master circular for MF.pdf, Page: 10
+  [C3] Source: SEBI Master circular for MF.pdf, Page: 4
+  [C4] Source: SEBI Master circular for MF.pdf, Page: 141
+  [C5] Source: SEBI Master circular for MF.pdf, Page: 365
+  [C6] Source: SEBI Master circular for MF.pdf, Page: 11
+  [C7] Source: SEBI Master circular for MF.pdf, Page: 10
+  [C8] Source: SEBI Master circular for MF.pdf, Page: 11
+
+SOURCES: SEBI Master circular for MF.pdf
+
+================================================================================
+ID: SEBI-Q7
+Category: scheme-related
+Type: regulatory
+
+QUESTION: What are the specific restrictions for Capital Protection Oriented Schemes?
+
+ANSWER:
+The specific restrictions for Capital Protection Oriented Schemes are as follows:
+
+1. **Portfolio Structure and Rating**: The orientation towards capital protection must originate from the portfolio structure of the scheme, not from any bank guarantee, insurance cover, etc. The proposed portfolio structure must be rated by a SEBI-registered Credit Rating Agency to assess the degree of certainty for achieving capital protection. This rating must be reviewed on a quarterly basis and disclosed in the Scheme Information Document (SID), Key Information Memorandum (KIM), and advertisements related to the scheme [C2][C5].
+
+2. **Continuous Monitoring**: Asset Management Companies (AMCs) must ensure continuous monitoring of the portfolio structure and quarterly review of the ratings. These disclosures and reviews must be confirmed in the offer documents [C5].
+
+3. **Regulatory Compliance**: All investment restrictions as contained in the relevant SEBI Mutual Fund Regulations and applicable schedules must be incorporated. If the fund follows any additional internal norms (such as limiting exposure to a particular security or sector), these must also be disclosed [C6].
+
+4. **No External Guarantees**: The scheme cannot rely on any external guarantees (such as bank guarantees or insurance covers) for capital protection; the protection must be inherent to the portfolio structure [C2].
+
+5. **Credit Rating Requirement**: The units of the scheme must be rated by a registered credit rating agency from the viewpoint of the ability of its portfolio structure to attain protection of the capital invested [C1].
+
+In summary, Capital Protection Oriented Schemes must rely solely on their portfolio structure for capital protection, require regular credit rating and monitoring, and must comply with all SEBI investment restrictions and disclosure requirements. No external guarantees are permitted [C1][C2][C5][C6].
+
+CITATIONS:
+  [C1] Source: SEBI Regulation.pdf, Page: 25
+  [C2] Source: SEBI Master circular for MF.pdf, Page: 40
+  [C3] Source: SEBI Master circular for MF.pdf, Page: 315
+  [C4] Source: SEBI Master circular for MF.pdf, Page: 87
+  [C5] Source: SEBI Master circular for MF.pdf, Page: 324
+  [C6] Source: SEBI Master circular for MF.pdf, Page: 368
+  [C7] Source: SEBI Master circular for MF.pdf, Page: 22
+  [C8] Source: SEBI Master circular for MF.pdf, Page: 234
+
+SOURCES: SEBI Regulation.pdf, SEBI Master circular for MF.pdf
+
+================================================================================
+ID: SEBI-Q8
+Category: scheme-related
+Type: regulatory
+
+QUESTION: What is the maximum period for which scheme particulars/offer documents remain valid before re-filing?
+
+ANSWER:
+The maximum period for which scheme particulars/offer documents remain valid before re-filing is six months from the date of the issuance of final observations from SEBI. If the AMC intends to launch the scheme after six months, it must refile the Scheme Information Document (SID) with SEBI along with the filing fees under Regulation 28(1)[C6].
+
+CITATIONS:
+  [C1] Source: SEBI Master circular for MF.pdf, Page: 226
+  [C2] Source: SEBI Master circular for MF.pdf, Page: 144
+  [C3] Source: SEBI Regulation.pdf, Page: 23
+  [C4] Source: SEBI Regulation.pdf, Page: 32
+  [C5] Source: SEBI Master circular for MF.pdf, Page: 5
+  [C6] Source: SEBI Master circular for MF.pdf, Page: 7
+  [C7] Source: SEBI Regulation.pdf, Page: 21
+  [C8] Source: SEBI Master circular for MF.pdf, Page: 213
+
+SOURCES: SEBI Master circular for MF.pdf, SEBI Regulation.pdf
+
+================================================================================
+ID: SEBI-Q9
+Category: scheme-related
+Type: regulatory
+
+QUESTION: What are the conversion rules for close-ended schemes to open-ended schemes?
+
+ANSWER:
+The conversion of close-ended schemes to open-ended schemes is governed by the following rules:
+
+1. The procedure for conversion is specified in the SEBI Mutual Funds Regulations and further clarified in SEBI's master circulars. The conversion can occur if:
+   - The offer document of the close-ended scheme discloses the option and the period for such conversion; or
+   - Unitholders are provided with an option to redeem their units in full at the time of conversion[C3][C1].
+
+2. For the conversion process:
+   - Applications for conversion filed by Asset Management Companies (AMCs) are deemed to be taken on record if SEBI does not raise queries or suggest modifications within 21 working days, provided the application is complete and compliant with all relevant regulations and circulars[C5].
+
+3. At the time of conversion, unitholders who do not wish to continue must be given the option to redeem their holdings in full at the Net Asset Value (NAV) based price[C3].
+
+4. The conversion is not applicable to all close-ended schemes—only those where the offer document provides for such an option, or where unitholders are given the redemption option at the time of conversion[C3][C4].
+
+In summary, conversion is allowed if disclosed in the offer document or if unitholders are given a full redemption option, and SEBI must be notified with a 21-day response window for regulatory review[C3][C1][C5].
+
+CITATIONS:
+  [C1] Source: SEBI Master circular for MF.pdf, Page: 18
+  [C2] Source: SEBI Master circular for MF.pdf, Page: 18
+  [C3] Source: SEBI Regulation.pdf, Page: 23
+  [C4] Source: SEBI Master circular for MF.pdf, Page: 8
+  [C5] Source: SEBI Master circular for MF.pdf, Page: 11
+  [C6] Source: SEBI Regulation.pdf, Page: 25
+  [C7] Source: SEBI Master circular for MF.pdf, Page: 88
+  [C8] Source: SEBI Master circular for MF.pdf, Page: 322
+
+SOURCES: SEBI Master circular for MF.pdf, SEBI Regulation.pdf, Mirae Asset Small Cap SID.pdf
+
+================================================================================
+ID: SEBI-Q10
+Category: scheme-related
+Type: regulatory
+
+QUESTION: What are the specific investment restrictions for Real Estate Mutual Fund schemes regarding sponsor investments?
+
+ANSWER:
+The specific investment restrictions for Real Estate Mutual Fund (REMF) schemes regarding sponsor investments are as follows:
+
+1. A REMF scheme shall not invest in any unlisted security of the sponsor or its associate or group company.
+2. A REMF scheme shall not invest in any listed security issued by way of preferential allotment by the sponsor or its associate or group company.
+3. A REMF scheme shall not invest in any listed security of the sponsor or its associate or group company in excess of twenty-five percent of the net assets of the scheme.
+4. A REMF scheme shall not invest in any real estate asset which was owned by the sponsor or the asset management company or any of its associates during the period of the last five years, or in which the sponsor or the asset management company or any of its associates hold tenancy or lease rights[ C1 ].
+
+These restrictions are designed to prevent conflicts of interest and ensure that investments are made in the best interests of the unit holders. [C1]
+
+CITATIONS:
+  [C1] Source: SEBI Regulation.pdf, Page: 30
+  [C2] Source: SEBI Regulation.pdf, Page: 65
+  [C3] Source: SEBI Regulation.pdf, Page: 31
+  [C4] Source: SEBI Regulation.pdf, Page: 30
+  [C5] Source: SEBI Regulation.pdf, Page: 31
+  [C6] Source: SEBI Regulation.pdf, Page: 30
+  [C7] Source: SEBI Regulation.pdf, Page: 72
+  [C8] Source: SEBI Regulation.pdf, Page: 77
+
+SOURCES: SEBI Regulation.pdf
+
+================================================================================
+ID: SEBI-Q11
+Category: general-sebi
+Type: regulatory-complex
+
+QUESTION: What is the 'Fit and Proper Person' criteria and how does it interact with multiple regulations?
+
+ANSWER:
+The 'Fit and Proper Person' criteria is a regulatory requirement under SEBI regulations that mandates applicants (such as sponsors, asset management companies, and their key personnel) to demonstrate integrity, sound reputation, and compliance with legal and ethical standards. Specifically, the regulations state that the applicant must be a "fit and proper person" [C1][C3]. This includes not being guilty of fraud, not having been convicted of offences involving moral turpitude, and not having been found guilty of any economic offence [C2][C3].
+
+Interaction with Multiple Regulations:
+- The 'Fit and Proper Person' criteria is not a standalone requirement; it interacts with several SEBI regulations. For example, the SEBI (Criteria for Fit and Proper Person) Regulations, 2004, are made applicable to all applicants or mutual funds under these regulations, meaning the criteria must be met in conjunction with other eligibility requirements [C2].
+- For Mutual Fund Lite schemes, the applicant must also be a fit and proper person, as specified in Schedule II of the SEBI (Intermediaries) Regulations, 2008, in addition to fulfilling other financial and experience-related criteria [C5].
+- The Board (SEBI) may reject applications if the sponsor does not satisfy the eligibility criteria, which includes the fit and proper person requirement [C7].
+- The criteria also extend to trustees and directors, who must not have been found guilty of moral turpitude or convicted of economic offences [C8].
+
+In summary, the 'Fit and Proper Person' criteria is a foundational standard that interacts with and is referenced by multiple SEBI regulations, ensuring that only individuals and entities with integrity, sound reputation, and clean legal records are permitted to participate in the mutual fund industry [C1][C2][C3][C5][C7][C8].
+
+CITATIONS:
+  [C1] Source: SEBI Regulation.pdf, Page: 8
+  [C2] Source: SEBI Regulation.pdf, Page: 8
+  [C3] Source: SEBI Regulation.pdf, Page: 13
+  [C4] Source: SEBI Master circular for MF.pdf, Page: 55
+  [C5] Source: SEBI Regulation.pdf, Page: 47
+  [C6] Source: SEBI Master circular for MF.pdf, Page: 42
+  [C7] Source: SEBI Regulation.pdf, Page: 9
+  [C8] Source: SEBI Regulation.pdf, Page: 10
+
+SOURCES: SEBI Regulation.pdf, SEBI Master circular for MF.pdf
+
+================================================================================
+ID: SEBI-Q12
+Category: general-sebi
+Type: regulatory-complex
+
+QUESTION: Explain the complete shareholding web restriction under Regulation 7B and its exception provisions.
+
+ANSWER:
+The "complete shareholding web restriction" under Regulation 7B generally restricts cross-holdings and significant shareholding overlaps between sponsors, asset management companies (AMCs), and mutual funds to prevent conflicts of interest and ensure independence in the mutual fund industry.
+
+**Exception Provisions:**
+However, several exceptions to these restrictions are provided, as outlined below:
+
+1. **Dual Registration for Sponsors:**  
+   A sponsor is allowed to obtain both a regular mutual fund registration and a separate registration as a "Mutual Fund Lite" (a lighter regulatory regime for certain passive schemes), subject to conditions specified by SEBI, even if Regulation 7B would otherwise prohibit such dual roles [C1].
+
+2. **Transfer of Passive Schemes:**  
+   An existing sponsor may transfer its eligible passive schemes (those qualifying as mutual fund lite schemes) from its existing mutual fund to a mutual fund lite belonging to a group entity of the same sponsor, again subject to SEBI's conditions. However, after such a transfer, the original mutual fund cannot launch new passive schemes eligible as mutual fund lite schemes [C1].
+
+3. **Shareholding in Group Entities:**  
+   An existing shareholder who holds 10% or more shareholding or voting rights in an existing AMC of a mutual fund may also be allowed to hold 10% or more in a mutual fund lite AMC belonging to a group entity of the same sponsor, notwithstanding the general restriction under Regulation 7B [C1].
+
+**Summary:**  
+Regulation 7B imposes restrictions to prevent complex or overlapping shareholding structures among mutual fund sponsors and AMCs. However, exceptions allow for dual registrations, transfer of passive schemes, and certain cross-shareholdings within group entities, provided SEBI's specified conditions are met [C1].
+
+If you need the exact text of Regulation 7B or further details on the general restriction itself, that information is not present in the provided contexts.
+
+CITATIONS:
+  [C1] Source: SEBI Regulation.pdf, Page: 48
+  [C2] Source: SEBI Master circular for MF.pdf, Page: 358
+  [C3] Source: SEBI Master circular for MF.pdf, Page: 309
+  [C4] Source: SEBI Regulation.pdf, Page: 48
+  [C5] Source: SEBI Master circular for MF.pdf, Page: 11
+  [C6] Source: SEBI Master circular for MF.pdf, Page: 100
+  [C7] Source: SEBI Master circular for MF.pdf, Page: 95
+  [C8] Source: SEBI Regulation.pdf, Page: 65
+
+SOURCES: SEBI Regulation.pdf, SEBI Master circular for MF.pdf
+
+================================================================================
+ID: SEBI-Q13
+Category: general-sebi
+Type: regulatory-complex
+
+QUESTION: What is the complete process and implications when institutional mechanism detects potential front-running?
+
+ANSWER:
+When an institutional mechanism detects potential front-running, the process and implications are as follows:
+
+1. Detection and Identification:
+- Asset Management Companies (AMCs) are required to have an institutional mechanism in place for the identification and deterrence of potential market abuse, including front-running and fraudulent transactions in securities, as specified by SEBI regulations[C1].
+- This involves integrated systems (front-mid-back office) that perform order generation, pre-trade compliance checks, order execution, deal booking, and exception reporting. These systems are designed to flag breaches, such as unauthorized trades or trades that violate preset parameters[C3].
+- Data analytics and Management Information Systems (MIS) are used to identify fraud patterns and generate alerts for potential front-running incidents[C5].
+
+2. Internal Review and Reporting:
+- When alerts are generated, the compliance officer reviews the details and investigates the incident to determine if front-running or other violations have occurred[C5].
+- The compliance officer is responsible for tracking employee transactions and mutual fund transactions to ensure there is no conflict of interest or front-running by employees[C4].
+- A report containing details of the alerts generated and the subsequent actions taken is submitted to the trustees on a quarterly basis[C6].
+
+3. Escalation and External Reporting:
+- Trustees review the reports, add their comments and details of steps taken, and may forward the results to SEBI in their half-yearly trustee reports[C6].
+
+4. Implications:
+- If front-running is confirmed, it may lead to disciplinary action against the involved employees, including negative impact on performance incentives, clawback of incentives, or other penalties as per the AMC’s policies and SEBI regulations[C7].
+- The AMC must document the incident, update fraud risk registers, and may need to enhance training or controls to prevent recurrence[C5].
+- There may also be regulatory consequences, including further investigation or penalties imposed by SEBI if the matter is escalated[C6].
+
+In summary, the process involves detection through automated systems, internal review by compliance officers, reporting to trustees, and possible escalation to SEBI, with implications ranging from internal disciplinary action to regulatory penalties[C1][C3][C4][C5][C6][C7].
+
+CITATIONS:
+  [C1] Source: SEBI Regulation.pdf, Page: 19
+  [C2] Source: SEBI Master circular for MF.pdf, Page: 284
+  [C3] Source: SEBI Master circular for MF.pdf, Page: 244
+  [C4] Source: SEBI Master circular for MF.pdf, Page: 79
+  [C5] Source: SEBI Master circular for MF.pdf, Page: 245
+  [C6] Source: SEBI Master circular for MF.pdf, Page: 246
+  [C7] Source: SEBI Master circular for MF.pdf, Page: 51
+  [C8] Source: Mirae Asset Small Cap SID.pdf, Page: 42
+
+SOURCES: SEBI Regulation.pdf, SEBI Master circular for MF.pdf, Mirae Asset Small Cap SID.pdf
+
+================================================================================
+ID: SEBI-Q14
+Category: general-sebi
+Type: regulatory-complex
+
+QUESTION: How does the networth maintenance requirement interact with sponsor disassociation provisions?
+
+ANSWER:
+The networth maintenance requirement and sponsor disassociation provisions are closely linked in the SEBI Mutual Fund regulatory framework:
+
+1. **Networth Requirement for AMCs**: Asset Management Companies (AMCs) must maintain a minimum networth as specified by SEBI regulations (typically INR 50 crore or INR 100 crore, depending on circumstances) on a continuous basis. This is to ensure financial stability and investor protection, especially if the sponsor does not meet certain eligibility criteria at the time of application or during operations [C1][C6].
+
+2. **Sponsor Disassociation**: SEBI allows a sponsor to voluntarily reduce its stake and eventually disassociate from the AMC, subject to certain conditions and timelines (e.g., 5 years for listed AMCs, 3 years for unlisted AMCs). During the transition period, the outgoing sponsor must continue to fulfill all regulatory obligations applicable to sponsors [C2][C5].
+
+3. **Interaction Between Networth and Disassociation**:
+   - When a sponsor disassociates, the AMC may become "self-sponsored." In this scenario, the AMC is required to maintain the minimum networth requirement on a continuous basis as per SEBI MF Regulations [C2].
+   - If the AMC fails to meet the eligibility criteria for a self-sponsored AMC (including the networth requirement), a cure period of one year is provided. If the AMC still fails after this period, either the disassociated sponsor or a new entity must step in as the sponsor of the Mutual Fund [C4][C8].
+   - The statutory auditor must certify compliance with the networth and other eligibility criteria annually, and the AMC/trustees must report compliance status to SEBI regularly [C2].
+
+4. **Summary of Interaction**: The networth maintenance requirement acts as a safeguard during and after sponsor disassociation. It ensures that, even in the absence of a traditional sponsor, the AMC remains financially robust. If the AMC cannot maintain the required networth post-disassociation, regulatory provisions require the re-association of a sponsor to protect investors and maintain regulatory compliance [C2][C4][C8].
+
+**In essence:** The networth maintenance requirement is a critical condition for AMCs, especially when a sponsor disassociates. Failure to maintain networth can trigger the need for a new or returning sponsor, ensuring the mutual fund's stability and compliance with SEBI regulations.
+
+CITATIONS:
+  [C1] Source: SEBI Regulation.pdf, Page: 14
+  [C2] Source: SEBI Master circular for MF.pdf, Page: 16
+  [C3] Source: SEBI Master circular for MF.pdf, Page: 86
+  [C4] Source: SEBI Master circular for MF.pdf, Page: 17
+  [C5] Source: SEBI Master circular for MF.pdf, Page: 15
+  [C6] Source: SEBI Master circular for MF.pdf, Page: 302
+  [C7] Source: SEBI Regulation.pdf, Page: 7
+  [C8] Source: SEBI Master circular for MF.pdf, Page: 17
+
+SOURCES: SEBI Regulation.pdf, SEBI Master circular for MF.pdf
+
+================================================================================
+ID: SEBI-Q15
+Category: general-sebi
+Type: regulatory-complex
+
+QUESTION: What is the complete framework for inter-scheme transfers and their regulatory treatment?
+
+ANSWER:
+The complete framework for inter-scheme transfers (ISTs) and their regulatory treatment is as follows:
+
+1. **Permissibility and Pricing**:
+   - Transfers of investments from one scheme to another within the same mutual fund are allowed only if such transfers are done at the prevailing market price for quoted instruments on a spot basis. This ensures fair valuation and transparency in the transaction [C1][C7].
+
+2. **Conformity with Investment Objectives**:
+   - The securities transferred must be in conformity with the investment objective of the scheme to which the transfer is made [C7].
+
+3. **Scheme Type Specific Rules**:
+   - **Close Ended Schemes**: IST purchases are allowed only during the New Fund Offer (NFO) period. After the NFO, no ISTs are permitted to or from close ended schemes [C7].
+   - **Open Ended Schemes**: ISTs are allowed in specific scenarios, such as for meeting liquidity requirements in a scheme in case of unanticipated redemption pressure [C7].
+
+4. **Documentation and Disclosure**:
+   - Details of ISTs during the quarter, including dates, names of transferor and transferee schemes, securities transferred and price, value of transfer, and specific reasons for the transfer, must be documented and disclosed [C4].
+
+5. **Compliance and Safeguards**:
+   - Mutual funds must comply with SEBI guidelines on ISTs, including those outlined in SEBI Circulars (e.g., SEBI/HO/IMD/DF4/CIR/P/2020/202 dated October 08, 2020, and SEBI/HO/IMD/DF2/CIR/P/2020/253 dated December 31, 2020) [C6][C7].
+   - The risk management framework of the mutual fund must ensure compliance with regulatory requirements and protection of investors’ interests [C8].
+
+6. **Legal and Regulatory Framework**:
+   - ISTs are governed by the Securities and Exchange Board of India (Mutual Funds) Regulations, 1996, and amendments thereto, as well as the Indian Trusts Act, 1882 [C1].
+
+In summary, ISTs are tightly regulated to ensure fair pricing, alignment with scheme objectives, transparency, and investor protection, with specific rules for open and close ended schemes and mandatory disclosures and compliance requirements [C1][C4][C6][C7][C8].
+
+CITATIONS:
+  [C1] Source: SEBI Master circular for MF.pdf, Page: 363
+  [C2] Source: SEBI Master circular for MF.pdf, Page: 312
+  [C3] Source: SEBI Master circular for MF.pdf, Page: 120
+  [C4] Source: SEBI Master circular for MF.pdf, Page: 325
+  [C5] Source: SEBI Master circular for MF.pdf, Page: 316
+  [C6] Source: SEBI Master circular for MF.pdf, Page: 220
+  [C7] Source: SEBI Master circular for MF.pdf, Page: 158
+  [C8] Source: SEBI Master circular for MF.pdf, Page: 325
+
+SOURCES: SEBI Master circular for MF.pdf
+
+================================================================================
+ID: SEBI-Q16
+Category: general-sebi
+Type: regulatory-complex
+
+QUESTION: Explain the complete copyright compliance framework that applies when using web search for investor communications.
+
+ANSWER:
+Based on the provided contexts, there is no explicit or detailed framework regarding copyright compliance specifically when using web search for investor communications. The contexts focus on compliance tests for investor services and investments, risk management frameworks, communication with stakeholders, risks associated with email transactions, and stewardship responsibilities, but do not address copyright compliance or the use of web search content in investor communications.
+
+Therefore, I don't know the complete copyright compliance framework that applies when using web search for investor communications based on the given information. [C1]
+
+CITATIONS:
+  [C1] Source: SEBI Master circular for MF.pdf, Page: 302
+  [C2] Source: SEBI Master circular for MF.pdf, Page: 311
+  [C3] Source: SEBI Master circular for MF.pdf, Page: 302
+  [C4] Source: SEBI Master circular for MF.pdf, Page: 308
+  [C5] Source: SEBI Master circular for MF.pdf, Page: 243
+  [C6] Source: Mirae Asset Small Cap SID.pdf, Page: 31
+  [C7] Source: SEBI Master circular for MF.pdf, Page: 325
+  [C8] Source: SEBI Master circular for MF.pdf, Page: 283
+
+SOURCES: SEBI Master circular for MF.pdf, Mirae Asset Small Cap SID.pdf
+
+================================================================================
+ID: SEBI-Q17
+Category: general-sebi
+Type: regulatory-complex
+
+QUESTION: What are the complete valuation requirements when a debt security is downgraded below investment grade?
+
+ANSWER:
+When a debt security is downgraded below investment grade, the complete valuation requirements are as follows:
+
+1. **Valuation at Price Provided by Valuation Agencies:** All money market and debt securities rated below investment grade must be valued at the price provided by valuation agencies. If the AMC deviates from this price, it must record a detailed rationale for the deviation, including information about the security (ISIN, issuer name, rating, etc.), the price at which the security was valued versus the price from the valuation agencies, and the impact of such deviation on the scheme NAV (in amount and percentage terms). This information must be reported to the Board of AMC and Trustees [C2].
+
+2. **Use of Indicative Haircuts:** Until the valuation agencies compute the valuation of such securities, they should be valued based on indicative haircuts provided by these agencies. These haircuts are to be applied on the date of the credit event (i.e., when the security is downgraded to sub-investment grade) [C2].
+
+3. **Treatment of Accrued Interest:** The treatment of accrued interest and future accrual of interest for securities classified as below investment grade or default is governed by SEBI guidelines, as referenced in SEBI Circular No. SEBI/HO/IMD/DF4/CIR/P/2019/102 dated September 24, 2019 [C5].
+
+4. **Disclosure and Reporting:** The AMC must disclose details of investments downgraded to below investment grade or default during the quarter, including comments on steps taken or to be taken by the AMC [C3][C8]. Additionally, the aggregate market value and provision thereof for such securities must be disclosed [C6].
+
+5. **Rebalancing Requirement:** If the security is part of a scheme based on a debt index and is downgraded below the rating mandated in the index methodology (including below investment grade), the portfolio must be rebalanced within 30 calendar days. This does not apply to sectoral or thematic debt indices [C1].
+
+In summary, the valuation must follow the price from valuation agencies (or indicative haircuts if not available), with detailed documentation and reporting of any deviations, proper treatment of accrued interest, and required disclosures and rebalancing as per SEBI guidelines.
+
+CITATIONS:
+  [C1] Source: SEBI Master circular for MF.pdf, Page: 35
+  [C2] Source: SEBI Master circular for MF.pdf, Page: 113
+  [C3] Source: SEBI Master circular for MF.pdf, Page: 324
+  [C4] Source: SEBI Master circular for MF.pdf, Page: 160
+  [C5] Source: SEBI Master circular for MF.pdf, Page: 114
+  [C6] Source: SEBI Master circular for MF.pdf, Page: 335
+  [C7] Source: SEBI Master circular for MF.pdf, Page: 108
+  [C8] Source: SEBI Master circular for MF.pdf, Page: 316
+
+SOURCES: SEBI Master circular for MF.pdf
+
+================================================================================
+ID: SEBI-Q18
+Category: general-sebi
+Type: regulatory-complex
+
+QUESTION: How does the 'associate' definition vary across different contexts and what are the implications?
+
+ANSWER:
+The definition of "associate" varies across different regulatory and operational contexts, particularly in the mutual fund industry, and these variations have important implications for disclosure, governance, and conflict of interest management.
+
+**Regulatory Definition and Exemptions:**
+- The SEBI regulations define an "associate" in relation to an asset management company (AMC), trustee, or sponsor as:
+  - (i) Any person who, directly or indirectly (alone or with relatives), exercises control over the AMC, trustee, or sponsor;
+  - (ii) Any person over whom the AMC, trustee, or sponsor exercises control;
+  - (iii) Any entity whose director, officer, or employee is also a director, officer, or employee of the AMC (excluding independent directors)[C2].
+- However, there is a specific exemption: this definition does not apply to sponsors that invest in various companies on behalf of beneficiaries of insurance policies or other schemes as specified by SEBI[C1][C2]. This means that certain institutional investors acting in a fiduciary capacity are not considered "associates" for regulatory purposes, reducing the compliance burden and potential conflict-of-interest disclosures in such cases.
+
+**Operational and Disclosure Implications:**
+- In practice, mutual funds must disclose transactions with associates, including:
+  - Underwriting obligations for issues of associate companies,
+  - Investments in issues lead-managed by associates,
+  - Business given to associate brokers and commissions paid,
+  - Distribution of units by associate companies,
+  - Policies for investing in group companies, and
+  - Names of associates with whom the fund has dealings or uses for marketing/distribution[C4][C5].
+- If a scheme invests more than 25% of its net assets in group companies, this must be specifically disclosed[C4].
+
+**Implications:**
+- The variation in the definition of "associate" affects which entities and transactions are subject to enhanced disclosure and regulatory scrutiny.
+- Exempting certain sponsors (like insurance companies investing on behalf of policyholders) from the "associate" definition reduces administrative complexity and recognizes the distinct fiduciary role of such sponsors[C1][C2].
+- For other entities, the broad definition ensures transparency and helps manage conflicts of interest, as all significant relationships and transactions with associates must be disclosed and justified to investors and regulators[C4][C5].
+
+In summary, the definition of "associate" is context-dependent, with regulatory carve-outs for certain fiduciary sponsors, and has significant implications for disclosure, governance, and conflict-of-interest management in mutual funds.
+
+CITATIONS:
+  [C1] Source: SEBI Master circular for MF.pdf, Page: 216
+  [C2] Source: SEBI Regulation.pdf, Page: 4
+  [C3] Source: Mirae Asset Small Cap SID.pdf, Page: 71
+  [C4] Source: SEBI Master circular for MF.pdf, Page: 363
+  [C5] Source: SEBI Master circular for MF.pdf, Page: 327
+  [C6] Source: SEBI Master circular for MF.pdf, Page: 355
+  [C7] Source: SEBI Master circular for MF.pdf, Page: 367
+  [C8] Source: SEBI Master circular for MF.pdf, Page: 234
+
+SOURCES: SEBI Master circular for MF.pdf, SEBI Regulation.pdf, Mirae Asset Small Cap SID.pdf
+
+================================================================================
+ID: SEBI-Q19
+Category: general-sebi
+Type: regulatory-complex
+
+QUESTION: What is the complete framework for a mutual fund scheme investing in commodity derivatives?
+
+ANSWER:
+The complete framework for a mutual fund scheme investing in commodity derivatives, specifically Exchange Traded Commodity Derivatives (ETCDs), is governed by SEBI regulations and circulars. The key elements of the framework are as follows:
+
+1. **Permission and Guidelines**: Mutual funds are permitted to participate in ETCDs in India, subject to SEBI guidelines issued from time to time. These guidelines include specific circulars such as SEBI/HO/IMD/DF2/CIR/P/2019/65 dated May 21, 2019, and SEBI/HO/CDMRD/DMP/CIR/P/2017/84 dated July 25, 2017, which lay down the operational and disclosure requirements for such investments[C6][C4][C2][C8].
+
+2. **Risk Management Framework**: Mutual funds investing in commodity derivatives must have a robust risk management framework in place. This framework should comply with regulatory requirements and ensure the protection of investors' interests. The outcomes of the risk management framework and steps taken to address risks must be documented and disclosed[C3].
+
+3. **Custody of Underlying Goods**: In the case of physical settlement of commodity derivative contracts, mutual fund schemes may appoint a custodian to have custody of the underlying goods[C1].
+
+4. **Disclosure Requirements**: There are specific disclosure requirements for mutual funds investing in derivatives, including commodity derivatives. These disclosures apply to all new schemes launched after the relevant SEBI circulars and to existing schemes from the specified compliance date[C7].
+
+5. **Reporting**: Mutual funds participating in ETCDs are required to provide monthly investment reports and scheme master data as part of their ongoing compliance and transparency obligations[C5].
+
+In summary, the framework includes SEBI’s permission, adherence to specific circulars, a risk management system, appointment of custodians for physical settlement, mandatory disclosures, and regular reporting[C1][C2][C3][C4][C5][C6][C7][C8].
+
+CITATIONS:
+  [C1] Source: SEBI Regulation.pdf, Page: 20
+  [C2] Source: SEBI Master circular for MF.pdf, Page: 99
+  [C3] Source: SEBI Master circular for MF.pdf, Page: 325
+  [C4] Source: SEBI Master circular for MF.pdf, Page: 219
+  [C5] Source: SEBI Master circular for MF.pdf, Page: 414
+  [C6] Source: SEBI Master circular for MF.pdf, Page: 152
+  [C7] Source: SEBI Master circular for MF.pdf, Page: 338
+  [C8] Source: SEBI Master circular for MF.pdf, Page: 225
+
+SOURCES: SEBI Regulation.pdf, SEBI Master circular for MF.pdf, Mirae Asset Small Cap SID.pdf
+
+================================================================================
+ID: SEBI-Q20
+Category: general-sebi
+Type: regulatory-complex
+
+QUESTION: What are the complete requirements and process for launching a Specialized Investment Fund with multiple investment strategies?
+
+ANSWER:
+The complete requirements and process for launching a Specialized Investment Fund (SIF) with multiple investment strategies are as follows:
+
+**1. Approval Requirements:**
+- Only a mutual fund registered under regulation 9 may be granted approval to establish a Specialized Investment Fund, subject to eligibility criteria and in the manner specified by SEBI (the Board) [C4].
+- Investments made must comply with investment restrictions as specified under regulation 49AA [C4].
+
+**2. Procedure for Launching Investment Strategies:**
+- Investment strategies under the SIF must be launched in accordance with the procedure applicable to mutual fund schemes as laid down in regulation 28, unless otherwise specified by SEBI [C1].
+- Each investment strategy can be structured as open-ended, close-ended, or interval, with the subscription and redemption frequency clearly disclosed in the offer document [C1].
+- Fees and expenses for each strategy must comply with regulation 52 [C1].
+
+**3. Investment Restrictions:**
+- No more than 20% of the NAV of an investment strategy may be invested in debt instruments (money market and non-money market) from a single issuer, rated not below investment grade. This can be extended to 25% with prior approval from the Board of Trustees and the AMC Board [C3].
+- No investment strategy may invest more than 10% of its NAV in equity shares and equity-related instruments of any entity [C6].
+- The SIF, across all its strategies, must not own more than 10% of the capital carrying voting rights or units of REITs issued by a single issuer [C6].
+- For InvITs, the SIF (across all strategies) must not own more than 20% of units issued by a single issuer, and no strategy may invest more than 20% of its NAV in InvITs or more than 10% in units of a single InvIT issuer, except for index or sector/industry-specific schemes [C6].
+- All other mutual fund scheme regulations apply unless specifically exempted [C3][C5][C8].
+
+**4. Disclosure Requirements:**
+- Offer documents must provide adequate disclosures for investors, highlighting the high-risk nature of the product, as specified by SEBI [C6].
+- Portfolio disclosures must be made as specified by SEBI [C6].
+- The Scheme Information Document must include information about the investment approach, risk control, whether the strategy is active or passive, asset allocation, portfolio turnover policy, and the probable effects of the strategy on portfolio turnover and costs [C7].
+
+**5. Fund Manager Requirements:**
+- The Fund Manager must have the relevant NISM certification as specified by SEBI [C3].
+
+**6. General Compliance:**
+- All other provisions of the SEBI Mutual Fund Regulations, guidelines, and circulars apply to SIFs and their investment strategies, unless specifically provided otherwise [C5][C8].
+
+**Summary of Process:**
+1. Obtain SEBI approval to establish a SIF (must be a registered mutual fund).
+2. Launch investment strategies following mutual fund scheme procedures, with required disclosures and compliance with investment restrictions.
+3. Ensure offer documents and ongoing disclosures meet SEBI requirements.
+4. Appoint a qualified Fund Manager.
+5. Adhere to all applicable SEBI regulations and circulars.
+
+**References:**  
+[C1], [C3], [C4], [C5], [C6], [C7], [C8]
+
+CITATIONS:
+  [C1] Source: SEBI Regulation.pdf, Page: 35
+  [C2] Source: SEBI Regulation.pdf, Page: 2
+  [C3] Source: SEBI Regulation.pdf, Page: 35
+  [C4] Source: SEBI Regulation.pdf, Page: 35
+  [C5] Source: SEBI Regulation.pdf, Page: 35
+  [C6] Source: SEBI Regulation.pdf, Page: 36
+  [C7] Source: SEBI Master circular for MF.pdf, Page: 355
+  [C8] Source: SEBI Regulation.pdf, Page: 35
+
+SOURCES: SEBI Regulation.pdf, SEBI Master circular for MF.pdf
+
+================================================================================
+ID: SEBI-Q21
+Category: portfolio-analysis
+Type: excel-analysis
+
+QUESTION: What is the scheme's Asset Under Management (AUM) as of December 2025 and how does it compare to the regulatory minimum?
+
+ANSWER:
+Based on the provided contexts, the regulatory minimum average Asset Under Management (AUM) required for open-ended debt oriented schemes is Rs. 20 crore on a half yearly rolling basis. If this minimum is not maintained, the AMC must scale up the AUM within six months, or else regulatory actions may be taken as per Regulation 39(2)(c) of MF Regulations [C6][C7].
+
+However, there is no information in the provided contexts about the scheme's actual AUM as of December 2025. Therefore, I don't know the scheme's AUM as of December 2025, but I can confirm that the regulatory minimum is Rs. 20 crore average AUM on a half yearly rolling basis for open-ended debt oriented schemes [C6][C7].
+
+CITATIONS:
+  [C1] Source: SEBI Master circular for MF.pdf, Page: 92
+  [C2] Source: SEBI Master circular for MF.pdf, Page: 42
+  [C3] Source: SEBI Master circular for MF.pdf, Page: 193
+  [C4] Source: SEBI Master circular for MF.pdf, Page: 85
+  [C5] Source: SEBI Master circular for MF.pdf, Page: 60
+  [C6] Source: SEBI Master circular for MF.pdf, Page: 92
+  [C7] Source: SEBI Master circular for MF.pdf, Page: 316
+  [C8] Source: SEBI Master circular for MF.pdf, Page: 359
+
+SOURCES: SEBI Master circular for MF.pdf, Mirae Asset Small Cap SID.pdf
+
+================================================================================
+ID: SEBI-Q22
+Category: portfolio-analysis
+Type: excel-analysis
+
+QUESTION: Calculate the scheme's exposure to the top 5 holdings. Does it comply with the 10% single issuer limit under Clause 1 of the Seventh Schedule?
+
+ANSWER:
+To calculate the scheme's exposure to the top 5 holdings and assess compliance with the 10% single issuer limit under Clause 1 of the Seventh Schedule, we need the actual percentage exposure of the scheme to each of its top 5 holdings. However, the provided contexts do not include the specific exposure percentages for the top 5 holdings.
+
+Regarding the 10% single issuer limit:
+- For most securities, the exposure to a single issuer by the ETF/Index Fund should not exceed 10% of the portfolio. There are exceptions: for AAA rated securities of PSU and PFI issuers, the limit is 15%[C3].
+- For investments in units of InvITs, the mutual fund under all its schemes shall not own more than 10% of units issued by a single issuer of InvIT[C7].
+
+**Conclusion:**  
+Without the actual exposure data for the top 5 holdings, I cannot calculate the scheme's exposure or definitively state whether it complies with the 10% single issuer limit. If you provide the exposure percentages, I can help you check compliance with the relevant limits as per SEBI regulations[C3][C7].
+
+CITATIONS:
+  [C1] Source: SEBI Master circular for MF.pdf, Page: 34
+  [C2] Source: SEBI Master circular for MF.pdf, Page: 33
+  [C3] Source: SEBI Master circular for MF.pdf, Page: 36
+  [C4] Source: SEBI Master circular for MF.pdf, Page: 148
+  [C5] Source: SEBI Master circular for MF.pdf, Page: 335
+  [C6] Source: SEBI Master circular for MF.pdf, Page: 155
+  [C7] Source: Mirae Asset Small Cap SID.pdf, Page: 49
+  [C8] Source: SEBI Master circular for MF.pdf, Page: 316
+
+SOURCES: SEBI Master circular for MF.pdf, Mirae Asset Small Cap SID.pdf
+
+================================================================================
+ID: SEBI-Q23
+Category: portfolio-analysis
+Type: excel-analysis
+
+QUESTION: Identify all investments in group companies of the sponsor. What is the aggregate exposure and does it comply with the 25% limit?
+
+ANSWER:
+To identify all investments in group companies of the sponsor, the following disclosures and compliance checks are required:
+
+1. **Disclosure of Investments**:  
+   - The name of each group company and the amount of investment made in each by every scheme must be disclosed, along with the aggregate investments made by all schemes in the group companies of the sponsor [C1].
+
+2. **Aggregate Exposure Calculation**:  
+   - Investments in various securities are aggregated at the issuer (group company) level for the purpose of exposure limits [C5].
+
+3. **Regulatory Limits**:  
+   - Mutual funds must not invest in unlisted securities of an associate or group company of the sponsor, or in securities issued by way of private placement by such companies, or in listed securities of group companies of the sponsor in excess of 25% of the net assets of all the schemes of the mutual fund [C3][C8].
+   - For debt schemes, the total exposure in a group (excluding certain public sector entities) must not exceed 20% of the net assets of the scheme, extendable to 25% with trustee approval. However, investments in debt and money market instruments of group companies of the sponsor and AMC together must not exceed 10% of the net assets of the scheme, extendable to 15% with trustee approval [C2].
+
+4. **Compliance Confirmation**:  
+   - There must be confirmation that the mutual fund has not made investments in excess of the 25% limit in listed securities of group companies of the sponsor [C3][C8].
+
+**Summary Table for Compliance:**
+
+| Requirement                                                                 | Limit/Disclosure                                    | Reference |
+|-----------------------------------------------------------------------------|-----------------------------------------------------|-----------|
+| Disclosure of investments in group companies (by scheme and aggregate)      | Mandatory disclosure                                | [C1]      |
+| Aggregation of exposure at issuer level                                     | Yes                                                 | [C5]      |
+| Maximum exposure to group companies (all schemes, listed securities)        | 25% of net assets                                   | [C3][C8]  |
+| Maximum exposure to group companies (debt/money market, per scheme)         | 10% (extendable to 15% with trustee approval)       | [C2]      |
+| Maximum exposure to group (all companies, per scheme, debt schemes)         | 20% (extendable to 25% with trustee approval)       | [C2]      |
+
+**Conclusion:**  
+- All investments in group companies of the sponsor must be disclosed by name and amount, and aggregated at the issuer level.
+- The aggregate exposure to listed securities of group companies of the sponsor must not exceed 25% of the net assets of all schemes.
+- For debt and money market instruments, the exposure to group companies of the sponsor and AMC together must not exceed 10% (extendable to 15%) of the net assets of the scheme.
+- Compliance with the 25% limit must be confirmed and reported [C1][C2][C3][C5][C8].
+
+If you need the actual list of investments and aggregate exposure, that information must be obtained from the mutual fund's disclosures as per the above requirements.
+
+CITATIONS:
+  [C1] Source: SEBI Regulation.pdf, Page: 77
+  [C2] Source: SEBI Master circular for MF.pdf, Page: 138
+  [C3] Source: SEBI Master circular for MF.pdf, Page: 315
+  [C4] Source: SEBI Master circular for MF.pdf, Page: 315
+  [C5] Source: SEBI Master circular for MF.pdf, Page: 34
+  [C6] Source: SEBI Regulation.pdf, Page: 12
+  [C7] Source: SEBI Regulation.pdf, Page: 49
+  [C8] Source: SEBI Master circular for MF.pdf, Page: 309
+
+SOURCES: SEBI Regulation.pdf, SEBI Master circular for MF.pdf
+
+================================================================================
+ID: SEBI-Q24
+Category: portfolio-analysis
+Type: excel-analysis
+
+QUESTION: What is the scheme's equity allocation versus debt allocation? Based on this, should it be classified as an equity-oriented scheme for TER purposes?
+
+ANSWER:
+The equity and debt allocation of a scheme depends on its category as defined by SEBI. Here are the relevant categories and their allocations:
+
+- **Conservative Hybrid Fund:** Equity & equity related instruments: 10–25% of total assets; Debt instruments: 75–90% of total assets.
+- **Balanced Hybrid Fund:** Equity & equity related instruments: 40–60% of total assets; Debt instruments: 40–60% of total assets.
+- **Arbitrage Fund:** Minimum investment in equity & equity related instruments: 65% of total assets.
+- **Equity Savings:** Minimum investment in equity & equity related instruments: 65% of total assets and minimum investment in debt: 10% of total assets.
+
+For a scheme to be classified as an **equity-oriented scheme for TER (Total Expense Ratio) purposes**, it generally needs to have at least 65% of its assets in equity and equity-related instruments. This is evident from the minimum equity allocation for Arbitrage Funds and Equity Savings Funds, both of which are considered equity-oriented schemes when their equity allocation is at least 65% of total assets[C3].
+
+**Conclusion:**  
+- If the scheme’s equity allocation is **65% or more** of total assets, it should be classified as an equity-oriented scheme for TER purposes.
+- If the equity allocation is **less than 65%**, it should not be classified as equity-oriented for TER purposes, and would fall under hybrid or debt-oriented categories depending on the exact allocation[C3].
+
+If you provide the specific allocation percentages for the scheme in question, I can confirm its classification.
+
+CITATIONS:
+  [C1] Source: SEBI Master circular for MF.pdf, Page: 280
+  [C2] Source: SEBI Master circular for MF.pdf, Page: 339
+  [C3] Source: SEBI Master circular for MF.pdf, Page: 25
+  [C4] Source: SEBI Master circular for MF.pdf, Page: 354
+  [C5] Source: Mirae Asset Small Cap SID.pdf, Page: 54
+  [C6] Source: SEBI Master circular for MF.pdf, Page: 22
+  [C7] Source: SEBI Master circular for MF.pdf, Page: 372
+  [C8] Source: SEBI Master circular for MF.pdf, Page: 240
+
+SOURCES: SEBI Master circular for MF.pdf, Mirae Asset Small Cap SID.pdf
+
+================================================================================
+ID: SEBI-Q25
+Category: portfolio-analysis
+Type: excel-analysis
+
+QUESTION: Calculate the scheme's actual Total Expense Ratio (TER) based on the portfolio size. Is it within regulatory limits?
+
+ANSWER:
+To calculate the scheme's actual Total Expense Ratio (TER) based on the portfolio size, you would need the actual expense figures and the average daily net assets of the scheme. The TER is calculated as:
+
+TER = (Total Expenses during the period / Average Daily Net Assets) × 100
+
+However, the provided contexts do not give a specific portfolio size or actual expense numbers for a particular scheme, so I cannot calculate the exact TER.
+
+Regarding regulatory limits, the maximum TER allowed depends on the scheme type:
+
+- For index funds or ETFs, TER shall not exceed 1.00% of daily net assets [C3].
+- For close-ended equity-oriented schemes, TER shall not exceed 1.25% [C3].
+- For close-ended non-equity schemes, TER shall not exceed 1.00% [C3].
+- For fund of funds, the TER limits vary from 1.00% to 2.25% depending on the underlying investments [C4].
+
+To determine if the scheme's TER is within regulatory limits, compare the calculated TER (from actual data) to the relevant limit above.
+
+Since the actual TER calculation requires data not provided in the contexts, I cannot compute or confirm if it is within regulatory limits for a specific scheme. If you provide the actual expense and portfolio size, I can help with the calculation and comparison.
+
+CITATIONS:
+  [C1] Source: SEBI Master circular for MF.pdf, Page: 31
+  [C2] Source: Mirae Asset Small Cap SID.pdf, Page: 23
+  [C3] Source: SEBI Regulation.pdf, Page: 39
+  [C4] Source: SEBI Regulation.pdf, Page: 39
+  [C5] Source: SEBI Master circular for MF.pdf, Page: 296
+  [C6] Source: SEBI Master circular for MF.pdf, Page: 379
+  [C7] Source: SEBI Master circular for MF.pdf, Page: 379
+  [C8] Source: SEBI Master circular for MF.pdf, Page: 51
+
+SOURCES: SEBI Master circular for MF.pdf, Mirae Asset Small Cap SID.pdf, SEBI Regulation.pdf
+
+================================================================================
+ID: SEBI-Q26
+Category: portfolio-analysis
+Type: excel-analysis
+
+QUESTION: Identify any unlisted debt securities in the portfolio. What is their aggregate value and does it exceed the 10% limit under Seventh Schedule Clause 1A?
+
+ANSWER:
+Based on the provided contexts, the Mirae Asset Small Cap Scheme does not intend to invest in unrated debt instruments or debt instruments having special features, and there is no explicit mention of investment in unlisted debt securities in the portfolio summary. The Scheme Information Document (SID) states:
+
+- "The Scheme does not intend to undertake/ invest/ engage in: ... Unrated Debt instruments ... Debt Instruments having Special Features..."[C5]
+- The table of investment limits shows "Unrated Debt Instruments" at 0% exposure, and there is no separate line item for "Unlisted Debt Instruments"—only for "Unrated" (which is 0%)[C8].
+
+While the SID allows for investment in debt securities that could be "listed, unlisted, privately placed, among others, as permitted by regulation"[C5], the explicit policy is not to invest in unrated debt instruments, and there is no evidence in the provided contexts of any current exposure to unlisted debt securities.
+
+Therefore:
+- There are no unlisted debt securities identified in the portfolio.
+- The aggregate value of unlisted debt securities is 0%.
+- This does not exceed the 10% limit under Seventh Schedule Clause 1A[C1][C3].
+
+If you require confirmation for a specific reporting period or actual portfolio holdings, that information is not present in the provided contexts.
+
+CITATIONS:
+  [C1] Source: SEBI Regulation.pdf, Page: 64
+  [C2] Source: SEBI Regulation.pdf, Page: 70
+  [C3] Source: SEBI Master circular for MF.pdf, Page: 133
+  [C4] Source: SEBI Master circular for MF.pdf, Page: 117
+  [C5] Source: Mirae Asset Small Cap SID.pdf, Page: 11
+  [C6] Source: SEBI Master circular for MF.pdf, Page: 335
+  [C7] Source: SEBI Master circular for MF.pdf, Page: 315
+  [C8] Source: Mirae Asset Small Cap SID.pdf, Page: 12
+
+SOURCES: SEBI Regulation.pdf, SEBI Master circular for MF.pdf, Mirae Asset Small Cap SID.pdf
+
+================================================================================
+ID: SEBI-Q27
+Category: portfolio-analysis
+Type: excel-analysis
+
+QUESTION: Are there any securities in the portfolio that haven't been traded in the last 30 days? How should these be valued?
+
+ANSWER:
+Yes, according to SEBI regulations, if a security (other than Government securities, money market, and debt securities) has not been traded on any stock exchange for a period of thirty days prior to the valuation date, it is classified as a non-traded security[C2][C5].
+
+For such non-traded securities, the asset management company must value them using appropriate valuation methods based on principles approved by the Board of the asset management company. The decision and supporting data for each security so valued must be documented and preserved[C5]. 
+
+In summary:
+- If a security has not been traded in the last 30 days, it is considered non-traded.
+- Non-traded securities should be valued using Board-approved valuation methods, with proper documentation[C2][C5].
+
+CITATIONS:
+  [C1] Source: SEBI Regulation.pdf, Page: 68
+  [C2] Source: SEBI Master circular for MF.pdf, Page: 108
+  [C3] Source: SEBI Master circular for MF.pdf, Page: 109
+  [C4] Source: SEBI Master circular for MF.pdf, Page: 335
+  [C5] Source: SEBI Regulation.pdf, Page: 68
+  [C6] Source: SEBI Master circular for MF.pdf, Page: 117
+  [C7] Source: SEBI Master circular for MF.pdf, Page: 91
+  [C8] Source: SEBI Master circular for MF.pdf, Page: 216
+
+SOURCES: SEBI Regulation.pdf, SEBI Master circular for MF.pdf, Mirae Asset Small Cap SID.pdf
+
+================================================================================
+ID: SEBI-Q28
+Category: portfolio-analysis
+Type: excel-analysis
+
+QUESTION: Calculate the scheme's holdings in InvITs and REITs. Do they comply with the ownership and exposure limits under Seventh Schedule Clause 13?
+
+ANSWER:
+To answer your question, let's break it down:
+
+**1. Scheme's Holdings in InvITs and REITs:**
+- The scheme may invest in the units of REITs and InvITs up to 10% of the net assets of the scheme [C5].
+- The cumulative gross exposure through equity, debt, derivatives, repo, credit default swaps, REITs, InvITs, and other permitted securities/assets should not exceed 100% of the net assets of the scheme [C2][C6].
+
+**2. Ownership and Exposure Limits under Seventh Schedule Clause 13:**
+- Clause 13 of the Seventh Schedule specifically deals with restrictions on investment in the units of REITs and InvITs [C3].
+- The Mutual Fund under all its schemes shall not own more than 10% of units issued by a single issuer of InvIT [C8].
+
+**Compliance Check:**
+- If the scheme's holdings in REITs and InvITs are within 10% of the net assets of the scheme, and the fund does not own more than 10% of units issued by a single InvIT issuer, then the scheme complies with the ownership and exposure limits under Seventh Schedule Clause 13 [C5][C8].
+- The overall exposure (including REITs/InvITs and other asset classes) must not exceed 100% of the net assets [C2][C6].
+
+**Conclusion:**
+- If the scheme's holdings in InvITs and REITs are within the above limits, they comply with the ownership and exposure limits under Seventh Schedule Clause 13.
+
+**Note:** The actual percentage holdings of the scheme in InvITs and REITs are not provided in the contexts. If you need to calculate the exact holdings, you would need the scheme's portfolio data. Based on the stated limits, compliance is as described above.
+
+CITATIONS:
+  [C1] Source: SEBI Master circular for MF.pdf, Page: 147
+  [C2] Source: SEBI Master circular for MF.pdf, Page: 148
+  [C3] Source: SEBI Master circular for MF.pdf, Page: 309
+  [C4] Source: SEBI Master circular for MF.pdf, Page: 278
+  [C5] Source: Mirae Asset Small Cap SID.pdf, Page: 44
+  [C6] Source: SEBI Master circular for MF.pdf, Page: 155
+  [C7] Source: SEBI Master circular for MF.pdf, Page: 137
+  [C8] Source: Mirae Asset Small Cap SID.pdf, Page: 49
+
+SOURCES: SEBI Master circular for MF.pdf, Mirae Asset Small Cap SID.pdf
+
+================================================================================
+ID: SEBI-Q29
+Category: portfolio-analysis
+Type: excel-analysis
+
+QUESTION: Identify all inter-scheme transfers in the month of December 2025. Were they executed at market prices and properly disclosed?
+
+ANSWER:
+Based on the provided contexts, the identification of all inter-scheme transfers (ISTs) in the month of December 2025 specifically is not possible, as there is no direct data or table listing the ISTs for that month in the given excerpts.
+
+However, the regulatory framework and disclosure requirements for ISTs are clearly outlined:
+
+- Asset management companies are required to report and disclose all ISTs in debt and money market securities as specified by SEBI, including details such as dates, transferor and transferee schemes, securities transferred, price, value, and reasons for the transfer [C1][C2].
+- ISTs must be executed at the prevailing market price for quoted instruments on a spot basis [C4].
+- There are requirements for documentation, fair execution, and avoidance of favouritism or price manipulation in ISTs [C5][C6].
+- Disclosure tables (such as in [C8]) are designed to capture details like date, quantity, rate, value, and reasons for transfer, which would facilitate proper disclosure if filled out.
+
+In summary:
+- The specific ISTs for December 2025 are not listed in the provided contexts.
+- SEBI regulations require that ISTs be executed at market prices and properly disclosed, with detailed documentation and transparency [C1][C2][C4][C5][C8].
+
+If you need the actual list of ISTs for December 2025, you would need access to the monthly investment transaction report or the relevant disclosure tables for that period, which are referenced but not included in the provided contexts [C3][C8].
+
+CITATIONS:
+  [C1] Source: SEBI Master circular for MF.pdf, Page: 305
+  [C2] Source: SEBI Master circular for MF.pdf, Page: 325
+  [C3] Source: SEBI Master circular for MF.pdf, Page: 414
+  [C4] Source: SEBI Master circular for MF.pdf, Page: 363
+  [C5] Source: SEBI Regulation.pdf, Page: 62
+  [C6] Source: SEBI Regulation.pdf, Page: 17
+  [C7] Source: SEBI Master circular for MF.pdf, Page: 385
+  [C8] Source: SEBI Master circular for MF.pdf, Page: 312
+
+SOURCES: SEBI Master circular for MF.pdf, SEBI Regulation.pdf
+
+================================================================================
+ID: SEBI-Q30
+Category: portfolio-analysis
+Type: excel-analysis
+
+QUESTION: What is the scheme's cash and cash equivalent position? Is the scheme fully invested or holding excess liquidity, and what are the implications?
+
+ANSWER:
+Based on the provided contexts, the cash and cash equivalent position of a scheme depends on its category:
+
+- For open-ended debt schemes (except Overnight Fund, Liquid Fund, Gilt Fund, and Gilt Fund with 10-year constant duration), the scheme must hold at least 20% of its net assets in liquid assets such as securities, T-bills, and Repo on Government Securities[C1].
+- For Liquid Funds, there is also a requirement to hold at least 20% of net assets in liquid assets. If the exposure falls below this threshold, the AMC must restore compliance before making further investments[C2].
+
+Whether the scheme is fully invested or holding excess liquidity depends on its adherence to these regulatory minimums. If a scheme holds only the minimum required (20%), it is close to being fully invested. If it holds more than 20%, it is holding excess liquidity.
+
+Implications:
+- Holding the minimum required liquidity allows the scheme to maximize returns by investing more in higher-yielding assets, but may increase liquidity risk.
+- Holding excess liquidity can reduce returns (since liquid assets typically yield less) but improves the scheme’s ability to meet redemption requests and manage risk.
+
+In summary, the scheme must at least meet the 20% liquidity requirement, and whether it is fully invested or holding excess liquidity will impact its risk-return profile as described above[C1][C2].
+
+CITATIONS:
+  [C1] Source: SEBI Master circular for MF.pdf, Page: 52
+  [C2] Source: SEBI Master circular for MF.pdf, Page: 52
+  [C3] Source: SEBI Master circular for MF.pdf, Page: 385
+  [C4] Source: SEBI Master circular for MF.pdf, Page: 277
+  [C5] Source: SEBI Master circular for MF.pdf, Page: 282
+  [C6] Source: SEBI Master circular for MF.pdf, Page: 136
+  [C7] Source: SEBI Regulation.pdf, Page: 72
+  [C8] Source: SEBI Master circular for MF.pdf, Page: 367
+
+SOURCES: SEBI Master circular for MF.pdf, SEBI Regulation.pdf, Mirae Asset Small Cap SID.pdf

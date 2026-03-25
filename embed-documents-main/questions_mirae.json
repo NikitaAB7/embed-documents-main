@@ -1,0 +1,216 @@
+{
+  "generated_at": "2026-03-06T10:00:00.000000Z",
+  "description": "SEBI Mutual Funds Regulations RAG Testing - Scheme-related, General Regulations, and Portfolio Analysis Questions",
+  "questions": [
+    {
+      "id": "SEBI-Q1",
+      "question": "What are the mandatory conditions for a close-ended scheme to avoid listing on stock exchanges?",
+      "category": "scheme-related",
+      "question_type": "regulatory",
+      "topics": ["close-ended scheme", "listing", "stock exchange", "conditions"]
+    },
+    {
+      "id": "SEBI-Q2",
+      "question": "What is the lock-in period and transaction frequency for Infrastructure Debt Fund schemes?",
+      "category": "scheme-related",
+      "question_type": "regulatory",
+      "topics": ["Infrastructure Debt Fund", "lock-in period", "transaction frequency", "IDF"]
+    },
+    {
+      "id": "SEBI-Q3",
+      "question": "What are the minimum investor requirements for Infrastructure Debt Fund schemes?",
+      "category": "scheme-related",
+      "question_type": "regulatory",
+      "topics": ["Infrastructure Debt Fund", "investor requirements", "minimum investors", "IDF"]
+    },
+    {
+      "id": "SEBI-Q4",
+      "question": "What are the investment restrictions specific to Gold ETF schemes?",
+      "category": "scheme-related",
+      "question_type": "regulatory",
+      "topics": ["Gold ETF", "investment restrictions", "exchange traded fund", "gold"]
+    },
+    {
+      "id": "SEBI-Q5",
+      "question": "Can a mutual fund scheme invest in another scheme of the same mutual fund? What are the restrictions?",
+      "category": "scheme-related",
+      "question_type": "regulatory",
+      "topics": ["scheme investment", "same mutual fund", "inter-scheme", "restrictions"]
+    },
+    {
+      "id": "SEBI-Q6",
+      "question": "What are the deployment timelines for funds raised through New Fund Offers?",
+      "category": "scheme-related",
+      "question_type": "regulatory",
+      "topics": ["NFO", "New Fund Offer", "deployment timeline", "fund mobilization"]
+    },
+    {
+      "id": "SEBI-Q7",
+      "question": "What are the specific restrictions for Capital Protection Oriented Schemes?",
+      "category": "scheme-related",
+      "question_type": "regulatory",
+      "topics": ["Capital Protection", "CPOS", "restrictions", "oriented scheme"]
+    },
+    {
+      "id": "SEBI-Q8",
+      "question": "What is the maximum period for which scheme particulars/offer documents remain valid before re-filing?",
+      "category": "scheme-related",
+      "question_type": "regulatory",
+      "topics": ["offer document", "scheme particulars", "validity", "re-filing"]
+    },
+    {
+      "id": "SEBI-Q9",
+      "question": "What are the conversion rules for close-ended schemes to open-ended schemes?",
+      "category": "scheme-related",
+      "question_type": "regulatory",
+      "topics": ["close-ended", "open-ended", "conversion", "scheme conversion"]
+    },
+    {
+      "id": "SEBI-Q10",
+      "question": "What are the specific investment restrictions for Real Estate Mutual Fund schemes regarding sponsor investments?",
+      "category": "scheme-related",
+      "question_type": "regulatory",
+      "topics": ["Real Estate Mutual Fund", "REMF", "sponsor investment", "restrictions"]
+    },
+    {
+      "id": "SEBI-Q11",
+      "question": "What is the 'Fit and Proper Person' criteria and how does it interact with multiple regulations?",
+      "category": "general-sebi",
+      "question_type": "regulatory-complex",
+      "topics": ["Fit and Proper Person", "criteria", "regulations", "eligibility"]
+    },
+    {
+      "id": "SEBI-Q12",
+      "question": "Explain the complete shareholding web restriction under Regulation 7B and its exception provisions.",
+      "category": "general-sebi",
+      "question_type": "regulatory-complex",
+      "topics": ["shareholding", "Regulation 7B", "web restriction", "exceptions"]
+    },
+    {
+      "id": "SEBI-Q13",
+      "question": "What is the complete process and implications when institutional mechanism detects potential front-running?",
+      "category": "general-sebi",
+      "question_type": "regulatory-complex",
+      "topics": ["front-running", "institutional mechanism", "detection", "implications"]
+    },
+    {
+      "id": "SEBI-Q14",
+      "question": "How does the networth maintenance requirement interact with sponsor disassociation provisions?",
+      "category": "general-sebi",
+      "question_type": "regulatory-complex",
+      "topics": ["networth", "sponsor disassociation", "maintenance", "provisions"]
+    },
+    {
+      "id": "SEBI-Q15",
+      "question": "What is the complete framework for inter-scheme transfers and their regulatory treatment?",
+      "category": "general-sebi",
+      "question_type": "regulatory-complex",
+      "topics": ["inter-scheme transfer", "framework", "regulatory treatment"]
+    },
+    {
+      "id": "SEBI-Q16",
+      "question": "Explain the complete copyright compliance framework that applies when using web search for investor communications.",
+      "category": "general-sebi",
+      "question_type": "regulatory-complex",
+      "topics": ["copyright", "web search", "investor communications", "compliance"]
+    },
+    {
+      "id": "SEBI-Q17",
+      "question": "What are the complete valuation requirements when a debt security is downgraded below investment grade?",
+      "category": "general-sebi",
+      "question_type": "regulatory-complex",
+      "topics": ["valuation", "debt security", "downgrade", "investment grade"]
+    },
+    {
+      "id": "SEBI-Q18",
+      "question": "How does the 'associate' definition vary across different contexts and what are the implications?",
+      "category": "general-sebi",
+      "question_type": "regulatory-complex",
+      "topics": ["associate", "definition", "contexts", "implications"]
+    },
+    {
+      "id": "SEBI-Q19",
+      "question": "What is the complete framework for a mutual fund scheme investing in commodity derivatives?",
+      "category": "general-sebi",
+      "question_type": "regulatory-complex",
+      "topics": ["commodity derivatives", "mutual fund", "investment framework"]
+    },
+    {
+      "id": "SEBI-Q20",
+      "question": "What are the complete requirements and process for launching a Specialized Investment Fund with multiple investment strategies?",
+      "category": "general-sebi",
+      "question_type": "regulatory-complex",
+      "topics": ["Specialized Investment Fund", "SIF", "investment strategies", "launch requirements"]
+    },
+    {
+      "id": "SEBI-Q21",
+      "question": "What is the scheme's Asset Under Management (AUM) as of December 2025 and how does it compare to the regulatory minimum?",
+      "category": "portfolio-analysis",
+      "question_type": "excel-analysis",
+      "topics": ["AUM", "Asset Under Management", "regulatory minimum", "December 2025"]
+    },
+    {
+      "id": "SEBI-Q22",
+      "question": "Calculate the scheme's exposure to the top 5 holdings. Does it comply with the 10% single issuer limit under Clause 1 of the Seventh Schedule?",
+      "category": "portfolio-analysis",
+      "question_type": "excel-analysis",
+      "topics": ["top 5 holdings", "single issuer limit", "10% limit", "Seventh Schedule", "Clause 1"]
+    },
+    {
+      "id": "SEBI-Q23",
+      "question": "Identify all investments in group companies of the sponsor. What is the aggregate exposure and does it comply with the 25% limit?",
+      "category": "portfolio-analysis",
+      "question_type": "excel-analysis",
+      "topics": ["group companies", "sponsor", "aggregate exposure", "25% limit"]
+    },
+    {
+      "id": "SEBI-Q24",
+      "question": "What is the scheme's equity allocation versus debt allocation? Based on this, should it be classified as an equity-oriented scheme for TER purposes?",
+      "category": "portfolio-analysis",
+      "question_type": "excel-analysis",
+      "topics": ["equity allocation", "debt allocation", "TER", "scheme classification"]
+    },
+    {
+      "id": "SEBI-Q25",
+      "question": "Calculate the scheme's actual Total Expense Ratio (TER) based on the portfolio size. Is it within regulatory limits?",
+      "category": "portfolio-analysis",
+      "question_type": "excel-analysis",
+      "topics": ["TER", "Total Expense Ratio", "regulatory limits", "portfolio size"]
+    },
+    {
+      "id": "SEBI-Q26",
+      "question": "Identify any unlisted debt securities in the portfolio. What is their aggregate value and does it exceed the 10% limit under Seventh Schedule Clause 1A?",
+      "category": "portfolio-analysis",
+      "question_type": "excel-analysis",
+      "topics": ["unlisted debt", "Seventh Schedule", "Clause 1A", "10% limit"]
+    },
+    {
+      "id": "SEBI-Q27",
+      "question": "Are there any securities in the portfolio that haven't been traded in the last 30 days? How should these be valued?",
+      "category": "portfolio-analysis",
+      "question_type": "excel-analysis",
+      "topics": ["illiquid securities", "trading", "valuation", "30 days"]
+    },
+    {
+      "id": "SEBI-Q28",
+      "question": "Calculate the scheme's holdings in InvITs and REITs. Do they comply with the ownership and exposure limits under Seventh Schedule Clause 13?",
+      "category": "portfolio-analysis",
+      "question_type": "excel-analysis",
+      "topics": ["InvITs", "REITs", "Seventh Schedule", "Clause 13", "exposure limits"]
+    },
+    {
+      "id": "SEBI-Q29",
+      "question": "Identify all inter-scheme transfers in the month of December 2025. Were they executed at market prices and properly disclosed?",
+      "category": "portfolio-analysis",
+      "question_type": "excel-analysis",
+      "topics": ["inter-scheme transfer", "December 2025", "market price", "disclosure"]
+    },
+    {
+      "id": "SEBI-Q30",
+      "question": "What is the scheme's cash and cash equivalent position? Is the scheme fully invested or holding excess liquidity, and what are the implications?",
+      "category": "portfolio-analysis",
+      "question_type": "excel-analysis",
+      "topics": ["cash", "liquidity", "cash equivalents", "investment position"]
+    }
+  ]
+}

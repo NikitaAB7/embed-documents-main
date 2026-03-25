@@ -27,7 +27,7 @@ class RAGConfig(BaseModel):
         description="Qdrant API key",
     )
     qdrant_collection_name: str = Field(
-        default="company_files",
+        default_factory=lambda: os.getenv("QDRANT_COLLECTION", "company_files"),
         description="Qdrant collection name for document embeddings",
     )
     qdrant_prefer_grpc: bool = Field(

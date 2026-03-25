@@ -14,8 +14,10 @@ from rag.ingestion.document_fetcher import DocumentFetcher
 from rag.ingestion.document_tracker import DocumentTracker
 from rag.retrieval.pipeline import RetrievalPipeline
 from rag.retrieval.answer_synthesizer import AnswerSynthesizer
+from rag.observability.local_evaluators import LocalEvaluator
 from rag.schemas.rag_schemas import (
     ExtractedFiltersResponse,
+    EvaluationScores,
     QueryRequest,
     QueryResponse,
     RetrievedChunk,
@@ -46,8 +48,68 @@ app = FastAPI(
 # Initialize document tracker and fetcher
 tracker = DocumentTracker()
 fetcher = DocumentFetcher()
+
+# Initialize local evaluator
+local_evaluator = LocalEvaluator()
 retrieval_pipeline = RetrievalPipeline(use_dynamic_filters=True)
 answer_synthesizer = AnswerSynthesizer()
+
+
+class EvaluationCache:
+    """Load eval_results.json and match questions to evaluations."""
+
+    def __init__(self):
+        """Initialize evaluation cache."""
+        self.evals = {}
+        self.load_evaluations()
+
+    def load_evaluations(self):
+        """Load evaluation results from eval_results.json."""
+        eval_file = Path(__file__).resolve().parent.parent / "eval_results.json"
+        if eval_file.exists():
+            try:
+                with open(eval_file, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    self.evals = data.get("results", {})
+                    logger.info(f"Loaded evaluations for {len(self.evals)} metrics")
+            except Exception as e:
+                logger.warning(f"Failed to load evaluation results: {e}")
+        else:
+            logger.info("No eval_results.json found, evaluations will not be available")
+
+    def get_eval_for_question(self, question_idx: int) -> dict:
+        """Get evaluation for a specific question by index.
+
+        Args:
+            question_idx: Index of the question (0-based)
+
+        Returns:
+            Dictionary with evaluation scores and reasoning
+        """
+        result = {}
+        for metric, scores in self.evals.items():
+            if isinstance(scores, list) and question_idx < len(scores):
+                result[metric] = scores[question_idx]
+        return result
+
+    def get_summary(self) -> dict:
+        """Get overall evaluation summary.
+
+        Returns:
+            Summary statistics from eval_results.json
+        """
+        eval_file = Path(__file__).resolve().parent.parent / "eval_results.json"
+        if eval_file.exists():
+            try:
+                with open(eval_file, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    return data
+            except Exception as e:
+                logger.warning(f"Failed to read evaluation summary: {e}")
+        return {}
+
+
+eval_cache = EvaluationCache()
 
 
 @app.on_event("startup")
@@ -230,11 +292,78 @@ async def download_file(filename: str, category: Optional[str] = None):
         category: Document category (optional, will be looked up from metadata)
 
     Returns:
-        Streaming response with PDF content
+        Streaming response with PDF content, or FileResponse for local files
     """
     try:
         # Get document info from tracker
         doc_info = await tracker.get_document_info(filename)
+
+        # Try to find source_path (local file location)
+        source_path = None
+        
+        # First check tracker metadata
+        if doc_info:
+            metadata = doc_info.get("metadata")
+            if metadata and metadata.get("source_path"):
+                source_path = metadata["source_path"]
+        
+        # If not in tracker, query Qdrant directly for the source_path
+        if not source_path:
+            try:
+                from qdrant_client import QdrantClient
+                from qdrant_client.models import Filter, FieldCondition, MatchValue
+                import os
+                qdrant_url = os.getenv("QDRANT_URL", "http://localhost:6333")
+                collection_name = os.getenv("QDRANT_COLLECTION", "compliance_docs")
+                client = QdrantClient(url=qdrant_url)
+                # Search for one document matching this source filename (nested in metadata)
+                results = client.scroll(
+                    collection_name=collection_name,
+                    scroll_filter=Filter(
+                        must=[FieldCondition(key="metadata.source", match=MatchValue(value=filename))]
+                    ),
+                    limit=1,
+                    with_payload=True,
+                )
+                logger.info(f"Qdrant scroll results for '{filename}': {len(results[0]) if results and results[0] else 0} points")
+                if results and results[0]:
+                    point = results[0][0]
+                    # source_path is nested in metadata
+                    meta = point.payload.get("metadata", {})
+                    source_path = meta.get("source_path")
+                    logger.info(f"Found source_path from Qdrant: {source_path}")
+            except Exception as e:
+                logger.warning(f"Could not query Qdrant for source_path: {e}")
+
+        # Serve local file if source_path exists
+        if source_path:
+            local_path = Path(source_path)
+            # Try as absolute path first, then relative to project directory
+            if not local_path.is_absolute():
+                # Try relative to project directory (parent of web folder)
+                project_dir = Path(__file__).resolve().parent.parent
+                local_path = project_dir / source_path
+            if local_path.exists():
+                logger.info(f"Serving local file: {local_path}")
+                # Determine media type based on extension
+                ext = local_path.suffix.lower()
+                media_types = {
+                    ".pdf": "application/pdf",
+                    ".docx": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                    ".doc": "application/msword",
+                    ".xlsx": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    ".xls": "application/vnd.ms-excel",
+                    ".txt": "text/plain",
+                    ".md": "text/markdown",
+                }
+                media_type = media_types.get(ext, "application/octet-stream")
+                return FileResponse(
+                    path=local_path,
+                    media_type=media_type,
+                    filename=filename,
+                )
+            else:
+                logger.warning(f"Local file not found: {local_path}")
 
         if not doc_info:
             raise HTTPException(
@@ -242,21 +371,18 @@ async def download_file(filename: str, category: Optional[str] = None):
                 detail=f"Document not found: {filename}"
             )
 
-        # Try to determine category from metadata
+        # Try to determine category from metadata for remote fetch
         if not category:
-
             metadata_json = doc_info.get("metadata_json")
             if metadata_json:
                 try:
-                    metadata = json.loads(metadata_json)
-                    category = metadata.get("category") or metadata.get("subcatname")
+                    parsed_meta = json.loads(metadata_json)
+                    category = parsed_meta.get("category") or parsed_meta.get("subcatname")
                 except json.JSONDecodeError:
                     pass
 
         # If still no category, try to fetch from metadata helpers
         if not category:
-            
-
             meta_item = get_metadata_item_by_attachment_name(filename)
             if meta_item:
                 category = meta_item.get("subcatname")
@@ -313,12 +439,90 @@ async def get_categories():
         raise HTTPException(status_code=500, detail=str(e))
 
 
+@app.get("/api/evaluations")
+async def get_evaluations():
+    """Get full evaluation results from eval_results.json.
+
+    Returns:
+        Complete evaluation data with all metrics and results
+    """
+    try:
+        summary = eval_cache.get_summary()
+        if not summary:
+            raise HTTPException(
+                status_code=404,
+                detail="No evaluation results available. Run evaluations first.",
+            )
+        return summary
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error getting evaluations: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/evaluations/summary")
+async def get_evaluations_summary():
+    """Get summary statistics of all evaluations.
+
+    Returns:
+        Dictionary with mean, min, max, and pass_rate for each metric
+    """
+    try:
+        full_data = eval_cache.get_summary()
+        if not full_data:
+            raise HTTPException(
+                status_code=404,
+                detail="No evaluation results available.",
+            )
+        return {
+            "dataset_name": full_data.get("dataset_name"),
+            "num_examples": full_data.get("num_examples"),
+            "summary": full_data.get("summary", {}),
+        }
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error getting evaluations summary: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/evaluations/question/{question_idx}")
+async def get_question_evaluation(question_idx: int):
+    """Get evaluation scores for a specific question.
+
+    Args:
+        question_idx: Zero-based index of the question
+
+    Returns:
+        Evaluation scores and reasoning for that question
+    """
+    try:
+        evals = eval_cache.get_eval_for_question(question_idx)
+        if not evals:
+            raise HTTPException(
+                status_code=404,
+                detail=f"No evaluation found for question index {question_idx}",
+            )
+        return evals
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error getting question evaluation: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
 @app.post("/api/query", response_model=QueryResponse)
 async def query_documents(request: QueryRequest):
     """Run retrieval pipeline with optional dynamic filter extraction.
 
     When use_dynamic_filters=True, the LLM analyzes the query to extract
     metadata filters (symbol, category, date range) automatically.
+
+    Optionally includes evaluation scores if question_idx is provided.
     """
     try:
         filters = request.filters.model_dump() if request.filters else None
@@ -379,6 +583,27 @@ async def query_documents(request: QueryRequest):
                 reasoning=ef.reasoning,
             )
 
+        # Include evaluation scores if answer is available
+        evaluation_scores = None
+        if answer and answer.strip():
+            try:
+                contexts = [doc.page_content for doc in result.documents[:5]]
+                eval_results = await local_evaluator.evaluate_all(
+                    question=request.query,
+                    answer=answer,
+                    contexts=contexts,
+                )
+                evaluation_scores = EvaluationScores(
+                    correctness=eval_results.get("correctness"),
+                    relevancy=eval_results.get("relevancy"),
+                    logical_coherence=eval_results.get("logical_coherence"),
+                    groundedness=eval_results.get("groundedness"),
+                    reasoning=eval_results.get("reasoning"),
+                )
+                logger.info(f"Generated evaluation scores: correctness={evaluation_scores.correctness:.2f}, relevancy={evaluation_scores.relevancy:.2f}, numerical_accuracy={evaluation_scores.numerical_accuracy:.2f}")
+            except Exception as e:
+                logger.warning(f"Failed to evaluate answer: {e}")
+
         return QueryResponse(
             use_rag=result.route.use_rag,
             confidence=result.route.confidence,
@@ -390,6 +615,7 @@ async def query_documents(request: QueryRequest):
             structured_answer=structured_answer,
             faithfulness_score=faithfulness_score,
             extracted_filters=extracted_filters_response,
+            evaluation_scores=evaluation_scores,
         )
 
     except Exception as e:

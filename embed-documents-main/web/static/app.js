@@ -4,6 +4,8 @@ let currentSymbol = null;
 let lastQueryFilters = null;
 let currentChunks = [];
 let currentCitations = []; // Store citations for clickable links
+let evaluationQuestions = []; // Store evaluation questions
+let currentQuestionIdx = null; // Track current question index for evaluations
 const pdfCache = new Map();
 let currentRenderTask = null; // Track current PDF render task
 const pdfViewerState = {
@@ -95,6 +97,21 @@ function setupEventListeners() {
             closePdfModal();
         }
     });
+
+    // Evaluation question selector
+    const evalSelect = document.getElementById('eval-question-select');
+    if (evalSelect) {
+        evalSelect.addEventListener('change', (e) => {
+            const idx = parseInt(e.target.value);
+            if (!isNaN(idx) && idx >= 0 && idx < evaluationQuestions.length) {
+                const question = evaluationQuestions[idx];
+                document.getElementById('query-input').value = question;
+                currentQuestionIdx = idx;
+            } else {
+                currentQuestionIdx = null;
+            }
+        });
+    }
 }
 
 // Submit query to RAG pipeline
@@ -141,6 +158,10 @@ async function submitQuery() {
             structured_output: false,
             evaluate_faithfulness: false,
         };
+
+        if (currentQuestionIdx !== null && currentQuestionIdx >= 0) {
+            payload.question_idx = currentQuestionIdx;
+        }
 
         if (filters) {
             payload.filters = filters;
@@ -191,6 +212,19 @@ function displayQueryResults(data, appliedFilters = null) {
         routeInfo.innerHTML = buildRouteInfo(data);
         contextFilters.innerHTML = buildFilterChips(appliedFilters);
         queryContext.style.display = 'flex';
+    }
+
+    // Display evaluation scores if available
+    const evaluationScoresDiv = document.getElementById('evaluation-scores');
+    const evaluationContentDiv = document.getElementById('evaluation-content');
+    console.log('evaluation_scores:', data.evaluation_scores);
+    if (data.evaluation_scores && evaluationContentDiv && evaluationScoresDiv) {
+        console.log('Rendering evaluation scores');
+        evaluationContentDiv.innerHTML = renderEvaluationScores(data.evaluation_scores);
+        evaluationScoresDiv.style.display = 'block';
+    } else if (evaluationScoresDiv) {
+        console.log('No evaluation scores to display');
+        evaluationScoresDiv.style.display = 'none';
     }
 
     // Check if RAG was used
@@ -355,7 +389,7 @@ function openCitationPdf(citationIndex) {
     const matchingChunk = currentChunks.find(chunk => {
         const meta = chunk.metadata || {};
         const chunkSource = chunk.source || meta.source || '';
-        const chunkPage = parseInt(meta.page || meta.page_no, 10);
+        const chunkPage = parseInt(meta.page || meta.page_no || meta.page_number, 10);
         return chunkSource === filename && chunkPage === page;
     });
     
@@ -381,6 +415,7 @@ function openCitationPdf(citationIndex) {
             metadata: {
                 source: filename,
                 page: page,
+                page_number: page,
                 bbox: bbox,
                 coord_origin: coordOrigin
             }
@@ -397,7 +432,8 @@ async function initializeApp() {
     try {
         await Promise.all([
             loadStats(),
-            loadSymbolsData()
+            loadSymbolsData(),
+            loadEvaluations()
         ]);
     } catch (error) {
         showError('Failed to initialize application: ' + error.message);
@@ -452,6 +488,47 @@ async function loadSymbolsData() {
         tableBody.innerHTML = '<tr><td colspan="6" class="no-data">Failed to load data</td></tr>';
     } finally {
         loading.style.display = 'none';
+    }
+}
+
+// Load evaluation questions
+async function loadEvaluations() {
+    try {
+        const response = await fetch('/api/evaluations');
+        if (!response.ok) {
+            console.log('No evaluation data available');
+            return;
+        }
+
+        const data = await response.json();
+        const results = data.results || {};
+        
+        // Get questions from the first metric (they should all have same length)
+        const answerRelevanceResults = results.answer_relevance || [];
+        
+        if (answerRelevanceResults.length > 0) {
+            // Store question count for later
+            evaluationQuestions = Array.from({ length: answerRelevanceResults.length }, (_, i) => 
+                `Question ${i + 1}`
+            );
+            
+            // Populate the eval question selector
+            const evalSelect = document.getElementById('eval-question-select');
+            if (evalSelect) {
+                for (let i = 0; i < evaluationQuestions.length; i++) {
+                    const option = document.createElement('option');
+                    option.value = i;
+                    option.textContent = `Test Question ${i + 1}`;
+                    evalSelect.appendChild(option);
+                }
+                console.log('Populated eval question dropdown with ' + evaluationQuestions.length + ' questions');
+            }
+            
+            console.log(`Loaded ${evaluationQuestions.length} evaluation questions`);
+        }
+    } catch (error) {
+        console.log('Could not load evaluations:', error.message);
+        // Evaluations are optional, don't show error
     }
 }
 
@@ -745,6 +822,72 @@ function buildRouteInfo(data) {
     `;
 }
 
+function renderEvaluationScores(evals) {
+    if (!evals) return '';
+    
+    const scores = [];
+    const scoreMap = {
+        'correctness': 'Correctness',
+        'relevancy': 'Relevancy',
+        'logical_coherence': 'Logical Coherence',
+        'groundedness': 'Groundedness'
+    };
+    
+    // Try new metrics first, fall back to legacy ones
+    const metricsToUse = [
+        evals.correctness !== null && evals.correctness !== undefined ? 'correctness' : null,
+        evals.relevancy !== null && evals.relevancy !== undefined ? 'relevancy' : null,
+        evals.logical_coherence !== null && evals.logical_coherence !== undefined ? 'logical_coherence' : null,
+        evals.groundedness !== null && evals.groundedness !== undefined ? 'groundedness' : null
+    ].filter(m => m);
+    
+    // If no new metrics, try legacy ones
+    if (metricsToUse.length === 0) {
+        scoreMap['answer_relevance'] = 'Answer Relevance';
+        scoreMap['context_relevance'] = 'Context Relevance';
+        scoreMap['faithfulness'] = 'Faithfulness';
+        metricsToUse.push('answer_relevance', 'context_relevance', 'faithfulness');
+    }
+    
+    for (const key of metricsToUse) {
+        if (evals[key] !== null && evals[key] !== undefined) {
+            const percentage = (evals[key] * 100).toFixed(1);
+            const statusClass = evals[key] >= 0.7 ? 'good' : evals[key] >= 0.5 ? 'fair' : 'poor';
+            scores.push(`
+                <div class="eval-score-item">
+                    <div class="eval-label">${scoreMap[key]}</div>
+                    <div class="eval-bar-container">
+                        <div class="eval-bar ${statusClass}" style="width: ${percentage}%"></div>
+                    </div>
+                    <div class="eval-value">${percentage}%</div>
+                </div>
+            `);
+        }
+    }
+    
+    // Add reasoning if available
+    let reasoning = '';
+    if (evals.reasoning && typeof evals.reasoning === 'object') {
+        const reasons = [];
+        for (const [key, reason] of Object.entries(evals.reasoning)) {
+            if (reason) {
+                const label = scoreMap[key] || key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                reasons.push(`<li><strong>${label}:</strong> ${escapeHtml(reason)}</li>`);
+            }
+        }
+        if (reasons.length > 0) {
+            reasoning = `<div class="eval-reasoning"><h4>Reasoning:</h4><ul>${reasons.join('')}</ul></div>`;
+        }
+    }
+    
+    return `
+        <div class="eval-scores-container">
+            ${scores.join('')}
+        </div>
+        ${reasoning}
+    `;
+}
+
 function renderCitation(citation) {
     const label = citation.id || 'Source';
     const sourceLabel = truncateFilename(citation.source || 'Unknown source', 50);
@@ -985,14 +1128,14 @@ async function openPdfViewer(chunk, citationId = null) {
     }
     
     // Get bbox page - could be stored separately or within bbox object
-    const pageHint = parseInt(metadata.page || metadata.page_no || metadata.pageNumber, 10);
+    const pageHint = parseInt(metadata.page || metadata.page_no || metadata.pageNumber || metadata.page_number, 10);
     if (bbox && pageHint) {
         bboxPage = pageHint;
     }
     
-    // Get page dimensions for normalization (if stored)
-    const pageWidth = metadata.page_width || null;
-    const pageHeight = metadata.page_height || null;
+    // Get page dimensions for normalization (if stored) - check bbox first, then metadata
+    const pageWidth = bbox?.page_width || metadata.page_width || null;
+    const pageHeight = bbox?.page_height || metadata.page_height || null;
     
     console.log('Final bbox:', bbox, 'page:', bboxPage, 'origin:', bboxCoordOrigin);
     console.log('Page dimensions:', pageWidth, 'x', pageHeight);

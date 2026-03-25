@@ -18,7 +18,7 @@ class RouteDecision:
 class QueryRouter:
     """Rule-based query router with confidence threshold."""
 
-    def __init__(self, threshold: float = 0.6) -> None:
+    def __init__(self, threshold: float = 0.4) -> None:  # Lowered from 0.6
         self.threshold = threshold
 
     def should_use_rag(self, query: str) -> RouteDecision:
@@ -40,14 +40,39 @@ class QueryRouter:
             "investor presentation",
             "presentation",
             "what does the document say",
+            # Financial/business signals
+            "revenue",
+            "profit",
+            "earnings",
+            "quarter",
+            "fy",
+            "q1",
+            "q2",
+            "q3",
+            "q4",
+            "margins",
+            "guidance",
+            "outlook",
+            "growth",
+            "capex",
+            "dividend",
+            "debt",
+            "ebitda",
+            "eps",
+            "net income",
+            "sales",
+            "operating",
+            "financial",
+            "performance",
+            "results",
+            "highlights",
         ]
 
         generic_signals = [
             "define",
-            "what is",
+            "what is a",  # More specific - "what is a stock" vs "what is TCS revenue"
             "who is",
-            "explain",
-            "summarize",
+            "explain the concept",
             "difference between",
         ]
 
@@ -58,8 +83,16 @@ class QueryRouter:
 
         if re.search(r"\b(fincode|ticker|symbol)\b", q):
             rag_score += 0.3
+        
+        # Company name patterns (3+ letter uppercase or mixed case words)
+        if re.search(r"\b[A-Z][A-Za-z]{2,}\b", query):  # Use original case
+            rag_score += 0.15
 
         if len(q.split()) >= 10:
+            rag_score += 0.1
+        
+        # Short financial questions should still use RAG
+        if len(q.split()) >= 4:
             rag_score += 0.1
 
         generic_score = 0.0

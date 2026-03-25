@@ -51,6 +51,9 @@ class QueryRequest(BaseModel):
     evaluate_faithfulness: bool = Field(
         False, description="Run an LLM-based faithfulness check"
     )
+    question_idx: Optional[int] = Field(
+        None, description="Index of question for evaluation matching (0-based)"
+    )
     filters: Optional["QueryFilters"] = Field(
         None, description="Metadata filters for retrieval (merged with dynamic filters)"
     )
@@ -95,6 +98,35 @@ class ExtractedFiltersResponse(BaseModel):
     reasoning: str = Field("", description="LLM's reasoning for filter extraction")
 
 
+class EvaluationScores(BaseModel):
+    """Evaluation metrics for an answer from local evaluators."""
+
+    correctness: Optional[float] = Field(
+        None, description="Correctness score based on accuracy and completeness (0.0-1.0)"
+    )
+    relevancy: Optional[float] = Field(
+        None, description="Relevancy score (how well answer addresses question) (0.0-1.0)"
+    )
+    logical_coherence: Optional[float] = Field(
+        None, description="Logical coherence score (structure and reasoning flow) (0.0-1.0)"
+    )
+    groundedness: Optional[float] = Field(
+        None, description="Groundedness score (answers supported by context) (0.0-1.0)"
+    )
+    answer_relevance: Optional[float] = Field(
+        None, description="Answer relevance score from LangSmith (0.0-1.0) - legacy"
+    )
+    context_relevance: Optional[float] = Field(
+        None, description="Context relevance score from LangSmith (0.0-1.0) - legacy"
+    )
+    faithfulness: Optional[float] = Field(
+        None, description="Faithfulness score from LangSmith (0.0-1.0) - legacy"
+    )
+    reasoning: Optional[dict] = Field(
+        None, description="Evaluator reasoning for each metric"
+    )
+
+
 class QueryResponse(BaseModel):
     """Query response from retrieval pipeline."""
 
@@ -109,4 +141,7 @@ class QueryResponse(BaseModel):
     faithfulness_score: Optional[float] = None
     extracted_filters: Optional[ExtractedFiltersResponse] = Field(
         None, description="Filters extracted dynamically from query by LLM"
+    )
+    evaluation_scores: Optional[EvaluationScores] = Field(
+        None, description="Evaluation scores from LangSmith evaluators"
     )

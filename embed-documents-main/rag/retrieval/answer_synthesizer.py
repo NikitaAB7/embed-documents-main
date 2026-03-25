@@ -1,7 +1,11 @@
-"""Answer synthesis with citation formatting."""
+"""Answer synthesis with citation formatting.
+
+Includes LangSmith tracing for observability.
+"""
 
 from __future__ import annotations
 
+import os
 import re
 from dataclasses import dataclass
 from typing import Iterable, Optional
@@ -11,6 +15,20 @@ from langchain_openai import ChatOpenAI
 
 from rag.config import rag_config
 from rag.retrieval.citation_validator import build_structured_answer, validate_citations
+
+
+# Tracing support (lazy import)
+_tracer = None
+
+def _get_tracer():
+    global _tracer
+    if _tracer is None and os.getenv("LANGCHAIN_TRACING_V2", "").lower() == "true":
+        try:
+            from rag.observability.tracing import get_tracer
+            _tracer = get_tracer()
+        except ImportError:
+            pass
+    return _tracer
 
 
 @dataclass
@@ -40,80 +58,107 @@ class AnswerSynthesizer:
         structured_output: bool = False,
         evaluate_faithfulness: bool = False,
     ) -> AnswerResult:
-        docs = list(documents)[:max_docs]
-        if not docs:
-            return AnswerResult(answer="No relevant sources found.", citations=[])
+        # Start tracing span if enabled
+        tracer = _get_tracer()
+        span = None
+        if tracer and tracer.is_enabled:
+            span = tracer.trace_span(
+                name="answer_synthesis",
+                run_type="llm",
+                inputs={"query": query, "max_docs": max_docs},
+                tags=["synthesis", "llm"],
+            ).__enter__()
 
-        citation_map = []
-        context_lines = []
-        for idx, doc in enumerate(docs, start=1):
-            meta = doc.metadata or {}
-            citation_id = f"C{idx}"
-            source = meta.get("source")
-            chunk_id = meta.get("chunk_id")
-            ref_chunk_id = meta.get("reference_chunk_id")
-            page = _extract_page(meta, doc.page_content)
-            bbox = meta.get("bbox")
-            coord_origin = meta.get("coord_origin", "TOPLEFT")
-            citation_map.append(
-                {
-                    "id": citation_id,
-                    "source": source,
-                    "page": page,
-                    "chunk_id": chunk_id,
-                    "reference_chunk_id": ref_chunk_id,
-                    "bbox": bbox,
-                    "coord_origin": coord_origin,
+        try:
+            docs = list(documents)[:max_docs]
+            if not docs:
+                if span:
+                    span.set_outputs({"answer_length": 0, "status": "no_docs"})
+                return AnswerResult(answer="No relevant sources found.", citations=[])
+
+            citation_map = []
+            context_lines = []
+            for idx, doc in enumerate(docs, start=1):
+                meta = doc.metadata or {}
+                citation_id = f"C{idx}"
+                source = meta.get("source")
+                chunk_id = meta.get("chunk_id")
+                ref_chunk_id = meta.get("reference_chunk_id")
+                page = _extract_page(meta, doc.page_content)
+                bbox = meta.get("bbox")
+                coord_origin = meta.get("coord_origin", "TOPLEFT")
+                citation_map.append(
+                    {
+                        "id": citation_id,
+                        "source": source,
+                        "page": page,
+                        "chunk_id": chunk_id,
+                        "reference_chunk_id": ref_chunk_id,
+                        "bbox": bbox,
+                        "coord_origin": coord_origin,
+                    }
+                )
+                context_lines.append(
+                    f"[{citation_id}] source={source} page={page} chunk_id={chunk_id}\n{doc.page_content}"
+                )
+
+            system_prompt = (
+                "You are a grounded assistant. Use ONLY the provided contexts. "
+                "Cite every factual claim using the citation ids in square brackets. "
+                "If the answer is not in the contexts, say you don't know."
+            )
+            user_prompt = (
+                f"Question: {query}\n\nContexts:\n" + "\n\n".join(context_lines)
+            )
+
+            response = await self._client.ainvoke(
+                [
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt},
+                ]
+            )
+
+            answer = response.content.strip()
+            answer = _ensure_citations(answer, [c["id"] for c in citation_map])
+
+            validation = None
+            structured = None
+            if strict_citations:
+                report = validate_citations(answer)
+                validation = {
+                    "total_sentences": report.total_sentences,
+                    "cited_sentences": report.cited_sentences,
+                    "missing_citations": report.missing_citations,
+                    "coverage": report.coverage,
                 }
+
+            if structured_output:
+                structured = build_structured_answer(answer)
+
+            faithfulness_score = None
+            if evaluate_faithfulness:
+                faithfulness_score = await self._evaluate_faithfulness(query, context_lines, answer)
+
+            result = AnswerResult(
+                answer=answer,
+                citations=citation_map,
+                validation=validation,
+                structured_answer=structured,
+                faithfulness_score=faithfulness_score,
             )
-            context_lines.append(
-                f"[{citation_id}] source={source} page={page} chunk_id={chunk_id}\n{doc.page_content}"
-            )
 
-        system_prompt = (
-            "You are a grounded assistant. Use ONLY the provided contexts. "
-            "Cite every factual claim using the citation ids in square brackets. "
-            "If the answer is not in the contexts, say you don't know."
-        )
-        user_prompt = (
-            f"Question: {query}\n\nContexts:\n" + "\n\n".join(context_lines)
-        )
+            if span:
+                span.set_outputs({
+                    "answer_length": len(answer),
+                    "num_citations": len(citation_map),
+                    "faithfulness": faithfulness_score,
+                })
 
-        response = await self._client.ainvoke(
-            [
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": user_prompt},
-            ]
-        )
+            return result
 
-        answer = response.content.strip()
-        answer = _ensure_citations(answer, [c["id"] for c in citation_map])
-
-        validation = None
-        structured = None
-        if strict_citations:
-            report = validate_citations(answer)
-            validation = {
-                "total_sentences": report.total_sentences,
-                "cited_sentences": report.cited_sentences,
-                "missing_citations": report.missing_citations,
-                "coverage": report.coverage,
-            }
-
-        if structured_output:
-            structured = build_structured_answer(answer)
-
-        faithfulness_score = None
-        if evaluate_faithfulness:
-            faithfulness_score = await self._evaluate_faithfulness(query, context_lines, answer)
-
-        return AnswerResult(
-            answer=answer,
-            citations=citation_map,
-            validation=validation,
-            structured_answer=structured,
-            faithfulness_score=faithfulness_score,
-        )
+        finally:
+            if span:
+                span.__exit__(None, None, None)
 
     async def _evaluate_faithfulness(
         self, query: str, context_lines: list[str], answer: str
@@ -145,7 +190,7 @@ class AnswerSynthesizer:
 
 
 def _extract_page(metadata: dict, page_content: str) -> str | None:
-    page = metadata.get("page") or metadata.get("page_no")
+    page = metadata.get("page") or metadata.get("page_no") or metadata.get("page_number")
     if page:
         return str(page)
 

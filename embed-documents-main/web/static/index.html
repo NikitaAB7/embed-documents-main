@@ -37,6 +37,9 @@
                         <option value="10" selected>Top 10 results</option>
                         <option value="20">Top 20 results</option>
                     </select>
+                    <select id="eval-question-select" class="select-input" title="Load an evaluated test question">
+                        <option value="">Load evaluation question...</option>
+                    </select>
                 </div>
                 <div class="query-filters">
                     <div class="filter-group">
@@ -82,6 +85,10 @@
                         <span class="context-label">Applied filters</span>
                         <div id="context-filters" class="filter-chips"></div>
                     </div>
+                </div>
+                <div id="evaluation-scores" class="evaluation-scores" style="display: none;">
+                    <h3>Evaluation Scores</h3>
+                    <div id="evaluation-content" class="evaluation-content"></div>
                 </div>
                 <div id="query-answer" class="answer-section" style="display: none;">
                     <h3>Answer</h3>
@@ -237,6 +244,6 @@
             pdfjsLib.GlobalWorkerOptions.workerSrc = '/static/vendor/pdf.worker.min.js';
         }
     </script>
-    <script src="/static/app.js?v=4"></script>
+    <script src="/static/app.js?v=9"></script>
 </body>
 </html>
