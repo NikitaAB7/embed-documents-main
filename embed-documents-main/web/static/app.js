@@ -620,7 +620,13 @@ async function viewFiles(symbol) {
                 : '-';
 
             // Get subcategory from metadata
-            const subcategory = file.subcatname || '-';
+            const subcategoryValue = file.subcatname || '';
+            const subcategory = subcategoryValue || '-';
+
+            // Sanitize values for data-* attributes
+            const safeFilenameAttr = escapeHtml(filename);
+            const safeSubcategoryAttr = escapeHtml(subcategoryValue);
+            const safeCollectionAttr = escapeHtml(file.collection_name || '');
 
             return `
                 <tr>
@@ -637,7 +643,10 @@ async function viewFiles(symbol) {
                     <td>
                         <button
                             class="btn btn-success btn-sm"
-                            onclick="downloadFile('${filename}', '${file.collection_name}')">
+                            data-filename="${safeFilenameAttr}"
+                            data-subcategory="${safeSubcategoryAttr}"
+                            data-collection="${safeCollectionAttr}"
+                            onclick="downloadFile(this)">
                             Download
                         </button>
                     </td>
@@ -658,15 +667,30 @@ async function viewFiles(symbol) {
 }
 
 // Download a file
-async function downloadFile(filename, category) {
+async function downloadFile(button) {
+    let originalText = '';
+
     try {
+        if (!button) {
+            throw new Error('Missing download button reference');
+        }
+
+        const btn = button;
+        const filename = btn.dataset.filename;
+        const subcategory = btn.dataset.subcategory || '';
+        const collection = btn.dataset.collection || '';
+        const categoryParam = subcategory || collection;
+
+        if (!filename) {
+            throw new Error('Missing filename metadata');
+        }
+
         // Show downloading indicator
-        const btn = event.target;
-        const originalText = btn.textContent;
+        originalText = btn.textContent;
         btn.textContent = 'Downloading...';
         btn.disabled = true;
 
-        const url = `/api/download/${encodeURIComponent(filename)}?category=${encodeURIComponent(category)}`;
+        const url = `/api/download/${encodeURIComponent(filename)}?category=${encodeURIComponent(categoryParam)}`;
 
         const response = await fetch(url);
         if (!response.ok) throw new Error('Download failed');
@@ -682,15 +706,13 @@ async function downloadFile(filename, category) {
         window.URL.revokeObjectURL(downloadUrl);
         document.body.removeChild(a);
 
-        // Reset button
-        btn.textContent = originalText;
-        btn.disabled = false;
-
     } catch (error) {
         alert('Failed to download file: ' + error.message);
-        // Reset button
-        event.target.textContent = 'Download';
-        event.target.disabled = false;
+    } finally {
+        if (button) {
+            button.textContent = originalText || 'Download';
+            button.disabled = false;
+        }
     }
 }
 

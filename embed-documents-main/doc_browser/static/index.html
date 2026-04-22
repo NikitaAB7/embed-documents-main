@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Browser</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>Document Browser</h1>
+                <p class="subtitle">Browse and download company documents</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Search Panel -->
+            <section class="search-panel">
+                <h2>Search Documents</h2>
+                
+                <div class="search-form">
+                    <div class="form-group">
+                        <label for="company-select">Company</label>
+                        <select id="company-select" class="form-control">
+                            <option value="">Select a company...</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="category-select">Document Type</label>
+                        <select id="category-select" class="form-control">
+                            <option value="">All document types</option>
+                        </select>
+                    </div>
+                    
+                    <button id="search-btn" class="btn btn-primary" onclick="searchDocuments()">
+                        <span class="btn-icon">🔍</span>
+                        Search Documents
+                    </button>
+                </div>
+            </section>
+
+            <!-- Results Panel -->
+            <section class="results-panel">
+                <div class="results-header">
+                    <h2>Documents</h2>
+                    <span id="results-count" class="results-count"></span>
+                </div>
+                
+                <!-- Loading State -->
+                <div id="loading" class="loading-state" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Loading documents...</p>
+                </div>
+                
+                <!-- Empty State -->
+                <div id="empty-state" class="empty-state">
+                    <div class="empty-icon">📄</div>
+                    <h3>No documents yet</h3>
+                    <p>Select a company and document type to search for documents</p>
+                </div>
+                
+                <!-- Documents List -->
+                <div id="documents-list" class="documents-list" style="display: none;">
+                </div>
+                
+                <!-- Pagination -->
+                <div id="pagination" class="pagination" style="display: none;">
+                    <button id="prev-btn" class="btn btn-secondary" onclick="prevPage()" disabled>
+                        ← Previous
+                    </button>
+                    <span id="page-info" class="page-info"></span>
+                    <button id="next-btn" class="btn btn-secondary" onclick="nextPage()">
+                        Next →
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Document Viewer Modal -->
+        <div id="document-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modal-title">Document Viewer</h3>
+                    <button class="modal-close" onclick="closeModal()">×</button>
+                </div>
+                <div class="modal-body">
+                    <div id="modal-loading" class="loading-state">
+                        <div class="spinner"></div>
+                        <p>Loading document...</p>
+                    </div>
+                    <iframe id="document-frame" class="document-frame" style="display: none;"></iframe>
+                </div>
+                <div class="modal-footer">
+                    <button id="download-btn" class="btn btn-primary" onclick="downloadDocument()">
+                        Download
+                    </button>
+                    <button class="btn btn-secondary" onclick="closeModal()">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
